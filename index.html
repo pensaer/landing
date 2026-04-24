@@ -41,25 +41,28 @@
       justify-content: space-between;
     }
 
-    .logo-wordmark { display: flex; flex-direction: column; gap: 2px; }
+    .logo-wordmark {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
 
-    .logo-ae {
+    .logo-img {
+      height: 36px;
+      width: auto;
+      display: block;
+      filter: brightness(0) invert(1);
+      opacity: 0.92;
+    }
+
+    .logo-sub {
       font-family: 'Playfair Display', serif;
       font-size: 11px;
-      letter-spacing: 4px;
+      font-weight: 400;
       color: var(--gold-light);
+      letter-spacing: 3px;
       text-transform: uppercase;
     }
-
-    .logo-pensaer {
-      font-family: 'Playfair Display', serif;
-      font-size: 22px;
-      font-weight: 600;
-      color: var(--white);
-      letter-spacing: 2px;
-    }
-
-    .logo-pensaer span { color: var(--gold-light); }
 
     .header-contact {
       font-size: 13px;
@@ -416,8 +419,8 @@
   <!-- HEADER -->
   <header>
     <div class="logo-wordmark">
-      <span class="logo-ae">æ Pensaer</span>
-      <span class="logo-pensaer">Dynha<span>.Pellegrini419</span></span>
+      <img class="logo-img" src="pensaer-logo.png" alt="æ Pensaer Desarrollos" />
+      <span class="logo-sub">Dynha · Pellegrini 419</span>
     </div>
     <a href="tel:+5493416980855" class="header-contact">Contactar</a>
   </header>
