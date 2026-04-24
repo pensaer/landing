@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Oficina 1C · Pensaer 7 · San Lorenzo 172 · Rosario</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --gold:       #9E8656;
+      --gold-light: #C9B48A;
+      --gold-dark:  #7A6340;
+      --brown-deep: #2A1F14;
+      --brown-mid:  #3D2E1E;
+      --beige:      #F5EFE4;
+      --beige-dark: #EAE0CE;
+      --white:      #FFFFFF;
+      --text-dark:  #1E1610;
+      --text-mid:   #5A4A35;
+      /* tonos propios oficina: grises cálidos */
+      --slate:      #4A5058;
+      --slate-light:#8A9098;
+      --concrete:   #D8D4CE;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--beige);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    /* ── HEADER ─────────────────────────────────────── */
+    header {
+      background: var(--brown-deep);
+      padding: 20px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo-wordmark { display: flex; flex-direction: column; gap: 2px; }
+
+    .logo-ae {
+      font-family: 'Playfair Display', serif;
+      font-size: 11px;
+      letter-spacing: 4px;
+      color: var(--gold-light);
+      text-transform: uppercase;
+    }
+
+    .logo-pensaer {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--white);
+      letter-spacing: 2px;
+    }
+
+    .logo-pensaer span { color: var(--gold-light); }
+
+    .header-contact {
+      font-size: 13px;
+      letter-spacing: 2px;
+      color: var(--gold-light);
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 1px solid var(--gold);
+      padding: 8px 20px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .header-contact:hover { background: var(--gold); color: var(--white); }
+
+    /* ── HERO ───────────────────────────────────────── */
+    .hero {
+      background: var(--brown-deep);
+      color: var(--white);
+      padding: 64px 48px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .hero-label {
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 16px;
+    }
+
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(34px, 5vw, 56px);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 8px;
+      color: var(--white);
+    }
+
+    .hero-title span {
+      color: var(--gold-light);
+      font-weight: 400;
+      font-size: 0.6em;
+      display: block;
+    }
+
+    .hero-subtitle {
+      font-size: 13px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 36px;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 28px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+
+    .stat { display: flex; flex-direction: column; gap: 4px; }
+
+    .stat-value {
+      font-family: 'Playfair Display', serif;
+      font-size: 30px;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold-light);
+    }
+
+    .stat-divider {
+      width: 1px;
+      background: var(--gold-dark);
+      align-self: stretch;
+    }
+
+    .hero-price {
+      background: var(--gold);
+      display: inline-flex;
+      flex-direction: column;
+      padding: 20px 28px;
+      gap: 4px;
+    }
+
+    .hero-price-label {
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--brown-deep);
+      font-weight: 600;
+    }
+
+    .hero-price-value {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--brown-deep);
+      line-height: 1;
+    }
+
+    .hero-price-note {
+      font-size: 10px;
+      color: var(--brown-mid);
+      letter-spacing: 1px;
+    }
+
+    /* ── HERO IMAGE (foto principal) ─────────────────── */
+    .hero-img-wrap { position: relative; }
+
+    .hero-img-wrap img {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      display: block;
+      border: 1px solid var(--gold-dark);
+    }
+
+    .hero-badge {
+      position: absolute;
+      top: -12px;
+      right: -12px;
+      background: var(--gold);
+      color: var(--brown-deep);
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 700;
+      padding: 10px 16px;
+    }
+
+    /* ── STRIP ──────────────────────────────────────── */
+    .strip {
+      background: var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      padding: 18px 48px;
+      flex-wrap: wrap;
+    }
+
+    .strip-item {
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--brown-deep);
+      font-weight: 600;
+    }
+
+    .strip-dot {
+      width: 4px;
+      height: 4px;
+      background: var(--brown-deep);
+      border-radius: 50%;
+    }
+
+    /* ── GALERÍA ────────────────────────────────────── */
+    .gallery-section {
+      padding: 72px 48px;
+      background: var(--white);
+    }
+
+    .section-tag {
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(26px, 3vw, 38px);
+      font-weight: 600;
+      color: var(--brown-deep);
+      margin-bottom: 36px;
+      line-height: 1.2;
+    }
+
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 48px;
+      height: 2px;
+      background: var(--gold);
+      margin-top: 14px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: 260px 200px;
+      gap: 8px;
+    }
+
+    .gallery-grid .g-main {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+
+    .gallery-grid img:hover { transform: scale(1.02); }
+
+    .g-wrap { overflow: hidden; }
+
+    /* ── PLANTA ─────────────────────────────────────── */
+    .planta-section {
+      background: var(--brown-mid);
+      padding: 72px 48px;
+    }
+
+    .planta-section .section-tag { color: var(--gold-light); }
+    .planta-section .section-title { color: var(--white); }
+    .planta-section .section-title::after { background: var(--gold-light); }
+
+    .planta-grid {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .planta-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border: 1px solid var(--gold-dark);
+      background: var(--white);
+    }
+
+    .planta-specs { display: flex; flex-direction: column; }
+
+    .spec-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 13px 0;
+      border-bottom: 1px solid rgba(201, 180, 138, 0.2);
+      gap: 16px;
+    }
+
+    .spec-row:last-child { border-bottom: none; }
+
+    .spec-name {
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      color: var(--gold-light);
+      text-transform: uppercase;
+    }
+
+    .spec-val {
+      font-family: 'Playfair Display', serif;
+      font-size: 16px;
+      color: var(--white);
+      text-align: right;
+    }
+
+    .spec-val.highlight {
+      color: var(--gold-light);
+      font-size: 20px;
+    }
+
+    /* ── CARACTERÍSTICAS ─────────────────────────────── */
+    .features-section {
+      padding: 72px 48px;
+      background: var(--beige);
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1px;
+      background: var(--beige-dark);
+      border: 1px solid var(--beige-dark);
+    }
+
+    .feature-item {
+      background: var(--white);
+      padding: 24px 28px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .feature-icon {
+      width: 32px;
+      height: 32px;
+      background: var(--beige);
+      border: 1px solid var(--gold-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .feature-icon svg {
+      width: 14px;
+      height: 14px;
+      stroke: var(--gold-dark);
+      fill: none;
+      stroke-width: 1.8;
+    }
+
+    .feature-text {
+      font-size: 13.5px;
+      color: var(--text-mid);
+      line-height: 1.5;
+    }
+
+    /* ── HIGHLIGHT CARDS ─────────────────────────────── */
+    .highlights-section {
+      padding: 72px 48px;
+      background: var(--white);
+    }
+
+    .highlights-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .hl-card {
+      border-top: 3px solid var(--gold);
+      padding: 28px 24px;
+      background: var(--beige);
+    }
+
+    .hl-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--beige-dark);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .hl-title {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--brown-deep);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .hl-desc {
+      font-size: 13px;
+      color: var(--text-mid);
+      line-height: 1.6;
+    }
+
+    /* ── CTA ────────────────────────────────────────── */
+    .cta-section {
+      background: var(--brown-deep);
+      padding: 80px 48px;
+      text-align: center;
+    }
+
+    .cta-eyebrow {
+      font-size: 10px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 20px;
+    }
+
+    .cta-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 4vw, 46px);
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .cta-subtitle {
+      font-size: 15px;
+      color: var(--gold-light);
+      margin-bottom: 48px;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--gold);
+      color: var(--brown-deep);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 20px 40px;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+    .btn-primary svg { width: 18px; height: 18px; fill: currentColor; }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: transparent;
+      color: var(--gold-light);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 20px 40px;
+      border: 1px solid var(--gold-dark);
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .btn-secondary:hover { border-color: var(--gold-light); color: var(--white); }
+
+    .cta-phone-label {
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-top: 40px;
+      margin-bottom: 8px;
+    }
+
+    .cta-phone-display {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      font-weight: 400;
+      color: var(--white);
+      letter-spacing: 4px;
+    }
+
+    /* ── LIGHTBOX ───────────────────────────────────── */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.92);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .lightbox.open { display: flex; }
+
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 88vh;
+      object-fit: contain;
+      border: 1px solid var(--gold-dark);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 24px;
+      color: var(--gold-light);
+      font-size: 32px;
+      cursor: pointer;
+      line-height: 1;
+      font-family: 'Inter', sans-serif;
+      background: none;
+      border: none;
+    }
+
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--gold-light);
+      font-size: 40px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0 16px;
+      line-height: 1;
+    }
+
+    .lightbox-prev { left: 8px; }
+    .lightbox-next { right: 8px; }
+
+    /* ── FOOTER ─────────────────────────────────────── */
+    footer {
+      background: var(--text-dark);
+      padding: 28px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      color: var(--gold-light);
+      letter-spacing: 2px;
+    }
+
+    .footer-brand span { color: var(--white); }
+    .footer-copy { font-size: 11px; color: var(--gold-dark); letter-spacing: 1px; }
+
+    .footer-address {
+      font-size: 11px;
+      color: var(--gold-dark);
+      letter-spacing: 1px;
+      text-align: right;
+    }
+
+    /* ── RESPONSIVE ─────────────────────────────────── */
+    @media (max-width: 900px) {
+      header { padding: 16px 24px; }
+      .hero { grid-template-columns: 1fr; padding: 48px 24px; gap: 32px; }
+      .hero-img-wrap { order: -1; }
+      .hero-img-wrap img { height: 280px; }
+      .hero-badge { top: 8px; right: 8px; }
+      .gallery-section { padding: 48px 24px; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+      .gallery-grid .g-main { grid-column: span 2; grid-row: span 1; height: 240px; }
+      .gallery-grid .g-wrap { height: 160px; }
+      .planta-section { padding: 48px 24px; }
+      .planta-grid { grid-template-columns: 1fr; }
+      .features-section { padding: 48px 24px; }
+      .highlights-section { padding: 48px 24px; }
+      .highlights-grid { grid-template-columns: 1fr; }
+      .cta-section { padding: 56px 24px; }
+      footer { padding: 24px; flex-direction: column; align-items: flex-start; }
+      .footer-address { text-align: left; }
+      .strip { gap: 20px; padding: 14px 24px; justify-content: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo-wordmark">
+      <span class="logo-ae">æ Pensaer</span>
+      <span class="logo-pensaer">Pensaer <span>7</span></span>
+    </div>
+    <a href="tel:+5493416980855" class="header-contact">Contactar</a>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div>
+      <p class="hero-label">San Lorenzo 172 · Rosario</p>
+      <h1 class="hero-title">
+        Oficina 1C
+        <span>Pensaer 7 · San Lorenzo</span>
+      </h1>
+      <p class="hero-subtitle">Oficina premium con patio propio</p>
+
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-value">~130</span>
+          <span class="stat-label">M² totales</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-value">2</span>
+          <span class="stat-label">Oficinas</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-value">2</span>
+          <span class="stat-label">Baños</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-value">31</span>
+          <span class="stat-label">M² patio</span>
+        </div>
+      </div>
+
+      <div class="hero-price">
+        <span class="hero-price-label">Consultar precio</span>
+        <span class="hero-price-value">341 698-0855</span>
+        <span class="hero-price-note">Disponible · Financiación a convenir</span>
+      </div>
+    </div>
+
+    <div class="hero-img-wrap">
+      <img src="fotos/01-patio.jpeg" alt="Patio exterior · Oficina 1C · Pensaer 7" />
+      <div class="hero-badge">Disponible</div>
+    </div>
+  </section>
+
+  <!-- STRIP -->
+  <div class="strip">
+    <span class="strip-item">Patio 6,70 × 4,65 m</span>
+    <span class="strip-dot"></span>
+    <span class="strip-item">2 oficinas privadas</span>
+    <span class="strip-dot"></span>
+    <span class="strip-item">Kitchenette equipada</span>
+    <span class="strip-dot"></span>
+    <span class="strip-item">2 baños</span>
+    <span class="strip-dot"></span>
+    <span class="strip-item">Luz natural</span>
+  </div>
+
+  <!-- GALERÍA -->
+  <section class="gallery-section">
+    <p class="section-tag">Galería</p>
+    <h2 class="section-title">Imágenes del espacio</h2>
+
+    <div class="gallery-grid">
+      <div class="g-wrap g-main">
+        <img src="fotos/02-interior-principal.jpeg" alt="Interior principal" onclick="openLightbox(0)" />
+      </div>
+      <div class="g-wrap">
+        <img src="fotos/03-interior-patio.jpeg" alt="Vista hacia el patio" onclick="openLightbox(1)" />
+      </div>
+      <div class="g-wrap">
+        <img src="fotos/04-salon.jpeg" alt="Salón principal" onclick="openLightbox(2)" />
+      </div>
+      <div class="g-wrap">
+        <img src="fotos/05-interior-2.jpeg" alt="Interior oficina 2" onclick="openLightbox(3)" />
+      </div>
+      <div class="g-wrap">
+        <img src="fotos/06-kitchenette.jpeg" alt="Kitchenette" onclick="openLightbox(4)" />
+      </div>
+      <div class="g-wrap">
+        <img src="fotos/07-bano.jpeg" alt="Baño" onclick="openLightbox(5)" />
+      </div>
+      <div class="g-wrap">
+        <img src="fotos/08-entrada.jpeg" alt="Entrada y placard" onclick="openLightbox(6)" />
+      </div>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+    <button class="lightbox-close" onclick="closeLightboxBtn()">×</button>
+    <button class="lightbox-nav lightbox-prev" onclick="navLightbox(-1)">‹</button>
+    <img id="lightbox-img" src="" alt="" />
+    <button class="lightbox-nav lightbox-next" onclick="navLightbox(1)">›</button>
+  </div>
+
+  <!-- PLANTA -->
+  <section class="planta-section">
+    <p class="section-tag">Distribución</p>
+    <h2 class="section-title">Planta de la oficina</h2>
+
+    <div class="planta-grid">
+      <img class="planta-img" src="plano.jpg" alt="Planta Oficina 1C · Pensaer 7 · San Lorenzo 172" />
+
+      <div class="planta-specs">
+        <div class="spec-row">
+          <span class="spec-name">Oficina principal</span>
+          <span class="spec-val">6,70–3,55 × 4,90–10,30 m</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-name">Oficina 2</span>
+          <span class="spec-val">3,00 × 4,75 m</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-name">Kitchenette / Office</span>
+          <span class="spec-val">2,90 × 1,80 m</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-name">Baño 1</span>
+          <span class="spec-val">1,70 × 1,30 m</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-name">Baño 2</span>
+          <span class="spec-val">1,70 × 1,30 m</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-name">Patio exterior</span>
+          <span class="spec-val">6,70 × 4,65 m</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-name">Superficie total</span>
+          <span class="spec-val highlight">~130 M²</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CARACTERÍSTICAS -->
+  <section class="features-section">
+    <p class="section-tag">Terminaciones</p>
+    <h2 class="section-title">Calidad y detalles constructivos</h2>
+
+    <div class="features-grid">
+
+      <div class="feature-item">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M9 3v18"/></svg>
+        </div>
+        <span class="feature-text">Tabiques y puertas de vidrio tipo loft con perfilería de aluminio</span>
+      </div>
+
+      <div class="feature-item">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        </div>
+        <span class="feature-text">Amplia luz natural — ventanas doble altura y patio abierto al cielo</span>
+      </div>
+
+      <div class="feature-item">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+        </div>
+        <span class="feature-text">Pisos de porcelanato gran formato en todas las áreas</span>
+      </div>
+
+      <div class="feature-item">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24"><path d="M8 3H5a2 2 0 00-2 2v14a2 2 0 002 2h3m6-18h3a2 2 0 012 2v14a2 2 0 01-2 2h-3M9 3v18"/></svg>
+        </div>
+        <span class="feature-text">Kitchenette completa con muebles negros, mesada de granito y pileta de acero</span>
+      </div>
+
+      <div class="feature-item">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16v4H4zM4 12h16v8H4z"/></svg>
+        </div>
+        <span class="feature-text">2 baños completos con revestimiento símil cemento de primera calidad</span>
+      </div>
+
+      <div class="feature-item">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0110 10c0 5.52-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2zm0 4v4l3 3"/></svg>
+        </div>
+        <span class="feature-text">Preinstalación de aire acondicionado y sistema eléctrico trifásico</span>
+      </div>
+
+      <div class="feature-item">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 10H3M21 6H3M21 14H3M21 18H3"/></svg>
+        </div>
+        <span class="feature-text">Canaletas perimetrales para cableado estructurado — lista para equipar</span>
+      </div>
+
+      <div class="feature-item">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
+        </div>
+        <span class="feature-text">Patio privado de 31 m² con pérgola — espacio único en el mercado</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- HIGHLIGHTS -->
+  <section class="highlights-section">
+    <p class="section-tag">El proyecto</p>
+    <h2 class="section-title">Pensaer 7 · San Lorenzo 172</h2>
+
+    <div class="highlights-grid">
+      <div class="hl-card">
+        <div class="hl-number">01</div>
+        <div class="hl-title">Ubicación estratégica</div>
+        <div class="hl-desc">San Lorenzo 172, pleno centro de Rosario. Acceso inmediato a tribunales, bancos, zona comercial y transporte público.</div>
+      </div>
+      <div class="hl-card">
+        <div class="hl-number">02</div>
+        <div class="hl-title">Patio exclusivo</div>
+        <div class="hl-desc">31 m² de patio privado al aire libre — un diferencial imposible de encontrar en oficinas de nueva construcción en el centro.</div>
+      </div>
+      <div class="hl-card">
+        <div class="hl-number">03</div>
+        <div class="hl-title">Proyecto Pensaer</div>
+        <div class="hl-desc">Desarrollado por Pensaer, con estándares de construcción premium y terminaciones de primera línea en cada detalle.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <p class="cta-eyebrow">¿Te interesa esta oficina?</p>
+    <h2 class="cta-title">Consultá ahora y<br>coordiná una visita</h2>
+    <p class="cta-subtitle">Oficina 1C · Pensaer 7 · San Lorenzo 172 · ~130 m² · Patio propio</p>
+
+    <div class="cta-buttons">
+      <a href="tel:+5493416980855" class="btn-primary">
+        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.95 12a19.79 19.79 0 01-3.07-8.67A2 2 0 012.87 1.18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.78a16 16 0 006.29 6.29l1.67-1.21a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        Llamar ahora
+      </a>
+      <a href="https://wa.me/5493416980855?text=Hola%2C%20me%20interesa%20la%20Oficina%201C%20en%20Pensaer%207%20%28San%20Lorenzo%20172%29" class="btn-secondary" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--gold-light)" stroke="none"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp
+      </a>
+    </div>
+
+    <p class="cta-phone-label">Teléfono directo</p>
+    <p class="cta-phone-display">341 698-0855</p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-brand"><span>æ</span> Pensaer 7 · San Lorenzo</div>
+    <span class="footer-copy">© 2024 Pensaer · pensaer.com.ar</span>
+    <div class="footer-address">San Lorenzo 172 · Rosario, Santa Fe<br>Oficina 1C</div>
+  </footer>
+
+  <script>
+    const imgs = [
+      'fotos/02-interior-principal.jpeg',
+      'fotos/03-interior-patio.jpeg',
+      'fotos/04-salon.jpeg',
+      'fotos/05-interior-2.jpeg',
+      'fotos/06-kitchenette.jpeg',
+      'fotos/07-bano.jpeg',
+      'fotos/08-entrada.jpeg',
+    ];
+    let current = 0;
+
+    function openLightbox(i) {
+      current = i;
+      document.getElementById('lightbox-img').src = imgs[i];
+      document.getElementById('lightbox').classList.add('open');
+    }
+
+    function closeLightbox(e) {
+      if (e.target === document.getElementById('lightbox')) {
+        document.getElementById('lightbox').classList.remove('open');
+      }
+    }
+
+    function closeLightboxBtn() {
+      document.getElementById('lightbox').classList.remove('open');
+    }
+
+    function navLightbox(dir) {
+      current = (current + dir + imgs.length) % imgs.length;
+      document.getElementById('lightbox-img').src = imgs[current];
+    }
+
+    document.addEventListener('keydown', e => {
+      if (!document.getElementById('lightbox').classList.contains('open')) return;
+      if (e.key === 'Escape') closeLightboxBtn();
+      if (e.key === 'ArrowRight') navLightbox(1);
+      if (e.key === 'ArrowLeft') navLightbox(-1);
+    });
+  </script>
+
+</body>
+</html>
