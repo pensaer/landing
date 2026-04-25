@@ -553,11 +553,12 @@
     /* ── RESPONSIVE ─────────────────────────────────── */
     @media (max-width: 860px) {
       header { padding: 16px 20px; }
+      .hero { height: 70vh; min-height: 460px; }
       .hero-content { padding: 0 24px; }
       .info-strip { grid-template-columns: 1fr; }
       .info-card { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); padding: 24px; }
-      .gallery-strip { grid-template-columns: 1fr; }
-      .gallery-strip .g-item { height: 220px; }
+      .gallery-strip { grid-template-columns: repeat(2, 1fr); }
+      .gallery-strip .g-item { height: 200px; }
       .desc-section { grid-template-columns: 1fr; padding: 48px 24px; gap: 32px; }
       .desc-img { height: 260px; }
       .ficha-section { padding: 40px 24px; }
@@ -569,6 +570,42 @@
       .cta-section { padding: 56px 24px; }
       footer { padding: 20px 24px; flex-direction: column; align-items: flex-start; }
       .footer-address { text-align: left; }
+    }
+
+    @media (max-width: 480px) {
+      header { padding: 12px 16px; }
+      .logo-img { height: 26px; }
+      .hero { height: 60vh; min-height: 400px; }
+      .hero-content { padding: 0 16px; }
+      .hero-eyebrow { font-size: 10px; letter-spacing: 2px; }
+      .hero-title { font-size: clamp(26px, 7vw, 42px); }
+      .hero-subtitle { font-size: 14px; }
+      .info-strip { padding: 0; }
+      .info-card { padding: 20px 16px; }
+      .info-label { font-size: 9px; }
+      .info-value { font-size: 15px; }
+      .gallery-strip { grid-template-columns: 1fr; }
+      .gallery-strip .g-item { height: 220px; }
+      .desc-section { padding: 36px 16px; gap: 24px; }
+      .desc-img { height: auto; max-height: 280px; }
+      .desc-title { font-size: clamp(20px, 5.5vw, 28px); }
+      .desc-text { font-size: 14px; }
+      .ficha-section { padding: 32px 16px; }
+      .ficha-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+      .ficha-item { padding: 14px 12px; }
+      .ficha-label { font-size: 9px; }
+      .ficha-value { font-size: 13px; }
+      .ubicacion-section { padding: 36px 16px; }
+      .ubicacion-title { font-size: clamp(20px, 5.5vw, 28px); }
+      .ubicacion-map { height: 220px; }
+      .servicios-section { padding: 32px 16px; }
+      .servicios-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+      .servicio-item { padding: 16px 12px; }
+      .cta-section { padding: 40px 16px; }
+      .cta-title { font-size: clamp(22px, 6vw, 34px); }
+      .cta-buttons { flex-direction: column; gap: 12px; }
+      .btn-primary, .btn-secondary { width: 100%; text-align: center; padding: 14px 20px; justify-content: center; }
+      footer { padding: 20px 16px; }
     }
   </style>
 </head>

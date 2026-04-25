@@ -574,6 +574,33 @@
       .footer-address { text-align: left; }
       .strip { gap: 24px; padding: 16px 24px; justify-content: flex-start; }
     }
+
+    @media (max-width: 480px) {
+      header { padding: 12px 16px; }
+      .logo-ae { font-size: 16px; }
+      .logo-sub { font-size: 10px; display: none; }
+      .hero { padding: 32px 16px; gap: 24px; }
+      .hero-title { font-size: clamp(26px, 7vw, 40px); }
+      .hero-price { font-size: clamp(22px, 6vw, 34px); }
+      .hero-desc { font-size: 14px; }
+      .strip { gap: 16px; padding: 12px 16px; font-size: 11px; flex-wrap: wrap; }
+      .section { padding: 32px 16px; }
+      .section-title { font-size: clamp(20px, 5.5vw, 28px); }
+      .planta-section { padding: 32px 16px; }
+      .planta-grid { gap: 24px; }
+      .specs-table td, .specs-table th { padding: 8px 10px; font-size: 13px; }
+      .features-grid { grid-template-columns: 1fr; gap: 12px; }
+      .feature-item { padding: 14px 16px; }
+      .amenities-section { padding: 32px 16px; }
+      .amenities-list { gap: 12px; }
+      .highlights-grid { grid-template-columns: 1fr; gap: 16px; }
+      .highlight-card { padding: 20px 16px; }
+      .cta-section { padding: 40px 16px; }
+      .cta-title { font-size: clamp(22px, 6vw, 32px); }
+      .cta-buttons { flex-direction: column; gap: 12px; }
+      .btn-primary, .btn-secondary { width: 100%; text-align: center; padding: 14px 20px; justify-content: center; }
+      footer { padding: 20px 16px; }
+    }
   </style>
 </head>
 <body>

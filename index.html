@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pensaer · Propiedades disponibles · Rosario</title>
+  <title>Pensaer &middot; Propiedades disponibles &middot; Rosario</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -20,497 +20,942 @@
       --text-dark:  #1E1610;
       --text-mid:   #5A4A35;
     }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--beige);
-      color: var(--text-dark);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Inter',sans-serif; background:var(--beige); color:var(--text-dark); min-height:100vh; display:flex; flex-direction:column; }
+    header { background:var(--brown-deep); padding:20px 48px; display:flex; align-items:center; justify-content:space-between; }
+    .logo-wordmark { display:flex; flex-direction:column; gap:6px; }
+    .logo-img { height:36px; width:auto; display:block; filter:brightness(0) invert(1); opacity:0.92; }
+    .logo-sub { font-size:10px; font-weight:400; color:var(--gold-light); letter-spacing:3px; text-transform:uppercase; }
+    .header-contact { font-size:13px; letter-spacing:2px; color:var(--gold-light); text-transform:uppercase; text-decoration:none; border:1px solid var(--gold); padding:8px 20px; transition:background .2s,color .2s; }
+    .header-contact:hover { background:var(--gold); color:var(--white); }
+    .hero { background:var(--brown-mid); padding:64px 48px; text-align:center; }
+    .hero-label { font-size:11px; letter-spacing:4px; text-transform:uppercase; color:var(--gold-light); margin-bottom:16px; }
+    .hero-title { font-family:'Playfair Display',serif; font-size:clamp(32px,5vw,54px); font-weight:700; color:var(--white); line-height:1.15; margin-bottom:8px; }
+    .hero-title span { color:var(--gold-light); font-weight:400; }
+    .hero-subtitle { font-size:13px; letter-spacing:3px; text-transform:uppercase; color:var(--gold); margin-bottom:24px; }
+    .hero-divider { width:48px; height:2px; background:var(--gold); margin:0 auto; }
+    .strip { background:var(--gold); display:flex; align-items:center; justify-content:center; gap:40px; padding:16px 48px; flex-wrap:wrap; }
+    .strip-item { font-size:11px; letter-spacing:3px; text-transform:uppercase; color:var(--brown-deep); font-weight:600; }
+    .strip-dot { width:4px; height:4px; background:var(--brown-deep); border-radius:50%; }
+    .grid-section { padding:64px 48px; flex:1; }
+    .grid-tag { font-size:10px; letter-spacing:4px; text-transform:uppercase; color:var(--gold); margin-bottom:12px; }
+    .grid-title { font-family:'Playfair Display',serif; font-size:clamp(24px,3vw,36px); font-weight:600; color:var(--brown-deep); margin-bottom:48px; }
+    .grid-title::after { content:''; display:block; width:48px; height:2px; background:var(--gold); margin-top:14px; }
+    .project-group { margin-bottom:64px; }
+    .project-heading { margin-bottom:24px; padding-bottom:16px; border-bottom:1px solid var(--beige-dark); display:flex; align-items:baseline; gap:16px; flex-wrap:wrap; }
+    .project-heading-title { font-family:'Playfair Display',serif; font-size:clamp(18px,2.5vw,26px); font-weight:600; color:var(--brown-deep); }
+    .project-heading-address { font-size:12px; letter-spacing:2px; text-transform:uppercase; color:var(--gold); }
+    .units-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:24px; }
+    .unit-card { background:var(--white); display:flex; flex-direction:column; text-decoration:none; color:inherit; transition:transform .25s,box-shadow .25s; overflow:hidden; }
+    .unit-card:hover { transform:translateY(-6px); box-shadow:0 16px 40px rgba(42,31,20,0.14); }
+    .card-img-wrap { position:relative; height:220px; overflow:hidden; background:var(--beige-dark); }
+    .card-img-wrap img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .4s; }
+    .unit-card:hover .card-img-wrap img { transform:scale(1.05); }
+    .card-img-overlay { position:absolute; inset:0; background:linear-gradient(to top,rgba(42,31,20,0.6) 0%,transparent 55%); }
+    .card-badge { position:absolute; top:14px; right:14px; font-size:9px; letter-spacing:2px; text-transform:uppercase; font-weight:700; color:var(--brown-deep); background:var(--gold); padding:5px 12px; }
+    .card-img-label { position:absolute; bottom:14px; left:16px; display:flex; flex-direction:column; gap:2px; }
+    .card-img-project { font-size:10px; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,0.7); }
+    .card-img-unit { font-family:'Playfair Display',serif; font-size:20px; font-weight:700; color:var(--white); line-height:1; }
+    .card-no-img { width:100%; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; background:var(--brown-mid); padding:24px; }
+    .card-no-img-badge { font-size:9px; letter-spacing:2px; text-transform:uppercase; font-weight:700; color:var(--brown-deep); background:var(--gold); padding:4px 12px; }
+    .card-no-img-unit { font-family:'Playfair Display',serif; font-size:22px; font-weight:700; color:var(--white); text-align:center; }
+    .card-no-img-project { font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--gold-light); text-align:center; }
+    .card-body { padding:22px 24px; flex:1; display:flex; flex-direction:column; gap:14px; border-top:3px solid var(--gold); }
+    .card-type { font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--gold-dark); font-weight:600; }
+    .card-address { font-size:12px; color:var(--text-mid); display:flex; align-items:center; gap:6px; }
+    .card-address svg { width:12px; height:12px; stroke:var(--gold); fill:none; stroke-width:2; flex-shrink:0; }
+    .card-stats { display:flex; gap:20px; }
+    .card-stat { display:flex; flex-direction:column; gap:3px; }
+    .card-stat-value { font-family:'Playfair Display',serif; font-size:20px; font-weight:700; color:var(--brown-deep); line-height:1; }
+    .card-stat-label { font-size:9px; letter-spacing:2px; text-transform:uppercase; color:var(--text-mid); }
+    .card-divider { width:1px; background:var(--beige-dark); }
+    .card-price { background:var(--beige); padding:12px 16px; display:flex; flex-direction:column; gap:2px; margin-top:auto; }
+    .card-price-label { font-size:9px; letter-spacing:3px; text-transform:uppercase; color:var(--gold-dark); font-weight:600; }
+    .card-price-value { font-family:'Playfair Display',serif; font-size:19px; font-weight:700; color:var(--brown-deep); }
+    .card-cta { background:var(--brown-deep); color:var(--gold-light); text-align:center; padding:14px; font-size:11px; letter-spacing:3px; text-transform:uppercase; font-weight:600; transition:background .2s,color .2s; }
+    .unit-card:hover .card-cta { background:var(--gold); color:var(--brown-deep); }
+    .cta-strip { background:var(--brown-deep); padding:56px 48px; display:flex; align-items:center; justify-content:space-between; gap:32px; flex-wrap:wrap; }
+    .cta-strip-text { display:flex; flex-direction:column; gap:8px; }
+    .cta-strip-label { font-size:10px; letter-spacing:4px; text-transform:uppercase; color:var(--gold); }
+    .cta-strip-title { font-family:'Playfair Display',serif; font-size:clamp(22px,3vw,34px); font-weight:600; color:var(--white); line-height:1.2; }
+    .cta-strip-buttons { display:flex; gap:16px; flex-wrap:wrap; }
+    .btn-primary { display:inline-flex; align-items:center; gap:10px; background:var(--gold); color:var(--brown-deep); text-decoration:none; font-size:13px; font-weight:700; letter-spacing:2px; text-transform:uppercase; padding:18px 36px; transition:background .2s,transform .15s; }
+    .btn-primary:hover { background:var(--gold-light); transform:translateY(-2px); }
+    .btn-secondary { display:inline-flex; align-items:center; gap:10px; background:transparent; color:var(--gold-light); text-decoration:none; font-size:13px; font-weight:600; letter-spacing:2px; text-transform:uppercase; padding:18px 36px; border:1px solid var(--gold-dark); transition:border-color .2s,color .2s; }
+    .btn-secondary:hover { border-color:var(--gold-light); color:var(--white); }
+    footer { background:var(--text-dark); padding:28px 48px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+    .footer-logo { height:24px; filter:brightness(0) invert(1); opacity:0.5; }
+    .footer-copy { font-size:11px; color:var(--gold-dark); letter-spacing:1px; }
+    .footer-address { font-size:11px; color:var(--gold-dark); letter-spacing:1px; text-align:right; }
+    @media (max-width:768px) {
+      header { padding:16px 20px; }
+      .hero { padding:48px 20px; }
+      .strip { gap:16px; padding:12px 20px; justify-content:flex-start; }
+      .grid-section { padding:40px 20px; }
+      .units-grid { grid-template-columns:1fr; }
+      .project-group { margin-bottom:40px; }
+      .cta-strip { padding:36px 20px; flex-direction:column; align-items:flex-start; gap:20px; }
+      footer { padding:24px 20px; flex-direction:column; align-items:flex-start; }
+      .footer-address { text-align:left; }
     }
-
-    /* ── HEADER ─────────────────────────────────────── */
-    header {
-      background: var(--brown-deep);
-      padding: 20px 48px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .logo-wordmark { display: flex; flex-direction: column; gap: 6px; }
-
-    .logo-img {
-      height: 36px;
-      width: auto;
-      display: block;
-      filter: brightness(0) invert(1);
-      opacity: 0.92;
-    }
-
-    .logo-sub {
-      font-size: 10px;
-      font-weight: 400;
-      color: var(--gold-light);
-      letter-spacing: 3px;
-      text-transform: uppercase;
-    }
-
-    .header-contact {
-      font-size: 13px;
-      letter-spacing: 2px;
-      color: var(--gold-light);
-      text-transform: uppercase;
-      text-decoration: none;
-      border: 1px solid var(--gold);
-      padding: 8px 20px;
-      transition: background 0.2s, color 0.2s;
-    }
-
-    .header-contact:hover { background: var(--gold); color: var(--white); }
-
-    /* ── HERO ───────────────────────────────────────── */
-    .hero {
-      background: var(--brown-mid);
-      padding: 64px 48px;
-      text-align: center;
-    }
-
-    .hero-label {
-      font-size: 11px;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      color: var(--gold-light);
-      margin-bottom: 16px;
-    }
-
-    .hero-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(32px, 5vw, 54px);
-      font-weight: 700;
-      color: var(--white);
-      line-height: 1.15;
-      margin-bottom: 8px;
-    }
-
-    .hero-title span { color: var(--gold-light); font-weight: 400; }
-
-    .hero-subtitle {
-      font-size: 13px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 24px;
-    }
-
-    .hero-divider {
-      width: 48px;
-      height: 2px;
-      background: var(--gold);
-      margin: 0 auto;
-    }
-
-    /* ── STRIP ──────────────────────────────────────── */
-    .strip {
-      background: var(--gold);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 40px;
-      padding: 16px 48px;
-      flex-wrap: wrap;
-    }
-
-    .strip-item {
-      font-size: 11px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--brown-deep);
-      font-weight: 600;
-    }
-
-    .strip-dot {
-      width: 4px;
-      height: 4px;
-      background: var(--brown-deep);
-      border-radius: 50%;
-    }
-
-    /* ── GRID ───────────────────────────────────────── */
-    .grid-section {
-      padding: 64px 48px;
-      flex: 1;
-    }
-
-    .grid-tag {
-      font-size: 10px;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 12px;
-    }
-
-    .grid-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(24px, 3vw, 36px);
-      font-weight: 600;
-      color: var(--brown-deep);
-      margin-bottom: 40px;
-    }
-
-    .grid-title::after {
-      content: '';
-      display: block;
-      width: 48px;
-      height: 2px;
-      background: var(--gold);
-      margin-top: 14px;
-    }
-
-    .units-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-      gap: 28px;
-    }
-
-    /* ── UNIT CARD ──────────────────────────────────── */
-    .unit-card {
-      background: var(--white);
-      display: flex;
-      flex-direction: column;
-      text-decoration: none;
-      color: inherit;
-      transition: transform 0.25s, box-shadow 0.25s;
-      overflow: hidden;
-    }
-
-    .unit-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 16px 40px rgba(42, 31, 20, 0.14);
-    }
-
-    /* foto preview */
-    .card-img-wrap {
-      position: relative;
-      height: 220px;
-      overflow: hidden;
-      background: var(--beige-dark);
-    }
-
-    .card-img-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.4s;
-    }
-
-    .unit-card:hover .card-img-wrap img { transform: scale(1.05); }
-
-    .card-img-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(42,31,20,0.6) 0%, transparent 55%);
-    }
-
-    .card-badge {
-      position: absolute;
-      top: 14px;
-      right: 14px;
-      font-size: 9px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      font-weight: 700;
-      color: var(--brown-deep);
-      background: var(--gold);
-      padding: 5px 12px;
-    }
-
-    .card-img-label {
-      position: absolute;
-      bottom: 14px;
-      left: 16px;
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-
-    .card-img-project {
-      font-size: 10px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.7);
-    }
-
-    .card-img-unit {
-      font-family: 'Playfair Display', serif;
-      font-size: 22px;
-      font-weight: 700;
-      color: var(--white);
-      line-height: 1;
-    }
-
-    /* contenido */
-    .card-body {
-      padding: 22px 24px;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      border-top: 3px solid var(--gold);
-    }
-
-    .card-type {
-      font-size: 11px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--gold-dark);
-      font-weight: 600;
-    }
-
-    .card-address {
-      font-size: 12px;
-      color: var(--text-mid);
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .card-address svg {
-      width: 12px;
-      height: 12px;
-      stroke: var(--gold);
-      fill: none;
-      stroke-width: 2;
-      flex-shrink: 0;
-    }
-
-    .card-stats {
-      display: flex;
-      gap: 20px;
-    }
-
-    .card-stat { display: flex; flex-direction: column; gap: 3px; }
-
-    .card-stat-value {
-      font-family: 'Playfair Display', serif;
-      font-size: 20px;
-      font-weight: 700;
-      color: var(--brown-deep);
-      line-height: 1;
-    }
-
-    .card-stat-label {
-      font-size: 9px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--text-mid);
-    }
-
-    .card-divider { width: 1px; background: var(--beige-dark); }
-
-    .card-price {
-      background: var(--beige);
-      padding: 12px 16px;
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-      margin-top: auto;
-    }
-
-    .card-price-label {
-      font-size: 9px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--gold-dark);
-      font-weight: 600;
-    }
-
-    .card-price-value {
-      font-family: 'Playfair Display', serif;
-      font-size: 19px;
-      font-weight: 700;
-      color: var(--brown-deep);
-    }
-
-    .card-cta {
-      background: var(--brown-deep);
-      color: var(--gold-light);
-      text-align: center;
-      padding: 14px;
-      font-size: 11px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      font-weight: 600;
-      transition: background 0.2s, color 0.2s;
-    }
-
-    .unit-card:hover .card-cta {
-      background: var(--gold);
-      color: var(--brown-deep);
-    }
-
-    /* ── CTA STRIP ──────────────────────────────────── */
-    .cta-strip {
-      background: var(--brown-deep);
-      padding: 56px 48px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 32px;
-      flex-wrap: wrap;
-    }
-
-    .cta-strip-text { display: flex; flex-direction: column; gap: 8px; }
-
-    .cta-strip-label {
-      font-size: 10px;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      color: var(--gold);
-    }
-
-    .cta-strip-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(22px, 3vw, 34px);
-      font-weight: 600;
-      color: var(--white);
-      line-height: 1.2;
-    }
-
-    .cta-strip-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
-
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: var(--gold);
-      color: var(--brown-deep);
-      text-decoration: none;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      padding: 18px 36px;
-      transition: background 0.2s, transform 0.15s;
-    }
-
-    .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
-
-    .btn-secondary {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: transparent;
-      color: var(--gold-light);
-      text-decoration: none;
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      padding: 18px 36px;
-      border: 1px solid var(--gold-dark);
-      transition: border-color 0.2s, color 0.2s;
-    }
-
-    .btn-secondary:hover { border-color: var(--gold-light); color: var(--white); }
-
-    /* ── FOOTER ─────────────────────────────────────── */
-    footer {
-      background: var(--text-dark);
-      padding: 28px 48px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .footer-logo {
-      height: 24px;
-      filter: brightness(0) invert(1);
-      opacity: 0.5;
-    }
-
-    .footer-copy { font-size: 11px; color: var(--gold-dark); letter-spacing: 1px; }
-
-    .footer-address {
-      font-size: 11px;
-      color: var(--gold-dark);
-      letter-spacing: 1px;
-      text-align: right;
-    }
-
-    /* ── RESPONSIVE ─────────────────────────────────── */
-    @media (max-width: 768px) {
-      header { padding: 16px 24px; }
-      .hero { padding: 48px 24px; }
-      .strip { gap: 20px; padding: 14px 24px; justify-content: flex-start; }
-      .grid-section { padding: 48px 24px; }
-      .units-grid { grid-template-columns: 1fr; }
-      .cta-strip { padding: 40px 24px; flex-direction: column; align-items: flex-start; }
-      footer { padding: 24px; flex-direction: column; align-items: flex-start; }
-      .footer-address { text-align: left; }
+    @media (max-width:480px) {
+      header { padding:12px 16px; }
+      .logo-img { height:28px; }
+      .hero { padding:36px 16px; }
+      .strip { gap:12px; padding:10px 16px; }
+      .grid-section { padding:32px 16px; }
+      .units-grid { gap:16px; }
+      .cta-strip { padding:28px 16px; }
+      footer { padding:20px 16px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- HEADER -->
   <header>
     <div class="logo-wordmark">
-      <img class="logo-img" src="pensaer-logo.png" alt="æ Pensaer Desarrollos" />
-      <span class="logo-sub">Propiedades disponibles · Rosario</span>
+      <img class="logo-img" src="pensaer-logo.png" alt="ae Pensaer Desarrollos" />
+      <span class="logo-sub">Propiedades disponibles &middot; Rosario</span>
     </div>
     <a href="tel:+5493416980855" class="header-contact">Contactar</a>
   </header>
 
-  <!-- HERO -->
   <section class="hero">
-    <p class="hero-label">Rosario · Santa Fe · Argentina</p>
-    <h1 class="hero-title">æ Pensaer<br><span>Propiedades</span></h1>
-    <p class="hero-subtitle">Unidades y oficinas disponibles</p>
+    <p class="hero-label">Rosario &middot; Santa Fe &middot; Argentina</p>
+    <h1 class="hero-title">ae Pensaer<br><span>Propiedades</span></h1>
+    <p class="hero-subtitle">Unidades disponibles</p>
     <div class="hero-divider"></div>
   </section>
 
-  <!-- STRIP -->
   <div class="strip">
     <span class="strip-item">Departamentos</span>
     <span class="strip-dot"></span>
     <span class="strip-item">Oficinas</span>
     <span class="strip-dot"></span>
-    <span class="strip-item">Centro · Rosario</span>
+    <span class="strip-item">Rosario &middot; Funes</span>
     <span class="strip-dot"></span>
     <span class="strip-item">Entrega inmediata</span>
   </div>
 
-  <!-- GRID DE PROPIEDADES -->
   <section class="grid-section">
-    <p class="grid-tag">Catálogo</p>
+    <p class="grid-tag">Cat&aacute;logo</p>
     <h2 class="grid-title">Propiedades disponibles</h2>
 
-    <div class="units-grid">
-
-      <!-- PENSAER 18 · UNIDAD 01-01 -->
-      <a href="p18_dynha_1-01-01/p18_dynha_1-01-01.html" class="unit-card">
+    <div class="project-group">
+      <div class="project-heading">
+        <h3 class="project-heading-title">Pensaer 14 &middot; DRAM</h3>
+        <p class="project-heading-address">San Mart&iacute;n 470-476 &middot; Rosario</p>
+      </div>
+      <div class="units-grid">
+      <a href="p14_dram_1-01-01/p14_dram_1-01-01.html" class="unit-card">
         <div class="card-img-wrap">
-          <img src="p18_dynha_1-01-01/Ficha_Dynha Pellegrini 01-01.png" alt="Unidad 01-01 · Piso 1° · Dynha Pellegrini 419" />
-          <div class="card-img-overlay"></div>
-          <span class="card-badge">Disponible</span>
-          <div class="card-img-label">
-            <span class="card-img-project">Pensaer 18 · Dynha Pellegrini</span>
-            <span class="card-img-unit">01-01 · Piso 1°</span>
-          </div>
+        <img src="render_p14.jpg" alt="DRAM San Martin 470" />
+        <div class="card-img-overlay"></div>
+        <span class="card-badge">Disponible</span>
+        <div class="card-img-label">
+          <span class="card-img-project">Pensaer 14 &middot; DRAM</span>
+          <span class="card-img-unit">01-01 &middot; Piso 1</span>
+        </div>
         </div>
         <div class="card-body">
-          <span class="card-type">Departamento · 2 Dormitorios</span>
-          <span class="card-address">
-            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            Av. Pellegrini 419 · Rosario
-          </span>
+          <span class="card-type">Departamento &middot; 3 Dormitorios</span>
+          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>San Mart&iacute;n 470-476 &middot; Rosario</span>
+          <div class="card-stats">
+            <div class="card-stat">
+              <span class="card-stat-value">183</span>
+              <span class="card-stat-label">M²</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">3</span>
+              <span class="card-stat-label">Dorm.</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">2</span>
+              <span class="card-stat-label">Baños</span>
+            </div>
+          </div>
+          <div class="card-price">
+            <span class="card-price-label">Precio de lista</span>
+            <span class="card-price-value">USD 366.000</span>
+          </div>
+        </div>
+        <div class="card-cta">Ver detalle completo &rarr;</div>
+      </a>
+      <a href="p14_dram_2-02-04/p14_dram_2-02-04.html" class="unit-card">
+        <div class="card-img-wrap">
+        <img src="render_p14.jpg" alt="DRAM San Martin 470" />
+        <div class="card-img-overlay"></div>
+        <span class="card-badge">Disponible</span>
+        <div class="card-img-label">
+          <span class="card-img-project">Pensaer 14 &middot; DRAM</span>
+          <span class="card-img-unit">02-04 &middot; Piso 2</span>
+        </div>
+        </div>
+        <div class="card-body">
+          <span class="card-type">Departamento &middot; 2 Dormitorios</span>
+          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>San Mart&iacute;n 470-476 &middot; Rosario</span>
+          <div class="card-stats">
+            <div class="card-stat">
+              <span class="card-stat-value">88</span>
+              <span class="card-stat-label">M²</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">2</span>
+              <span class="card-stat-label">Dorm.</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">2</span>
+              <span class="card-stat-label">Baños</span>
+            </div>
+          </div>
+          <div class="card-price">
+            <span class="card-price-label">Precio de lista</span>
+            <span class="card-price-value">USD 198.000</span>
+          </div>
+        </div>
+        <div class="card-cta">Ver detalle completo &rarr;</div>
+      </a>
+      <a href="p14_dram_3-03-01/p14_dram_3-03-01.html" class="unit-card">
+        <div class="card-img-wrap">
+        <img src="render_p14.jpg" alt="DRAM San Martin 470" />
+        <div class="card-img-overlay"></div>
+        <span class="card-badge">Disponible</span>
+        <div class="card-img-label">
+          <span class="card-img-project">Pensaer 14 &middot; DRAM</span>
+          <span class="card-img-unit">03-01 &middot; Piso 3</span>
+        </div>
+        </div>
+        <div class="card-body">
+          <span class="card-type">Departamento &middot; 3 Dormitorios</span>
+          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>San Mart&iacute;n 470-476 &middot; Rosario</span>
+          <div class="card-stats">
+            <div class="card-stat">
+              <span class="card-stat-value">148</span>
+              <span class="card-stat-label">M²</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">3</span>
+              <span class="card-stat-label">Dorm.</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">2</span>
+              <span class="card-stat-label">Baños</span>
+            </div>
+          </div>
+          <div class="card-price">
+            <span class="card-price-label">Precio de lista</span>
+            <span class="card-price-value">USD 333.000</span>
+          </div>
+        </div>
+        <div class="card-cta">Ver detalle completo &rarr;</div>
+      </a>
+      <a href="p14_dram_8-08-01/p14_dram_8-08-01.html" class="unit-card">
+        <div class="card-img-wrap">
+        <img src="render_p14.jpg" alt="DRAM San Martin 470" />
+        <div class="card-img-overlay"></div>
+        <span class="card-badge">Disponible</span>
+        <div class="card-img-label">
+          <span class="card-img-project">Pensaer 14 &middot; DRAM</span>
+          <span class="card-img-unit">08-01 &middot; Piso 8</span>
+        </div>
+        </div>
+        <div class="card-body">
+          <span class="card-type">Departamento &middot; 3 Dormitorios</span>
+          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>San Mart&iacute;n 470-476 &middot; Rosario</span>
+          <div class="card-stats">
+            <div class="card-stat">
+              <span class="card-stat-value">148</span>
+              <span class="card-stat-label">M²</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">3</span>
+              <span class="card-stat-label">Dorm.</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">2</span>
+              <span class="card-stat-label">Baños</span>
+            </div>
+          </div>
+          <div class="card-price">
+            <span class="card-price-label">Precio de lista</span>
+            <span class="card-price-value">USD 355.200</span>
+          </div>
+        </div>
+        <div class="card-cta">Ver detalle completo &rarr;</div>
+      </a>
+      </div>
+    </div>
+    <div class="project-group">
+      <div class="project-heading">
+        <h3 class="project-heading-title">Pensaer 15 &middot; Elysian Lagos</h3>
+        <p class="project-heading-address">Ovidio Lagos 1163 &middot; Rosario</p>
+      </div>
+      <div class="units-grid">
+      <a href="p15_elyol_2-02-02/p15_elyol_2-02-02.html" class="unit-card">
+        <div class="card-img-wrap">
+        <img src="render_p15_ol.jpg" alt="Elysian Ovidio Lagos 1163" />
+        <div class="card-img-overlay"></div>
+        <span class="card-badge">Disponible</span>
+        <div class="card-img-label">
+          <span class="card-img-project">Pensaer 15 &middot; Elysian</span>
+          <span class="card-img-unit">02-02 &middot; Piso 2</span>
+        </div>
+        </div>
+        <div class="card-body">
+          <span class="card-type">Departamento &middot; 1 Dormitorio</span>
+          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Ovidio Lagos 1163 &middot; Rosario</span>
+          <div class="card-stats">
+            <div class="card-stat">
+              <span class="card-stat-value">53,5</span>
+              <span class="card-stat-label">M²</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">1</span>
+              <span class="card-stat-label">Dorm.</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">1</span>
+              <span class="card-stat-label">Baño</span>
+            </div>
+          </div>
+          <div class="card-price">
+            <span class="card-price-label">Precio de lista</span>
+            <span class="card-price-value">USD 98.000</span>
+          </div>
+        </div>
+        <div class="card-cta">Ver detalle completo &rarr;</div>
+      </a>
+      <a href="p15_elyol_3-03-02/p15_elyol_3-03-02.html" class="unit-card">
+        <div class="card-img-wrap">
+        <img src="render_p15_ol.jpg" alt="Elysian Ovidio Lagos 1163" />
+        <div class="card-img-overlay"></div>
+        <span class="card-badge">Disponible</span>
+        <div class="card-img-label">
+          <span class="card-img-project">Pensaer 15 &middot; Elysian</span>
+          <span class="card-img-unit">03-02 &middot; Piso 3</span>
+        </div>
+        </div>
+        <div class="card-body">
+          <span class="card-type">Departamento &middot; 1 Dormitorio</span>
+          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Ovidio Lagos 1163 &middot; Rosario</span>
+          <div class="card-stats">
+            <div class="card-stat">
+              <span class="card-stat-value">52</span>
+              <span class="card-stat-label">M²</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">1</span>
+              <span class="card-stat-label">Dorm.</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">1</span>
+              <span class="card-stat-label">Baño</span>
+            </div>
+          </div>
+          <div class="card-price">
+            <span class="card-price-label">Precio de lista</span>
+            <span class="card-price-value">USD 95.000</span>
+          </div>
+        </div>
+        <div class="card-cta">Ver detalle completo &rarr;</div>
+      </a>
+      <a href="p15_elyol_4-04-02/p15_elyol_4-04-02.html" class="unit-card">
+        <div class="card-img-wrap">
+        <img src="render_p15_ol.jpg" alt="Elysian Ovidio Lagos 1163" />
+        <div class="card-img-overlay"></div>
+        <span class="card-badge">Disponible</span>
+        <div class="card-img-label">
+          <span class="card-img-project">Pensaer 15 &middot; Elysian</span>
+          <span class="card-img-unit">04-02 &middot; Piso 4</span>
+        </div>
+        </div>
+        <div class="card-body">
+          <span class="card-type">Departamento &middot; 1 Dormitorio</span>
+          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Ovidio Lagos 1163 &middot; Rosario</span>
+          <div class="card-stats">
+            <div class="card-stat">
+              <span class="card-stat-value">52</span>
+              <span class="card-stat-label">M²</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">1</span>
+              <span class="card-stat-label">Dorm.</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">1</span>
+              <span class="card-stat-label">Baño</span>
+            </div>
+          </div>
+          <div class="card-price">
+            <span class="card-price-label">Precio de lista</span>
+            <span class="card-price-value">USD 95.000</span>
+          </div>
+        </div>
+        <div class="card-cta">Ver detalle completo &rarr;</div>
+      </a>
+      <a href="p15_elyol_6-06-01/p15_elyol_6-06-01.html" class="unit-card">
+        <div class="card-img-wrap">
+        <img src="render_p15_ol.jpg" alt="Elysian Ovidio Lagos 1163" />
+        <div class="card-img-overlay"></div>
+        <span class="card-badge">Disponible</span>
+        <div class="card-img-label">
+          <span class="card-img-project">Pensaer 15 &middot; Elysian</span>
+          <span class="card-img-unit">06-01 &middot; Piso 6</span>
+        </div>
+        </div>
+        <div class="card-body">
+          <span class="card-type">Departamento &middot; 2 Dormitorios</span>
+          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Ovidio Lagos 1163 &middot; Rosario</span>
+          <div class="card-stats">
+            <div class="card-stat">
+              <span class="card-stat-value">78,5</span>
+              <span class="card-stat-label">M²</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">2</span>
+              <span class="card-stat-label">Dorm.</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">2</span>
+              <span class="card-stat-label">Baños</span>
+            </div>
+          </div>
+          <div class="card-price">
+            <span class="card-price-label">Precio de lista</span>
+            <span class="card-price-value">USD 150.000</span>
+          </div>
+        </div>
+        <div class="card-cta">Ver detalle completo &rarr;</div>
+      </a>
+      <a href="p15_elyol_7-07-02/p15_elyol_7-07-02.html" class="unit-card">
+        <div class="card-img-wrap">
+        <img src="render_p15_ol.jpg" alt="Elysian Ovidio Lagos 1163" />
+        <div class="card-img-overlay"></div>
+        <span class="card-badge">Disponible</span>
+        <div class="card-img-label">
+          <span class="card-img-project">Pensaer 15 &middot; Elysian</span>
+          <span class="card-img-unit">07-02 &middot; Piso 7</span>
+        </div>
+        </div>
+        <div class="card-body">
+          <span class="card-type">Departamento &middot; 1 Dormitorio</span>
+          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Ovidio Lagos 1163 &middot; Rosario</span>
+          <div class="card-stats">
+            <div class="card-stat">
+              <span class="card-stat-value">52</span>
+              <span class="card-stat-label">M²</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">1</span>
+              <span class="card-stat-label">Dorm.</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">1</span>
+              <span class="card-stat-label">Baño</span>
+            </div>
+          </div>
+          <div class="card-price">
+            <span class="card-price-label">Precio de lista</span>
+            <span class="card-price-value">USD 98.000</span>
+          </div>
+        </div>
+        <div class="card-cta">Ver detalle completo &rarr;</div>
+      </a>
+      <a href="p15_elyol_10y11-01/p15_elyol_10y11-01.html" class="unit-card">
+        <div class="card-img-wrap">
+        <img src="render_p15_ol.jpg" alt="Elysian Ovidio Lagos 1163" />
+        <div class="card-img-overlay"></div>
+        <span class="card-badge">Disponible</span>
+        <div class="card-img-label">
+          <span class="card-img-project">Pensaer 15 &middot; Elysian</span>
+          <span class="card-img-unit">10-01/11-01 &middot; P.10/11</span>
+        </div>
+        </div>
+        <div class="card-body">
+          <span class="card-type">D&uacute;plex &middot; 3 Dormitorios</span>
+          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Ovidio Lagos 1163 &middot; Rosario</span>
+          <div class="card-stats">
+            <div class="card-stat">
+              <span class="card-stat-value">127,5</span>
+              <span class="card-stat-label">M²</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">3</span>
+              <span class="card-stat-label">Dorm.</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">3</span>
+              <span class="card-stat-label">Baños</span>
+            </div>
+          </div>
+          <div class="card-price">
+            <span class="card-price-label">Precio de lista</span>
+            <span class="card-price-value">USD 235.000</span>
+          </div>
+        </div>
+        <div class="card-cta">Ver detalle completo &rarr;</div>
+      </a>
+      <a href="p15_elyol_10y11-02/p15_elyol_10y11-02.html" class="unit-card">
+        <div class="card-img-wrap">
+        <img src="render_p15_ol.jpg" alt="Elysian Ovidio Lagos 1163" />
+        <div class="card-img-overlay"></div>
+        <span class="card-badge">Disponible</span>
+        <div class="card-img-label">
+          <span class="card-img-project">Pensaer 15 &middot; Elysian</span>
+          <span class="card-img-unit">10-02/11-02 &middot; P.10/11</span>
+        </div>
+        </div>
+        <div class="card-body">
+          <span class="card-type">D&uacute;plex &middot; 3 Dormitorios</span>
+          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Ovidio Lagos 1163 &middot; Rosario</span>
+          <div class="card-stats">
+            <div class="card-stat">
+              <span class="card-stat-value">190</span>
+              <span class="card-stat-label">M²</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">3</span>
+              <span class="card-stat-label">Dorm.</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">3</span>
+              <span class="card-stat-label">Baños</span>
+            </div>
+          </div>
+          <div class="card-price">
+            <span class="card-price-label">Precio de lista</span>
+            <span class="card-price-value">USD 325.000</span>
+          </div>
+        </div>
+        <div class="card-cta">Ver detalle completo &rarr;</div>
+      </a>
+      </div>
+    </div>
+    <div class="project-group">
+      <div class="project-heading">
+        <h3 class="project-heading-title">Pensaer 15 &middot; Elysian San Juan</h3>
+        <p class="project-heading-address">San Juan 2741-53 &middot; Rosario</p>
+      </div>
+      <div class="units-grid">
+      <a href="p15_elysj_6-06-04/p15_elysj_6-06-04.html" class="unit-card">
+        <div class="card-img-wrap">
+        <img src="render_p15_sj.jpg" alt="Elysian San Juan 2741" />
+        <div class="card-img-overlay"></div>
+        <span class="card-badge">Disponible</span>
+        <div class="card-img-label">
+          <span class="card-img-project">Pensaer 15 &middot; Elysian</span>
+          <span class="card-img-unit">06-04 &middot; Piso 6</span>
+        </div>
+        </div>
+        <div class="card-body">
+          <span class="card-type">Departamento &middot; 2 Dormitorios</span>
+          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>San Juan 2741-53 &middot; Rosario</span>
+          <div class="card-stats">
+            <div class="card-stat">
+              <span class="card-stat-value">63,5</span>
+              <span class="card-stat-label">M²</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">2</span>
+              <span class="card-stat-label">Dorm.</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">2</span>
+              <span class="card-stat-label">Baños</span>
+            </div>
+          </div>
+          <div class="card-price">
+            <span class="card-price-label">Precio de lista</span>
+            <span class="card-price-value">USD 150.000</span>
+          </div>
+        </div>
+        <div class="card-cta">Ver detalle completo &rarr;</div>
+      </a>
+      </div>
+    </div>
+    <div class="project-group">
+      <div class="project-heading">
+        <h3 class="project-heading-title">Pensaer 16 &middot; Eryn</h3>
+        <p class="project-heading-address">Salta 1466-1474 &middot; Rosario</p>
+      </div>
+      <div class="units-grid">
+      <a href="p16_eryn_1-01-03/p16_eryn_1-01-03.html" class="unit-card">
+        <div class="card-img-wrap">
+        <img src="render_p16.jpg" alt="Eryn Salta 1466" />
+        <div class="card-img-overlay"></div>
+        <span class="card-badge">Disponible</span>
+        <div class="card-img-label">
+          <span class="card-img-project">Pensaer 16 &middot; Eryn</span>
+          <span class="card-img-unit">01-03 &middot; Piso 1</span>
+        </div>
+        </div>
+        <div class="card-body">
+          <span class="card-type">Departamento &middot; 3 Dormitorios</span>
+          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Salta 1466-1474 &middot; Rosario</span>
+          <div class="card-stats">
+            <div class="card-stat">
+              <span class="card-stat-value">175</span>
+              <span class="card-stat-label">M²</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">3</span>
+              <span class="card-stat-label">Dorm.</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">2</span>
+              <span class="card-stat-label">Baños</span>
+            </div>
+          </div>
+          <div class="card-price">
+            <span class="card-price-label">Precio de lista</span>
+            <span class="card-price-value">USD 367.500</span>
+          </div>
+        </div>
+        <div class="card-cta">Ver detalle completo &rarr;</div>
+      </a>
+      <a href="p16_eryn_1-01-04/p16_eryn_1-01-04.html" class="unit-card">
+        <div class="card-img-wrap">
+        <img src="render_p16.jpg" alt="Eryn Salta 1466" />
+        <div class="card-img-overlay"></div>
+        <span class="card-badge">Disponible</span>
+        <div class="card-img-label">
+          <span class="card-img-project">Pensaer 16 &middot; Eryn</span>
+          <span class="card-img-unit">01-04 &middot; Piso 1</span>
+        </div>
+        </div>
+        <div class="card-body">
+          <span class="card-type">Departamento &middot; 3 Dormitorios</span>
+          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Salta 1466-1474 &middot; Rosario</span>
+          <div class="card-stats">
+            <div class="card-stat">
+              <span class="card-stat-value">172</span>
+              <span class="card-stat-label">M²</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">3</span>
+              <span class="card-stat-label">Dorm.</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">2</span>
+              <span class="card-stat-label">Baños</span>
+            </div>
+          </div>
+          <div class="card-price">
+            <span class="card-price-label">Precio de lista</span>
+            <span class="card-price-value">USD 361.200</span>
+          </div>
+        </div>
+        <div class="card-cta">Ver detalle completo &rarr;</div>
+      </a>
+      <a href="p16_eryn_3-03-03/p16_eryn_3-03-03.html" class="unit-card">
+        <div class="card-img-wrap">
+        <img src="render_p16.jpg" alt="Eryn Salta 1466" />
+        <div class="card-img-overlay"></div>
+        <span class="card-badge">Disponible</span>
+        <div class="card-img-label">
+          <span class="card-img-project">Pensaer 16 &middot; Eryn</span>
+          <span class="card-img-unit">03-03 &middot; Piso 3</span>
+        </div>
+        </div>
+        <div class="card-body">
+          <span class="card-type">Departamento &middot; 2 Dormitorios</span>
+          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Salta 1466-1474 &middot; Rosario</span>
+          <div class="card-stats">
+            <div class="card-stat">
+              <span class="card-stat-value">83</span>
+              <span class="card-stat-label">M²</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">2</span>
+              <span class="card-stat-label">Dorm.</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">2</span>
+              <span class="card-stat-label">Baños</span>
+            </div>
+          </div>
+          <div class="card-price">
+            <span class="card-price-label">Precio de lista</span>
+            <span class="card-price-value">USD 215.800</span>
+          </div>
+        </div>
+        <div class="card-cta">Ver detalle completo &rarr;</div>
+      </a>
+      <a href="p16_eryn_10-10-01/p16_eryn_10-10-01.html" class="unit-card">
+        <div class="card-img-wrap">
+        <img src="render_p16.jpg" alt="Eryn Salta 1466" />
+        <div class="card-img-overlay"></div>
+        <span class="card-badge">Disponible</span>
+        <div class="card-img-label">
+          <span class="card-img-project">Pensaer 16 &middot; Eryn</span>
+          <span class="card-img-unit">10-01 &middot; Piso 10</span>
+        </div>
+        </div>
+        <div class="card-body">
+          <span class="card-type">Departamento &middot; 3 Dormitorios</span>
+          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Salta 1466-1474 &middot; Rosario</span>
+          <div class="card-stats">
+            <div class="card-stat">
+              <span class="card-stat-value">200</span>
+              <span class="card-stat-label">M²</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">3</span>
+              <span class="card-stat-label">Dorm.</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">2</span>
+              <span class="card-stat-label">Baños</span>
+            </div>
+          </div>
+          <div class="card-price">
+            <span class="card-price-label">Precio de lista</span>
+            <span class="card-price-value">USD 450.000</span>
+          </div>
+        </div>
+        <div class="card-cta">Ver detalle completo &rarr;</div>
+      </a>
+      </div>
+    </div>
+    <div class="project-group">
+      <div class="project-heading">
+        <h3 class="project-heading-title">Pensaer 17 &middot; Nythu Brown</h3>
+        <p class="project-heading-address">Brown 1902 &middot; Rosario</p>
+      </div>
+      <div class="units-grid">
+      <a href="p17_nythu_3-03-01/p17_nythu_3-03-01.html" class="unit-card">
+        <div class="card-img-wrap">
+        <img src="render_p17.jpg" alt="Nythu Brown 1902" />
+        <div class="card-img-overlay"></div>
+        <span class="card-badge">Disponible</span>
+        <div class="card-img-label">
+          <span class="card-img-project">Pensaer 17 &middot; Nythu</span>
+          <span class="card-img-unit">03-01 &middot; Piso 3</span>
+        </div>
+        </div>
+        <div class="card-body">
+          <span class="card-type">Departamento &middot; 3 Dormitorios</span>
+          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Brown 1902 &middot; Rosario</span>
+          <div class="card-stats">
+            <div class="card-stat">
+              <span class="card-stat-value">164</span>
+              <span class="card-stat-label">M²</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">3</span>
+              <span class="card-stat-label">Dorm.</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">2</span>
+              <span class="card-stat-label">Baños</span>
+            </div>
+          </div>
+          <div class="card-price">
+            <span class="card-price-label">Precio de lista</span>
+            <span class="card-price-value">USD 388.000</span>
+          </div>
+        </div>
+        <div class="card-cta">Ver detalle completo &rarr;</div>
+      </a>
+      <a href="p17_nythu_5-05-01/p17_nythu_5-05-01.html" class="unit-card">
+        <div class="card-img-wrap">
+        <img src="render_p17.jpg" alt="Nythu Brown 1902" />
+        <div class="card-img-overlay"></div>
+        <span class="card-badge">Disponible</span>
+        <div class="card-img-label">
+          <span class="card-img-project">Pensaer 17 &middot; Nythu</span>
+          <span class="card-img-unit">05-01 &middot; Piso 5</span>
+        </div>
+        </div>
+        <div class="card-body">
+          <span class="card-type">Departamento &middot; 3 Dormitorios</span>
+          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Brown 1902 &middot; Rosario</span>
+          <div class="card-stats">
+            <div class="card-stat">
+              <span class="card-stat-value">164</span>
+              <span class="card-stat-label">M²</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">3</span>
+              <span class="card-stat-label">Dorm.</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">2</span>
+              <span class="card-stat-label">Baños</span>
+            </div>
+          </div>
+          <div class="card-price">
+            <span class="card-price-label">Precio de lista</span>
+            <span class="card-price-value">USD 398.000</span>
+          </div>
+        </div>
+        <div class="card-cta">Ver detalle completo &rarr;</div>
+      </a>
+      <a href="p17_nythu_7-07-02/p17_nythu_7-07-02.html" class="unit-card">
+        <div class="card-img-wrap">
+        <img src="render_p17.jpg" alt="Nythu Brown 1902" />
+        <div class="card-img-overlay"></div>
+        <span class="card-badge">Disponible</span>
+        <div class="card-img-label">
+          <span class="card-img-project">Pensaer 17 &middot; Nythu</span>
+          <span class="card-img-unit">07-02 &middot; Piso 7</span>
+        </div>
+        </div>
+        <div class="card-body">
+          <span class="card-type">Departamento &middot; 3 Dormitorios</span>
+          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Brown 1902 &middot; Rosario</span>
+          <div class="card-stats">
+            <div class="card-stat">
+              <span class="card-stat-value">138,5</span>
+              <span class="card-stat-label">M²</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">3</span>
+              <span class="card-stat-label">Dorm.</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">2</span>
+              <span class="card-stat-label">Baños</span>
+            </div>
+          </div>
+          <div class="card-price">
+            <span class="card-price-label">Precio de lista</span>
+            <span class="card-price-value">USD 340.000</span>
+          </div>
+        </div>
+        <div class="card-cta">Ver detalle completo &rarr;</div>
+      </a>
+      <a href="p17_nythu_9-09-02/p17_nythu_9-09-02.html" class="unit-card">
+        <div class="card-img-wrap">
+        <img src="render_p17.jpg" alt="Nythu Brown 1902" />
+        <div class="card-img-overlay"></div>
+        <span class="card-badge">Disponible</span>
+        <div class="card-img-label">
+          <span class="card-img-project">Pensaer 17 &middot; Nythu</span>
+          <span class="card-img-unit">09-02 &middot; Piso 9</span>
+        </div>
+        </div>
+        <div class="card-body">
+          <span class="card-type">Departamento &middot; 2 Dormitorios</span>
+          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Brown 1902 &middot; Rosario</span>
+          <div class="card-stats">
+            <div class="card-stat">
+              <span class="card-stat-value">123</span>
+              <span class="card-stat-label">M²</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">2</span>
+              <span class="card-stat-label">Dorm.</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">2</span>
+              <span class="card-stat-label">Baños</span>
+            </div>
+          </div>
+          <div class="card-price">
+            <span class="card-price-label">Precio de lista</span>
+            <span class="card-price-value">USD 296.300</span>
+          </div>
+        </div>
+        <div class="card-cta">Ver detalle completo &rarr;</div>
+      </a>
+      <a href="p17_nythu_10-10-01/p17_nythu_10-10-01.html" class="unit-card">
+        <div class="card-img-wrap">
+        <img src="render_p17.jpg" alt="Nythu Brown 1902" />
+        <div class="card-img-overlay"></div>
+        <span class="card-badge">Disponible</span>
+        <div class="card-img-label">
+          <span class="card-img-project">Pensaer 17 &middot; Nythu</span>
+          <span class="card-img-unit">10-01 &middot; Piso 10</span>
+        </div>
+        </div>
+        <div class="card-body">
+          <span class="card-type">Departamento &middot; 3 Dormitorios</span>
+          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Brown 1902 &middot; Rosario</span>
+          <div class="card-stats">
+            <div class="card-stat">
+              <span class="card-stat-value">218,5</span>
+              <span class="card-stat-label">M²</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">3</span>
+              <span class="card-stat-label">Dorm.</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">2</span>
+              <span class="card-stat-label">Baños</span>
+            </div>
+          </div>
+          <div class="card-price">
+            <span class="card-price-label">Precio de lista</span>
+            <span class="card-price-value">USD 525.000</span>
+          </div>
+        </div>
+        <div class="card-cta">Ver detalle completo &rarr;</div>
+      </a>
+      </div>
+    </div>
+    <div class="project-group">
+      <div class="project-heading">
+        <h3 class="project-heading-title">Pensaer 18 &middot; Dynha Pellegrini</h3>
+        <p class="project-heading-address">Av. Pellegrini 419 &middot; Rosario</p>
+      </div>
+      <div class="units-grid">
+      <a href="p18_dynha_1-01-01/p18_dynha_1-01-01.html" class="unit-card">
+        <div class="card-img-wrap">
+        <img src="p18_dynha_1-01-01/Ficha_Dynha Pellegrini 01-01.png" alt="Ficha 01-01" />
+        <div class="card-img-overlay"></div>
+        <span class="card-badge">Disponible</span>
+        <div class="card-img-label">
+          <span class="card-img-project">Pensaer 18 &middot; Dynha</span>
+          <span class="card-img-unit">01-01 &middot; Piso 1</span>
+        </div>
+        </div>
+        <div class="card-body">
+          <span class="card-type">Departamento &middot; 2 Dormitorios</span>
+          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Av. Pellegrini 419 &middot; Rosario</span>
           <div class="card-stats">
             <div class="card-stat">
               <span class="card-stat-value">86,5</span>
@@ -532,35 +977,30 @@
             <span class="card-price-value">USD 181.650</span>
           </div>
         </div>
-        <div class="card-cta">Ver detalle completo →</div>
+        <div class="card-cta">Ver detalle completo &rarr;</div>
       </a>
-
-      <!-- PENSAER 7 · OFICINA 1C -->
-      <a href="p7_oficina_sl/p7_oficina_sl.html" class="unit-card">
+      <a href="p18_dynha_1-01-02/p18_dynha_1-01-02.html" class="unit-card">
         <div class="card-img-wrap">
-          <img src="p7_oficina_sl/fotos/04-salon.jpeg" alt="Oficina 1C · San Lorenzo 1725 · Pensaer 7" />
-          <div class="card-img-overlay"></div>
-          <span class="card-badge">Disponible</span>
-          <div class="card-img-label">
-            <span class="card-img-project">Pensaer 7 · San Lorenzo</span>
-            <span class="card-img-unit">Oficina 1C</span>
-          </div>
+        <img src="p18_dynha_1-01-02/Ficha_Dynha Pellegrini 01-02.png" alt="Ficha 01-02" />
+        <div class="card-img-overlay"></div>
+        <span class="card-badge">Disponible</span>
+        <div class="card-img-label">
+          <span class="card-img-project">Pensaer 18 &middot; Dynha</span>
+          <span class="card-img-unit">01-02 &middot; Piso 1</span>
+        </div>
         </div>
         <div class="card-body">
-          <span class="card-type">Oficina · Planta baja</span>
-          <span class="card-address">
-            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            San Lorenzo 1725 · Centro · Rosario
-          </span>
+          <span class="card-type">Departamento &middot; 2 Dormitorios</span>
+          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Av. Pellegrini 419 &middot; Rosario</span>
           <div class="card-stats">
             <div class="card-stat">
-              <span class="card-stat-value">93</span>
-              <span class="card-stat-label">M² cubiertos</span>
+              <span class="card-stat-value">115</span>
+              <span class="card-stat-label">M²</span>
             </div>
             <div class="card-divider"></div>
             <div class="card-stat">
-              <span class="card-stat-value">34,5</span>
-              <span class="card-stat-label">M² patio</span>
+              <span class="card-stat-value">2</span>
+              <span class="card-stat-label">Dorm.</span>
             </div>
             <div class="card-divider"></div>
             <div class="card-stat">
@@ -569,21 +1009,709 @@
             </div>
           </div>
           <div class="card-price">
-            <span class="card-price-label">Precio</span>
+            <span class="card-price-label">Precio de lista</span>
+            <span class="card-price-value">USD 235.750</span>
+          </div>
+        </div>
+        <div class="card-cta">Ver detalle completo &rarr;</div>
+      </a>
+      <a href="p18_dynha_2-02-01/p18_dynha_2-02-01.html" class="unit-card">
+        <div class="card-img-wrap">
+        <img src="p18_dynha_2-02-01/Ficha_Dynha Pellegrini 02-01.png" alt="Ficha 02-01" />
+        <div class="card-img-overlay"></div>
+        <span class="card-badge">Disponible</span>
+        <div class="card-img-label">
+          <span class="card-img-project">Pensaer 18 &middot; Dynha</span>
+          <span class="card-img-unit">02-01 &middot; Piso 2</span>
+        </div>
+        </div>
+        <div class="card-body">
+          <span class="card-type">Departamento &middot; 2 Dormitorios</span>
+          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Av. Pellegrini 419 &middot; Rosario</span>
+          <div class="card-stats">
+            <div class="card-stat">
+              <span class="card-stat-value">86,5</span>
+              <span class="card-stat-label">M²</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">2</span>
+              <span class="card-stat-label">Dorm.</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">2</span>
+              <span class="card-stat-label">Baños</span>
+            </div>
+          </div>
+          <div class="card-price">
+            <span class="card-price-label">Precio de lista</span>
+            <span class="card-price-value">USD 194.625</span>
+          </div>
+        </div>
+        <div class="card-cta">Ver detalle completo &rarr;</div>
+      </a>
+      <a href="p18_dynha_3-03-02/p18_dynha_3-03-02.html" class="unit-card">
+        <div class="card-img-wrap">
+        <img src="p18_dynha_3-03-02/Ficha_Dynha Pellegrini 03-02.png" alt="Ficha 03-02" />
+        <div class="card-img-overlay"></div>
+        <span class="card-badge">Disponible</span>
+        <div class="card-img-label">
+          <span class="card-img-project">Pensaer 18 &middot; Dynha</span>
+          <span class="card-img-unit">03-02 &middot; Piso 3</span>
+        </div>
+        </div>
+        <div class="card-body">
+          <span class="card-type">Departamento &middot; 2 Dormitorios</span>
+          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Av. Pellegrini 419 &middot; Rosario</span>
+          <div class="card-stats">
+            <div class="card-stat">
+              <span class="card-stat-value">85</span>
+              <span class="card-stat-label">M²</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">2</span>
+              <span class="card-stat-label">Dorm.</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">2</span>
+              <span class="card-stat-label">Baños</span>
+            </div>
+          </div>
+          <div class="card-price">
+            <span class="card-price-label">Precio de lista</span>
+            <span class="card-price-value">USD 199.750</span>
+          </div>
+        </div>
+        <div class="card-cta">Ver detalle completo &rarr;</div>
+      </a>
+      <a href="p18_dynha_5-05-02/p18_dynha_5-05-02.html" class="unit-card">
+        <div class="card-img-wrap">
+        <img src="p18_dynha_5-05-02/Ficha_Dynha Pellegrini 05-02.png" alt="Ficha 05-02" />
+        <div class="card-img-overlay"></div>
+        <span class="card-badge">Disponible</span>
+        <div class="card-img-label">
+          <span class="card-img-project">Pensaer 18 &middot; Dynha</span>
+          <span class="card-img-unit">05-02 &middot; Piso 5</span>
+        </div>
+        </div>
+        <div class="card-body">
+          <span class="card-type">Departamento &middot; Monoambiente</span>
+          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Av. Pellegrini 419 &middot; Rosario</span>
+          <div class="card-stats">
+            <div class="card-stat">
+              <span class="card-stat-value">37</span>
+              <span class="card-stat-label">M²</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">1</span>
+              <span class="card-stat-label">Baño</span>
+            </div>
+          </div>
+          <div class="card-price">
+            <span class="card-price-label">Precio de lista</span>
+            <span class="card-price-value">USD 79.550</span>
+          </div>
+        </div>
+        <div class="card-cta">Ver detalle completo &rarr;</div>
+      </a>
+      <a href="p18_dynha_7-07-01/p18_dynha_7-07-01.html" class="unit-card">
+        <div class="card-img-wrap">
+        <img src="p18_dynha_7-07-01/Ficha_Dynha Pellegrini 07-01.png" alt="Ficha 07-01" />
+        <div class="card-img-overlay"></div>
+        <span class="card-badge">Disponible</span>
+        <div class="card-img-label">
+          <span class="card-img-project">Pensaer 18 &middot; Dynha</span>
+          <span class="card-img-unit">07-01 &middot; Piso 7</span>
+        </div>
+        </div>
+        <div class="card-body">
+          <span class="card-type">Departamento &middot; 2 Dormitorios</span>
+          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Av. Pellegrini 419 &middot; Rosario</span>
+          <div class="card-stats">
+            <div class="card-stat">
+              <span class="card-stat-value">86,5</span>
+              <span class="card-stat-label">M²</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">2</span>
+              <span class="card-stat-label">Dorm.</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">2</span>
+              <span class="card-stat-label">Baños</span>
+            </div>
+          </div>
+          <div class="card-price">
+            <span class="card-price-label">Precio de lista</span>
+            <span class="card-price-value">USD 220.575</span>
+          </div>
+        </div>
+        <div class="card-cta">Ver detalle completo &rarr;</div>
+      </a>
+      <a href="p18_dynha_7-07-02/p18_dynha_7-07-02.html" class="unit-card">
+        <div class="card-img-wrap">
+        <img src="p18_dynha_7-07-02/Ficha_Dynha Pellegrini 07-02.png" alt="Ficha 07-02" />
+        <div class="card-img-overlay"></div>
+        <span class="card-badge">Disponible</span>
+        <div class="card-img-label">
+          <span class="card-img-project">Pensaer 18 &middot; Dynha</span>
+          <span class="card-img-unit">07-02 &middot; Piso 7</span>
+        </div>
+        </div>
+        <div class="card-body">
+          <span class="card-type">Departamento &middot; Monoambiente</span>
+          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Av. Pellegrini 419 &middot; Rosario</span>
+          <div class="card-stats">
+            <div class="card-stat">
+              <span class="card-stat-value">37</span>
+              <span class="card-stat-label">M²</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">1</span>
+              <span class="card-stat-label">Baño</span>
+            </div>
+          </div>
+          <div class="card-price">
+            <span class="card-price-label">Precio de lista</span>
+            <span class="card-price-value">USD 81.400</span>
+          </div>
+        </div>
+        <div class="card-cta">Ver detalle completo &rarr;</div>
+      </a>
+      <a href="p18_dynha_7-07-03/p18_dynha_7-07-03.html" class="unit-card">
+        <div class="card-img-wrap">
+        <img src="p18_dynha_7-07-03/Ficha_Dynha Pellegrini 07-03.png" alt="Ficha 07-03" />
+        <div class="card-img-overlay"></div>
+        <span class="card-badge">Disponible</span>
+        <div class="card-img-label">
+          <span class="card-img-project">Pensaer 18 &middot; Dynha</span>
+          <span class="card-img-unit">07-03 &middot; Piso 7</span>
+        </div>
+        </div>
+        <div class="card-body">
+          <span class="card-type">Departamento &middot; 1 Dormitorio</span>
+          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Av. Pellegrini 419 &middot; Rosario</span>
+          <div class="card-stats">
+            <div class="card-stat">
+              <span class="card-stat-value">47</span>
+              <span class="card-stat-label">M²</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">1</span>
+              <span class="card-stat-label">Dorm.</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">1</span>
+              <span class="card-stat-label">Baño</span>
+            </div>
+          </div>
+          <div class="card-price">
+            <span class="card-price-label">Precio de lista</span>
+            <span class="card-price-value">USD 110.450</span>
+          </div>
+        </div>
+        <div class="card-cta">Ver detalle completo &rarr;</div>
+      </a>
+      <a href="p18_dynha_10y11-01/p18_dynha_10y11-01.html" class="unit-card">
+        <div class="card-img-wrap">
+        <img src="p18_dynha_10y11-01/Ficha_Dynha Pellegrini 10y11-01.png" alt="Ficha 10y11-01" />
+        <div class="card-img-overlay"></div>
+        <span class="card-badge">Disponible</span>
+        <div class="card-img-label">
+          <span class="card-img-project">Pensaer 18 &middot; Dynha</span>
+          <span class="card-img-unit">10-01/11-01 &middot; P.10/11</span>
+        </div>
+        </div>
+        <div class="card-body">
+          <span class="card-type">D&uacute;plex &middot; 3 Dormitorios</span>
+          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Av. Pellegrini 419 &middot; Rosario</span>
+          <div class="card-stats">
+            <div class="card-stat">
+              <span class="card-stat-value">163,5</span>
+              <span class="card-stat-label">M²</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">3</span>
+              <span class="card-stat-label">Dorm.</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">2</span>
+              <span class="card-stat-label">Baños</span>
+            </div>
+          </div>
+          <div class="card-price">
+            <span class="card-price-label">Precio de lista</span>
+            <span class="card-price-value">USD 376.050</span>
+          </div>
+        </div>
+        <div class="card-cta">Ver detalle completo &rarr;</div>
+      </a>
+      <a href="p18_dynha_10y11-02/p18_dynha_10y11-02.html" class="unit-card">
+        <div class="card-img-wrap">
+        <img src="p18_dynha_10y11-02/Ficha_Dynha Pellegrini 10y11-02.png" alt="Ficha 10y11-02" />
+        <div class="card-img-overlay"></div>
+        <span class="card-badge">Disponible</span>
+        <div class="card-img-label">
+          <span class="card-img-project">Pensaer 18 &middot; Dynha</span>
+          <span class="card-img-unit">10-02/11-02 &middot; P.10/11</span>
+        </div>
+        </div>
+        <div class="card-body">
+          <span class="card-type">D&uacute;plex &middot; 2 Dormitorios</span>
+          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Av. Pellegrini 419 &middot; Rosario</span>
+          <div class="card-stats">
+            <div class="card-stat">
+              <span class="card-stat-value">132</span>
+              <span class="card-stat-label">M²</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">2</span>
+              <span class="card-stat-label">Dorm.</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">2</span>
+              <span class="card-stat-label">Baños</span>
+            </div>
+          </div>
+          <div class="card-price">
+            <span class="card-price-label">Precio de lista</span>
+            <span class="card-price-value">USD 330.000</span>
+          </div>
+        </div>
+        <div class="card-cta">Ver detalle completo &rarr;</div>
+      </a>
+      </div>
+    </div>
+    <div class="project-group">
+      <div class="project-heading">
+        <h3 class="project-heading-title">Pensaer 20 &middot; Elysian San Jos&eacute;</h3>
+        <p class="project-heading-address">San Jos&eacute; 2736 &middot; Funes, Santa Fe</p>
+      </div>
+      <div class="units-grid">
+      <a href="p20_elsj_2y3-02-01/p20_elsj_2y3-02-01.html" class="unit-card">
+        <div class="card-img-wrap">
+        <img src="p20_elsj_2y3-02-01/ficha.png" alt="Ficha duplex 02-01" />
+        <div class="card-img-overlay"></div>
+        <span class="card-badge">Disponible</span>
+        <div class="card-img-label">
+          <span class="card-img-project">Pensaer 20 &middot; Elysian SJ</span>
+          <span class="card-img-unit">02-01/03-01 &middot; P.2/3</span>
+        </div>
+        </div>
+        <div class="card-body">
+          <span class="card-type">D&uacute;plex &middot; 3 Dormitorios</span>
+          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>San Jos&eacute; 2736 &middot; Funes</span>
+          <div class="card-stats">
+            <div class="card-stat">
+              <span class="card-stat-value">163</span>
+              <span class="card-stat-label">M²</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">3</span>
+              <span class="card-stat-label">Dorm.</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">3</span>
+              <span class="card-stat-label">Baños</span>
+            </div>
+          </div>
+          <div class="card-price">
+            <span class="card-price-label">Precio de lista</span>
+            <span class="card-price-value">USD 395.000</span>
+          </div>
+        </div>
+        <div class="card-cta">Ver detalle completo &rarr;</div>
+      </a>
+      <a href="p20_elsj_2y3-02-02/p20_elsj_2y3-02-02.html" class="unit-card">
+        <div class="card-img-wrap">
+        <img src="p20_elsj_2y3-02-02/ficha.png" alt="Ficha duplex 02-02" />
+        <div class="card-img-overlay"></div>
+        <span class="card-badge">Disponible</span>
+        <div class="card-img-label">
+          <span class="card-img-project">Pensaer 20 &middot; Elysian SJ</span>
+          <span class="card-img-unit">02-02/03-02 &middot; P.2/3</span>
+        </div>
+        </div>
+        <div class="card-body">
+          <span class="card-type">D&uacute;plex &middot; 3 Dormitorios</span>
+          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>San Jos&eacute; 2736 &middot; Funes</span>
+          <div class="card-stats">
+            <div class="card-stat">
+              <span class="card-stat-value">144,5</span>
+              <span class="card-stat-label">M²</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">3</span>
+              <span class="card-stat-label">Dorm.</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">3</span>
+              <span class="card-stat-label">Baños</span>
+            </div>
+          </div>
+          <div class="card-price">
+            <span class="card-price-label">Precio de lista</span>
+            <span class="card-price-value">USD 350.000</span>
+          </div>
+        </div>
+        <div class="card-cta">Ver detalle completo &rarr;</div>
+      </a>
+      <a href="p20_elsj_2y3-02-04/p20_elsj_2y3-02-04.html" class="unit-card">
+        <div class="card-img-wrap">
+        <img src="p20_elsj_2y3-02-04/ficha.png" alt="Ficha duplex 02-04" />
+        <div class="card-img-overlay"></div>
+        <span class="card-badge">Disponible</span>
+        <div class="card-img-label">
+          <span class="card-img-project">Pensaer 20 &middot; Elysian SJ</span>
+          <span class="card-img-unit">02-04/03-04 &middot; P.2/3</span>
+        </div>
+        </div>
+        <div class="card-body">
+          <span class="card-type">D&uacute;plex &middot; 3 Dormitorios</span>
+          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>San Jos&eacute; 2736 &middot; Funes</span>
+          <div class="card-stats">
+            <div class="card-stat">
+              <span class="card-stat-value">128</span>
+              <span class="card-stat-label">M²</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">3</span>
+              <span class="card-stat-label">Dorm.</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">3</span>
+              <span class="card-stat-label">Baños</span>
+            </div>
+          </div>
+          <div class="card-price">
+            <span class="card-price-label">Precio de lista</span>
+            <span class="card-price-value">USD 320.000</span>
+          </div>
+        </div>
+        <div class="card-cta">Ver detalle completo &rarr;</div>
+      </a>
+      <a href="p20_elsj_2y3-02-05/p20_elsj_2y3-02-05.html" class="unit-card">
+        <div class="card-img-wrap">
+        <img src="p20_elsj_2y3-02-05/ficha.png" alt="Ficha duplex 02-05" />
+        <div class="card-img-overlay"></div>
+        <span class="card-badge">Disponible</span>
+        <div class="card-img-label">
+          <span class="card-img-project">Pensaer 20 &middot; Elysian SJ</span>
+          <span class="card-img-unit">02-05/03-05 &middot; P.2/3</span>
+        </div>
+        </div>
+        <div class="card-body">
+          <span class="card-type">D&uacute;plex &middot; 3 Dormitorios</span>
+          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>San Jos&eacute; 2736 &middot; Funes</span>
+          <div class="card-stats">
+            <div class="card-stat">
+              <span class="card-stat-value">146</span>
+              <span class="card-stat-label">M²</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">3</span>
+              <span class="card-stat-label">Dorm.</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">3</span>
+              <span class="card-stat-label">Baños</span>
+            </div>
+          </div>
+          <div class="card-price">
+            <span class="card-price-label">Precio de lista</span>
+            <span class="card-price-value">USD 355.000</span>
+          </div>
+        </div>
+        <div class="card-cta">Ver detalle completo &rarr;</div>
+      </a>
+      <a href="p20_elsj_2y3-02-06/p20_elsj_2y3-02-06.html" class="unit-card">
+        <div class="card-img-wrap">
+        <img src="p20_elsj_2y3-02-06/ficha.png" alt="Ficha duplex 02-06" />
+        <div class="card-img-overlay"></div>
+        <span class="card-badge">Disponible</span>
+        <div class="card-img-label">
+          <span class="card-img-project">Pensaer 20 &middot; Elysian SJ</span>
+          <span class="card-img-unit">02-06/03-06 &middot; P.2/3</span>
+        </div>
+        </div>
+        <div class="card-body">
+          <span class="card-type">D&uacute;plex &middot; 2 Dormitorios</span>
+          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>San Jos&eacute; 2736 &middot; Funes</span>
+          <div class="card-stats">
+            <div class="card-stat">
+              <span class="card-stat-value">95,5</span>
+              <span class="card-stat-label">M²</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">2</span>
+              <span class="card-stat-label">Dorm.</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">2</span>
+              <span class="card-stat-label">Baños</span>
+            </div>
+          </div>
+          <div class="card-price">
+            <span class="card-price-label">Precio de lista</span>
+            <span class="card-price-value">USD 240.000</span>
+          </div>
+        </div>
+        <div class="card-cta">Ver detalle completo &rarr;</div>
+      </a>
+      <a href="p20_elsj_2y3-02-08/p20_elsj_2y3-02-08.html" class="unit-card">
+        <div class="card-img-wrap">
+        <img src="p20_elsj_2y3-02-08/ficha.png" alt="Ficha duplex 02-08" />
+        <div class="card-img-overlay"></div>
+        <span class="card-badge">Disponible</span>
+        <div class="card-img-label">
+          <span class="card-img-project">Pensaer 20 &middot; Elysian SJ</span>
+          <span class="card-img-unit">02-08/03-08 &middot; P.2/3</span>
+        </div>
+        </div>
+        <div class="card-body">
+          <span class="card-type">D&uacute;plex &middot; 2 Dormitorios</span>
+          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>San Jos&eacute; 2736 &middot; Funes</span>
+          <div class="card-stats">
+            <div class="card-stat">
+              <span class="card-stat-value">90,5</span>
+              <span class="card-stat-label">M²</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">2</span>
+              <span class="card-stat-label">Dorm.</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">2</span>
+              <span class="card-stat-label">Baños</span>
+            </div>
+          </div>
+          <div class="card-price">
+            <span class="card-price-label">Precio de lista</span>
+            <span class="card-price-value">USD 210.000</span>
+          </div>
+        </div>
+        <div class="card-cta">Ver detalle completo &rarr;</div>
+      </a>
+      <a href="p20_elsj_2y3-02-09/p20_elsj_2y3-02-09.html" class="unit-card">
+        <div class="card-img-wrap">
+        <img src="p20_elsj_2y3-02-09/ficha.png" alt="Ficha duplex 02-09" />
+        <div class="card-img-overlay"></div>
+        <span class="card-badge">Disponible</span>
+        <div class="card-img-label">
+          <span class="card-img-project">Pensaer 20 &middot; Elysian SJ</span>
+          <span class="card-img-unit">02-09/03-09 &middot; P.2/3</span>
+        </div>
+        </div>
+        <div class="card-body">
+          <span class="card-type">D&uacute;plex &middot; 2 Dormitorios</span>
+          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>San Jos&eacute; 2736 &middot; Funes</span>
+          <div class="card-stats">
+            <div class="card-stat">
+              <span class="card-stat-value">95,5</span>
+              <span class="card-stat-label">M²</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">2</span>
+              <span class="card-stat-label">Dorm.</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">2</span>
+              <span class="card-stat-label">Baños</span>
+            </div>
+          </div>
+          <div class="card-price">
+            <span class="card-price-label">Precio de lista</span>
+            <span class="card-price-value">USD 240.000</span>
+          </div>
+        </div>
+        <div class="card-cta">Ver detalle completo &rarr;</div>
+      </a>
+      <a href="p20_elsj_2y3-02-10/p20_elsj_2y3-02-10.html" class="unit-card">
+        <div class="card-img-wrap">
+        <img src="p20_elsj_2y3-02-10/ficha.png" alt="Ficha duplex 02-10" />
+        <div class="card-img-overlay"></div>
+        <span class="card-badge">Disponible</span>
+        <div class="card-img-label">
+          <span class="card-img-project">Pensaer 20 &middot; Elysian SJ</span>
+          <span class="card-img-unit">02-10/03-10 &middot; P.2/3</span>
+        </div>
+        </div>
+        <div class="card-body">
+          <span class="card-type">D&uacute;plex &middot; 3 Dormitorios</span>
+          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>San Jos&eacute; 2736 &middot; Funes</span>
+          <div class="card-stats">
+            <div class="card-stat">
+              <span class="card-stat-value">164</span>
+              <span class="card-stat-label">M²</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">3</span>
+              <span class="card-stat-label">Dorm.</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">3</span>
+              <span class="card-stat-label">Baños</span>
+            </div>
+          </div>
+          <div class="card-price">
+            <span class="card-price-label">Precio de lista</span>
+            <span class="card-price-value">USD 395.000</span>
+          </div>
+        </div>
+        <div class="card-cta">Ver detalle completo &rarr;</div>
+      </a>
+      </div>
+    </div>
+    <div class="project-group">
+      <div class="project-heading">
+        <h3 class="project-heading-title">Pensaer 7 &middot; San Lorenzo 1725</h3>
+        <p class="project-heading-address">San Lorenzo 1725 &middot; Centro &middot; Rosario</p>
+      </div>
+      <div class="units-grid">
+      <a href="p7_oficina_sl/p7_oficina_sl.html" class="unit-card">
+        <div class="card-img-wrap">
+        <img src="p7_oficina_sl/fotos/04-salon.jpeg" alt="Oficina 1C San Lorenzo 1725" />
+        <div class="card-img-overlay"></div>
+        <span class="card-badge">Disponible</span>
+        <div class="card-img-label">
+          <span class="card-img-project">Pensaer 7 &middot; San Lorenzo</span>
+          <span class="card-img-unit">Oficina 1C</span>
+        </div>
+        </div>
+        <div class="card-body">
+          <span class="card-type">Oficina &middot; Planta baja</span>
+          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>San Lorenzo 1725 &middot; Rosario</span>
+          <div class="card-stats">
+            <div class="card-stat">
+              <span class="card-stat-value">93</span>
+              <span class="card-stat-label">M²</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">2</span>
+              <span class="card-stat-label">Baños</span>
+            </div>
+          </div>
+          <div class="card-price">
+            <span class="card-price-label"></span>
             <span class="card-price-value">Consultar</span>
           </div>
         </div>
-        <div class="card-cta">Ver detalle completo →</div>
+        <div class="card-cta">Ver detalle completo &rarr;</div>
       </a>
-
+      </div>
+    </div>
+    <div class="project-group">
+      <div class="project-heading">
+        <h3 class="project-heading-title">Otras Unidades</h3>
+        <p class="project-heading-address">Comercializadas por Pensaer &middot; Rosario</p>
+      </div>
+      <div class="units-grid">
+      <a href="z_italia1165_8c/z_italia1165_8c.html" class="unit-card">
+        <div class="card-img-wrap">
+        <div class="card-no-img">
+          <span class="card-no-img-badge">Disponible</span>
+          <span class="card-no-img-unit">8 C &middot; Piso 8</span>
+          <span class="card-no-img-project">Italia 1165 &middot; Rosario</span>
+        </div>
+        </div>
+        <div class="card-body">
+          <span class="card-type">Departamento &middot; 2 Dormitorios</span>
+          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Italia 1165 &middot; Rosario</span>
+          <div class="card-stats">
+            <div class="card-stat">
+              <span class="card-stat-value">55</span>
+              <span class="card-stat-label">M²</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">2</span>
+              <span class="card-stat-label">Dorm.</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">2</span>
+              <span class="card-stat-label">Baños</span>
+            </div>
+          </div>
+          <div class="card-price">
+            <span class="card-price-label">Precio de lista</span>
+            <span class="card-price-value">USD 95.000</span>
+          </div>
+        </div>
+        <div class="card-cta">Ver detalle completo &rarr;</div>
+      </a>
+      <a href="z_rosas930_10-01/z_rosas930_10-01.html" class="unit-card">
+        <div class="card-img-wrap">
+        <div class="card-no-img">
+          <span class="card-no-img-badge">Disponible</span>
+          <span class="card-no-img-unit">10-01 &middot; Piso 10</span>
+          <span class="card-no-img-project">Rosas 930/32 &middot; Rosario</span>
+        </div>
+        </div>
+        <div class="card-body">
+          <span class="card-type">Departamento &middot; 3 Dormitorios + Cochera</span>
+          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>J.M. de Rosas 930/32 &middot; Rosario</span>
+          <div class="card-stats">
+            <div class="card-stat">
+              <span class="card-stat-value">126</span>
+              <span class="card-stat-label">M²</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">3</span>
+              <span class="card-stat-label">Dorm.</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">2</span>
+              <span class="card-stat-label">Baños</span>
+            </div>
+          </div>
+          <div class="card-price">
+            <span class="card-price-label">Precio de lista</span>
+            <span class="card-price-value">USD 260.000</span>
+          </div>
+        </div>
+        <div class="card-cta">Ver detalle completo &rarr;</div>
+      </a>
+      </div>
     </div>
   </section>
 
-  <!-- CTA -->
   <div class="cta-strip">
     <div class="cta-strip-text">
-      <span class="cta-strip-label">¿Necesitás más información?</span>
-      <span class="cta-strip-title">Consultá por cualquier propiedad<br>con nuestro equipo comercial</span>
+      <span class="cta-strip-label">Necesit&aacute;s m&aacute;s informaci&oacute;n?</span>
+      <span class="cta-strip-title">Consult&aacute; por cualquier propiedad<br>con nuestro equipo comercial</span>
     </div>
     <div class="cta-strip-buttons">
       <a href="tel:+5493416980855" class="btn-primary">
@@ -597,11 +1725,10 @@
     </div>
   </div>
 
-  <!-- FOOTER -->
   <footer>
     <img class="footer-logo" src="pensaer-logo.png" alt="Pensaer" />
-    <span class="footer-copy">© 2024 Pensaer · pensaer.com.ar</span>
-    <div class="footer-address">Córdoba 1336 Piso 3 · Rosario · Santa Fe</div>
+    <span class="footer-copy">&copy; 2025 Pensaer &middot; pensaer.com.ar</span>
+    <div class="footer-address">C&oacute;rdoba 1336 Piso 3 &middot; Rosario &middot; Santa Fe</div>
   </footer>
 
 </body>

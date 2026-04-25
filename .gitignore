@@ -1,2 +1,14 @@
 # Carpetas de trabajo con archivos originales sin procesar
 p7_oficina_sl/Venta oficina SanLo/
+
+# Configuración y memoria de Claude
+CLAUDE.md
+.claude/
+.mcp.json
+
+# Scripts de generación (herramientas de desarrollo)
+gen_landings.py
+gen_index.py
+
+# Instrucciones de skills de GitHub Copilot/Claude
+.github/
