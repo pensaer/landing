@@ -1,6 +1,9 @@
 # Carpetas de trabajo con archivos originales sin procesar
 p7_oficina_sl/Venta oficina SanLo/
 
+# Brand guidelines y tipografías (activos internos)
+manual/
+
 # Configuración y memoria de Claude
 CLAUDE.md
 .claude/
