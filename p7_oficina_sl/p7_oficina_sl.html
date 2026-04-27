@@ -170,15 +170,17 @@
       font-size: 11px;
       letter-spacing: 2.5px;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.55);
+      color: var(--white);
       text-decoration: none;
       display: inline-flex;
       align-items: center;
       gap: 7px;
-      padding: 13px 0;
-      transition: color 0.2s;
+      padding: 13px 28px;
+      border: 1px solid rgba(255,255,255,0.35);
+      background: rgba(255,255,255,0.08);
+      transition: background 0.2s, border-color 0.2s;
     }
-    .btn-pdf:hover { color: var(--white); }
+    .btn-pdf:hover { background: rgba(255,255,255,0.16); border-color: rgba(255,255,255,0.7); }
     .btn-pdf svg { width: 14px; height: 14px; fill: currentColor; flex-shrink: 0; }
 
     /* ── INFO STRIP ───────────────────────────────────── */
