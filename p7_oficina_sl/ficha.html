@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ficha · Oficina San Lorenzo 1725 · Pensaer</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    @font-face {
+      font-family: 'Alliance No.1';
+      src: url('../manual/tipografia/Alliance No.1 Light.otf') format('opentype');
+      font-weight: 300; font-style: normal;
+    }
+    @font-face {
+      font-family: 'Alliance No.1';
+      src: url('../manual/tipografia/Alliance No.1 Regular.otf') format('opentype');
+      font-weight: 400; font-style: normal;
+    }
+    @font-face {
+      font-family: 'Alliance No.1';
+      src: url('../manual/tipografia/Alliance No.1 SemiBold.otf') format('opentype');
+      font-weight: 600; font-style: normal;
+    }
+    @font-face {
+      font-family: 'Alliance No.1';
+      src: url('../manual/tipografia/Alliance No.1 Bold.otf') format('opentype');
+      font-weight: 700; font-style: normal;
+    }
+
+    :root {
+      --brand-blue:  #25283A;
+      --beige:       #A99C8D;
+      --light-beige: #EDE2D1;
+      --dark-gray:   #3A3A38;
+      --light-gray:  #E8E8E8;
+      --white:       #FFFFFF;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body {
+      width: 210mm;
+      height: 297mm;
+      font-family: 'Sora', sans-serif;
+      background: var(--white);
+      color: var(--brand-blue);
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* ── PÁGINA ──────────────────────────────────── */
+    .page {
+      width: 210mm;
+      height: 297mm;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    /* ── HEADER ──────────────────────────────────── */
+    .header {
+      background: var(--brand-blue);
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-shrink: 0;
+    }
+
+    .header-logo {
+      height: 20px;
+      width: auto;
+      display: block;
+    }
+
+    .header-tag {
+      font-family: 'Alliance No.1', sans-serif;
+      font-weight: 300;
+      font-size: 8px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+    }
+
+    /* ── FOTO HERO ───────────────────────────────── */
+    .hero-photo {
+      width: 100%;
+      height: 82mm;
+      object-fit: cover;
+      object-position: center 30%;
+      display: block;
+      flex-shrink: 0;
+    }
+
+    /* ── IDENTIFICACIÓN ──────────────────────────── */
+    .id-bar {
+      background: var(--light-beige);
+      padding: 12px 24px;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-shrink: 0;
+      border-bottom: 1px solid rgba(37,40,58,0.1);
+    }
+
+    .id-title {
+      font-family: 'Alliance No.1', sans-serif;
+      font-weight: 300;
+      font-size: 20px;
+      color: var(--brand-blue);
+      line-height: 1;
+    }
+
+    .id-badge {
+      font-family: 'Alliance No.1', sans-serif;
+      font-weight: 400;
+      font-size: 8px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--brand-blue);
+      border: 1px solid var(--brand-blue);
+      padding: 5px 12px;
+    }
+
+    /* ── CUERPO ──────────────────────────────────── */
+    .body {
+      display: grid;
+      grid-template-columns: 1fr 72mm;
+      flex: 1;
+      overflow: hidden;
+    }
+
+    /* ── COLUMNA IZQUIERDA ───────────────────────── */
+    .col-left {
+      padding: 20px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      border-right: 1px solid var(--light-gray);
+      overflow: hidden;
+    }
+
+    .col-eyebrow {
+      font-family: 'Alliance No.1', sans-serif;
+      font-weight: 300;
+      font-size: 8px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--beige);
+    }
+
+    .col-desc {
+      font-size: 9.5px;
+      font-weight: 300;
+      color: var(--dark-gray);
+      line-height: 1.75;
+    }
+
+    .galeria-mini {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3px;
+      margin-top: auto;
+    }
+
+    .galeria-mini img {
+      width: 100%;
+      height: 28mm;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ── COLUMNA DERECHA ─────────────────────────── */
+    .col-right {
+      background: var(--brand-blue);
+      padding: 20px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .ficha-eyebrow {
+      font-family: 'Alliance No.1', sans-serif;
+      font-weight: 300;
+      font-size: 8px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 14px;
+    }
+
+    .ficha-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 9px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .ficha-row:last-of-type { border-bottom: none; }
+
+    .ficha-key {
+      font-family: 'Alliance No.1', sans-serif;
+      font-weight: 300;
+      font-size: 9px;
+      color: rgba(255,255,255,0.45);
+    }
+
+    .ficha-val {
+      font-family: 'Alliance No.1', sans-serif;
+      font-weight: 400;
+      font-size: 9.5px;
+      color: var(--white);
+    }
+
+    .contacto-block {
+      margin-top: auto;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .contacto-eyebrow {
+      font-family: 'Alliance No.1', sans-serif;
+      font-weight: 300;
+      font-size: 8px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 10px;
+    }
+
+    .contacto-line {
+      font-family: 'Alliance No.1', sans-serif;
+      font-weight: 300;
+      font-size: 9.5px;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.7;
+    }
+
+    .contacto-line strong {
+      font-weight: 400;
+      color: var(--white);
+    }
+
+    /* ── FOOTER ──────────────────────────────────── */
+    .footer {
+      background: var(--light-beige);
+      padding: 9px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-shrink: 0;
+      border-top: 1px solid rgba(37,40,58,0.1);
+    }
+
+    .footer-copy {
+      font-family: 'Alliance No.1', sans-serif;
+      font-weight: 300;
+      font-size: 7.5px;
+      color: var(--beige);
+      letter-spacing: 1px;
+    }
+
+    .footer-address {
+      font-family: 'Alliance No.1', sans-serif;
+      font-weight: 300;
+      font-size: 7.5px;
+      color: var(--beige);
+      text-align: right;
+    }
+
+    @media print {
+      html, body { width: 210mm; height: 297mm; }
+      .page { page-break-after: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- HEADER -->
+    <div class="header">
+      <img class="header-logo" src="../pensaer-logo.png" alt="Pensaer Desarrollos" />
+      <span class="header-tag">Propiedad en venta · Pensaer 7</span>
+    </div>
+
+    <!-- FOTO HERO -->
+    <img class="hero-photo" src="fotos/04-salon.jpeg" alt="Oficina San Lorenzo 1725" />
+
+    <!-- IDENTIFICACIÓN -->
+    <div class="id-bar">
+      <h1 class="id-title">Oficina · San Lorenzo 1725, Rosario</h1>
+      <span class="id-badge">Entrega inmediata</span>
+    </div>
+
+    <!-- CUERPO -->
+    <div class="body">
+
+      <!-- COLUMNA IZQUIERDA -->
+      <div class="col-left">
+        <p class="col-eyebrow">El espacio</p>
+        <p class="col-desc">
+          Oficina en venta ubicada sobre calle San Lorenzo, entre Italia y España,
+          en pleno centro de Rosario. Amplia oficina al contrafrente, vidriada a patio
+          interno.<br><br>
+          El espacio cuenta con 2 baños, office y sala de reuniones separada con
+          tabiques de vidrio tipo loft. Placares completos, alacenas y baño mesada.
+          Incluye termotanque eléctrico. Preinstalación de AA. Orientación Sur.<br><br>
+          La propiedad se encuentra en excelente estado de conservación, con 4 años
+          de antigüedad. Planta 1°, con buena iluminación natural.
+        </p>
+
+        <div class="galeria-mini">
+          <img src="fotos/03-interior-patio.jpeg" alt="" />
+          <img src="fotos/09-patio-2.jpeg" alt="" />
+          <img src="fotos/10-interior-vidrio.jpeg" alt="" />
+        </div>
+      </div>
+
+      <!-- COLUMNA DERECHA -->
+      <div class="col-right">
+        <p class="ficha-eyebrow">Ficha técnica</p>
+
+        <div class="ficha-row">
+          <span class="ficha-key">Superficie equivalente</span>
+          <span class="ficha-val">110,25 m²</span>
+        </div>
+        <div class="ficha-row">
+          <span class="ficha-key">Sup. cubierta exclusiva</span>
+          <span class="ficha-val">93 m²</span>
+        </div>
+        <div class="ficha-row">
+          <span class="ficha-key">Patio semi-cubierto</span>
+          <span class="ficha-val">34,5 m²</span>
+        </div>
+        <div class="ficha-row">
+          <span class="ficha-key">Ambiente</span>
+          <span class="ficha-val">1</span>
+        </div>
+        <div class="ficha-row">
+          <span class="ficha-key">Baños</span>
+          <span class="ficha-val">2</span>
+        </div>
+        <div class="ficha-row">
+          <span class="ficha-key">Planta</span>
+          <span class="ficha-val">1°</span>
+        </div>
+        <div class="ficha-row">
+          <span class="ficha-key">Orientación</span>
+          <span class="ficha-val">Sur</span>
+        </div>
+        <div class="ficha-row">
+          <span class="ficha-key">Antigüedad</span>
+          <span class="ficha-val">4 años</span>
+        </div>
+        <div class="ficha-row">
+          <span class="ficha-key">Condición</span>
+          <span class="ficha-val">Excelente</span>
+        </div>
+        <div class="ficha-row">
+          <span class="ficha-key">Servicios</span>
+          <span class="ficha-val">Agua · Gas · Luz</span>
+        </div>
+        <div class="ficha-row">
+          <span class="ficha-key">Uso</span>
+          <span class="ficha-val">Oficina</span>
+        </div>
+
+        <div class="contacto-block">
+          <p class="contacto-eyebrow">Contacto</p>
+          <p class="contacto-line"><strong>Pensaer Desarrollos</strong></p>
+          <p class="contacto-line">+54 9 341 698-0855</p>
+          <p class="contacto-line">pensaer.com.ar</p>
+          <p class="contacto-line" style="margin-top:6px; color:rgba(255,255,255,0.35); font-size:8px;">
+            Córdoba 1336 Piso 3 · Rosario, Santa Fe
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <span class="footer-copy">© 2025 Pensaer · pensaer.com.ar</span>
+      <span class="footer-address">Córdoba 1336 Piso 3 · Rosario, Santa Fe · Argentina</span>
+    </div>
+
+  </div>
+</body>
+</html>

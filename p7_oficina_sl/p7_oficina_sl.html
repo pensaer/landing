@@ -3,74 +3,101 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Oficina en Venta · San Lorenzo 1725 · Rosario · Pensaer 7</title>
+  <title>Oficina en Venta · San Lorenzo 1725 · Rosario · Pensaer</title>
+
+  <!-- Sora: tipografía secundaria para cuerpo de texto -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500&display=swap" rel="stylesheet" />
+
   <style>
+    /* ── TIPOGRAFÍA ───────────────────────────────────── */
+    @font-face {
+      font-family: 'Alliance No.1';
+      src: url('../manual/tipografia/Alliance No.1 Light.otf') format('opentype');
+      font-weight: 300; font-style: normal;
+    }
+    @font-face {
+      font-family: 'Alliance No.1';
+      src: url('../manual/tipografia/Alliance No.1 Regular.otf') format('opentype');
+      font-weight: 400; font-style: normal;
+    }
+    @font-face {
+      font-family: 'Alliance No.1';
+      src: url('../manual/tipografia/Alliance No.1 SemiBold.otf') format('opentype');
+      font-weight: 600; font-style: normal;
+    }
+    @font-face {
+      font-family: 'Alliance No.1';
+      src: url('../manual/tipografia/Alliance No.1 Bold.otf') format('opentype');
+      font-weight: 700; font-style: normal;
+    }
+    @font-face {
+      font-family: 'Alliance No.1';
+      src: url('../manual/tipografia/Alliance No.1 ExtraBold.otf') format('opentype');
+      font-weight: 800; font-style: normal;
+    }
+
+    /* ── TOKENS DE MARCA ──────────────────────────────── */
     :root {
-      --black:      #111111;
-      --dark:       #1C1C1C;
-      --grey-dark:  #333333;
-      --grey-mid:   #666666;
-      --grey-light: #F4F4F4;
-      --white:      #FFFFFF;
-      --accent:     #9E8656;
-      --accent-dk:  #7A6340;
-      --gold-light: #C9B48A;
-      --brown-deep: #2A1F14;
+      --brand-blue:  #25283A;
+      --beige:       #A99C8D;
+      --light-beige: #EDE2D1;
+      --dark-gray:   #3A3A38;
+      --light-gray:  #E8E8E8;
+      --white:       #FFFFFF;
+      --black:       #000000;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Sora', sans-serif;
       background: var(--white);
-      color: var(--dark);
+      color: var(--brand-blue);
       line-height: 1.6;
     }
 
-    /* ── HEADER ─────────────────────────────────────── */
+    /* ── HEADER ───────────────────────────────────────── */
     header {
       position: absolute;
       top: 0; left: 0; right: 0;
       z-index: 10;
-      padding: 20px 48px;
+      padding: 28px 56px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background: linear-gradient(to bottom, rgba(0,0,0,0.55), transparent);
+      background: linear-gradient(to bottom, rgba(37,40,58,0.65), transparent);
     }
 
     .logo-img {
-      height: 32px;
+      height: 28px;
       width: auto;
       display: block;
-      filter: brightness(0) invert(1);
-      opacity: 0.95;
     }
 
     .header-contact {
-      font-size: 12px;
-      letter-spacing: 2px;
+      font-family: 'Alliance No.1', sans-serif;
+      font-weight: 400;
+      font-size: 11px;
+      letter-spacing: 2.5px;
       color: var(--white);
       text-transform: uppercase;
       text-decoration: none;
-      border: 1px solid rgba(255,255,255,0.6);
-      padding: 8px 20px;
+      border: 1px solid rgba(255,255,255,0.5);
+      padding: 10px 28px;
       transition: background 0.2s, border-color 0.2s;
     }
-
     .header-contact:hover {
-      background: rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.1);
       border-color: var(--white);
     }
 
-    /* ── HERO ───────────────────────────────────────── */
+    /* ── HERO ─────────────────────────────────────────── */
     .hero {
       position: relative;
-      height: 88vh;
-      min-height: 520px;
+      height: 90vh;
+      min-height: 560px;
       overflow: hidden;
     }
 
@@ -80,7 +107,7 @@
       background-image: url('fotos/04-salon.jpeg');
       background-size: cover;
       background-position: center 30%;
-      filter: brightness(0.52);
+      filter: brightness(0.42);
     }
 
     .hero-content {
@@ -88,118 +115,120 @@
       height: 100%;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 0 48px;
+      align-items: flex-start;
+      justify-content: flex-end;
+      padding: 0 56px 72px;
     }
 
     .hero-eyebrow {
-      font-size: 12px;
-      letter-spacing: 5px;
+      font-family: 'Alliance No.1', sans-serif;
+      font-weight: 300;
+      font-size: 11px;
+      letter-spacing: 4px;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.75);
+      color: rgba(255,255,255,0.55);
       margin-bottom: 20px;
     }
 
     .hero-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(36px, 6vw, 68px);
-      font-weight: 700;
+      font-family: 'Alliance No.1', sans-serif;
+      font-weight: 300;
+      font-size: clamp(40px, 5.5vw, 72px);
       color: var(--white);
-      line-height: 1.1;
-      max-width: 800px;
+      line-height: 1.05;
+      max-width: 720px;
       margin-bottom: 40px;
     }
 
-    .btn-cta {
-      display: inline-flex;
+    .hero-actions {
+      display: flex;
+      gap: 12px;
       align-items: center;
-      gap: 10px;
-      background: var(--accent);
+      flex-wrap: wrap;
+    }
+
+    .btn-cta {
+      font-family: 'Alliance No.1', sans-serif;
+      font-weight: 400;
+      font-size: 11px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
       color: var(--white);
       text-decoration: none;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      padding: 18px 44px;
-      transition: background 0.2s, transform 0.15s;
+      border: 1px solid rgba(255,255,255,0.55);
+      padding: 13px 36px;
+      transition: background 0.2s, border-color 0.2s;
     }
-
     .btn-cta:hover {
-      background: var(--accent-dk);
-      transform: translateY(-2px);
+      background: rgba(255,255,255,0.1);
+      border-color: var(--white);
     }
 
-    /* ── INFO STRIP ─────────────────────────────────── */
+    .btn-pdf {
+      font-family: 'Alliance No.1', sans-serif;
+      font-weight: 400;
+      font-size: 11px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 13px 0;
+      transition: color 0.2s;
+    }
+    .btn-pdf:hover { color: var(--white); }
+    .btn-pdf svg { width: 14px; height: 14px; fill: currentColor; flex-shrink: 0; }
+
+    /* ── INFO STRIP ───────────────────────────────────── */
     .info-strip {
-      background: var(--dark);
+      background: var(--brand-blue);
       display: grid;
       grid-template-columns: 1fr 1fr;
     }
 
     .info-card {
-      padding: 28px 40px;
-      display: flex;
-      align-items: flex-start;
-      gap: 16px;
-      border-right: 1px solid rgba(255,255,255,0.08);
+      padding: 36px 56px;
+      border-right: 1px solid rgba(255,255,255,0.07);
     }
-
     .info-card:last-child { border-right: none; }
 
-    .info-icon {
-      width: 40px;
-      height: 40px;
-      background: rgba(158,134,86,0.15);
-      border: 1px solid rgba(158,134,86,0.3);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .info-icon svg {
-      width: 18px;
-      height: 18px;
-      stroke: var(--accent);
-      fill: none;
-      stroke-width: 1.6;
-    }
-
     .info-label {
-      font-size: 9px;
+      font-family: 'Alliance No.1', sans-serif;
+      font-weight: 300;
+      font-size: 10px;
       letter-spacing: 3px;
       text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 6px;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 10px;
     }
 
     .info-value {
-      font-family: 'Playfair Display', serif;
-      font-size: 20px;
-      font-weight: 600;
+      font-family: 'Alliance No.1', sans-serif;
+      font-weight: 300;
+      font-size: 26px;
       color: var(--white);
-      line-height: 1.2;
-      margin-bottom: 4px;
+      line-height: 1.15;
+      margin-bottom: 6px;
     }
 
     .info-sub {
       font-size: 12px;
-      color: rgba(255,255,255,0.45);
-      line-height: 1.6;
+      font-weight: 300;
+      color: rgba(255,255,255,0.38);
+      line-height: 1.7;
     }
 
-    /* ── GALLERY ────────────────────────────────────── */
+    /* ── GALERÍA ──────────────────────────────────────── */
     .gallery-strip {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 4px;
+      gap: 3px;
     }
 
     .gallery-strip .g-item {
-      height: 260px;
+      height: 280px;
       overflow: hidden;
       cursor: pointer;
     }
@@ -208,239 +237,195 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.4s;
+      transition: transform 0.5s ease;
       display: block;
     }
+    .gallery-strip .g-item:hover img { transform: scale(1.03); }
 
-    .gallery-strip .g-item:hover img { transform: scale(1.04); }
-
-    /* ── DESCRIPTION ────────────────────────────────── */
+    /* ── DESCRIPCIÓN ──────────────────────────────────── */
     .desc-section {
-      padding: 80px 48px;
+      padding: 96px 56px;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 64px;
+      gap: 80px;
       align-items: center;
     }
 
-    .desc-tag {
+    .section-eyebrow {
+      font-family: 'Alliance No.1', sans-serif;
+      font-weight: 300;
       font-size: 10px;
       letter-spacing: 3px;
       text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 16px;
+      color: var(--beige);
+      margin-bottom: 20px;
     }
 
     .desc-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(26px, 3vw, 38px);
-      font-weight: 600;
-      color: var(--dark);
-      line-height: 1.2;
-      margin-bottom: 20px;
+      font-family: 'Alliance No.1', sans-serif;
+      font-weight: 300;
+      font-size: clamp(28px, 3vw, 42px);
+      color: var(--brand-blue);
+      line-height: 1.1;
+      margin-bottom: 28px;
     }
 
     .desc-text {
       font-size: 14px;
-      color: var(--grey-mid);
-      line-height: 1.8;
-      margin-bottom: 28px;
+      font-weight: 300;
+      color: var(--dark-gray);
+      line-height: 1.9;
+      margin-bottom: 32px;
     }
 
     .badge-entrega {
-      display: inline-block;
-      border: 1px solid var(--accent);
-      color: var(--accent);
-      font-size: 11px;
-      letter-spacing: 2px;
+      font-family: 'Alliance No.1', sans-serif;
+      font-weight: 400;
+      font-size: 10px;
+      letter-spacing: 2.5px;
       text-transform: uppercase;
-      padding: 8px 18px;
-      font-weight: 600;
+      color: var(--brand-blue);
+      border: 1px solid var(--brand-blue);
+      padding: 10px 22px;
+      display: inline-block;
     }
 
     .desc-img {
       width: 100%;
-      height: 420px;
+      height: 500px;
       object-fit: cover;
       display: block;
     }
 
-    /* ── INFO GENERAL ───────────────────────────────── */
+    /* ── FICHA TÉCNICA ────────────────────────────────── */
     .ficha-section {
-      background: var(--grey-light);
-      padding: 56px 48px;
+      background: var(--light-beige);
+      padding: 72px 56px;
     }
 
-    .ficha-label {
-      font-size: 10px;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      color: var(--grey-mid);
-      margin-bottom: 32px;
-    }
-
-    .ficha-grid {
+    .ficha-list {
       display: grid;
-      grid-template-columns: repeat(7, 1fr);
-      gap: 0;
-      border: 1px solid #E0E0E0;
-      background: #E0E0E0;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 48px;
     }
 
     .ficha-item {
-      background: var(--white);
-      padding: 20px 16px;
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      gap: 8px;
-    }
-
-    .ficha-item-icon {
-      width: 36px;
-      height: 36px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .ficha-item-icon svg {
-      width: 22px;
-      height: 22px;
-      stroke: var(--grey-mid);
-      fill: none;
-      stroke-width: 1.5;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 15px 0;
+      border-bottom: 1px solid rgba(37,40,58,0.12);
     }
 
     .ficha-item-sub {
-      font-size: 9px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--grey-mid);
+      font-family: 'Alliance No.1', sans-serif;
+      font-weight: 300;
+      font-size: 13px;
+      color: var(--dark-gray);
     }
 
     .ficha-item-val {
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--dark);
+      font-family: 'Alliance No.1', sans-serif;
+      font-weight: 400;
+      font-size: 13px;
+      color: var(--brand-blue);
     }
 
-    /* ── UBICACIÓN ──────────────────────────────────── */
+    /* ── UBICACIÓN ────────────────────────────────────── */
     .ubicacion-section {
-      padding: 72px 48px;
+      padding: 96px 56px;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 48px;
+      gap: 64px;
       align-items: start;
     }
 
     .ubicacion-map {
       width: 100%;
-      height: 340px;
+      height: 380px;
       border: none;
       display: block;
-      filter: grayscale(20%);
+      filter: grayscale(25%);
     }
 
     .ubicacion-content { display: flex; flex-direction: column; gap: 20px; }
 
     .ubicacion-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 30px;
-      font-weight: 600;
-      color: var(--dark);
+      font-family: 'Alliance No.1', sans-serif;
+      font-weight: 300;
+      font-size: clamp(28px, 3vw, 40px);
+      color: var(--brand-blue);
+      line-height: 1.1;
     }
 
     .ubicacion-text {
       font-size: 14px;
-      color: var(--grey-mid);
-      line-height: 1.8;
+      font-weight: 300;
+      color: var(--dark-gray);
+      line-height: 1.9;
     }
-
-    .ubicacion-text strong { color: var(--dark); }
+    .ubicacion-text strong { color: var(--brand-blue); font-weight: 500; }
 
     .ubicacion-tags {
       display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
+      flex-direction: column;
       margin-top: 8px;
     }
 
     .ubicacion-tag {
-      font-size: 11px;
-      letter-spacing: 1px;
-      color: var(--grey-dark);
-      border: 1px solid #D0D0D0;
-      padding: 6px 14px;
+      font-family: 'Alliance No.1', sans-serif;
+      font-weight: 300;
+      font-size: 13px;
+      color: var(--dark-gray);
+      padding: 13px 0;
+      border-bottom: 1px solid var(--light-gray);
     }
 
-    /* ── SERVICIOS ──────────────────────────────────── */
+    /* ── SERVICIOS ────────────────────────────────────── */
     .servicios-section {
-      background: var(--grey-light);
-      padding: 56px 48px;
+      background: var(--light-beige);
+      padding: 72px 56px;
     }
 
-    .servicios-label {
-      font-size: 10px;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      color: var(--grey-mid);
-      margin-bottom: 32px;
-    }
-
-    .servicios-grid {
+    .servicios-list {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 48px;
     }
 
     .servicio-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
-      background: var(--white);
-      padding: 24px 16px;
+      font-family: 'Alliance No.1', sans-serif;
+      font-weight: 300;
+      font-size: 13px;
+      color: var(--dark-gray);
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(37,40,58,0.12);
     }
 
-    .servicio-item svg {
-      width: 28px;
-      height: 28px;
-      stroke: var(--accent);
-      fill: none;
-      stroke-width: 1.5;
-    }
-
-    .servicio-name {
-      font-size: 12px;
-      color: var(--grey-dark);
-      text-align: center;
-      letter-spacing: 0.5px;
-    }
-
-    /* ── CTA FINAL ──────────────────────────────────── */
+    /* ── CTA FINAL ────────────────────────────────────── */
     .cta-section {
-      background: var(--dark);
-      padding: 80px 48px;
+      background: var(--brand-blue);
+      padding: 96px 56px;
       text-align: center;
     }
 
     .cta-question {
-      font-size: 12px;
+      font-family: 'Alliance No.1', sans-serif;
+      font-weight: 300;
+      font-size: 11px;
       letter-spacing: 3px;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.5);
-      margin-bottom: 20px;
+      color: rgba(255,255,255,0.38);
+      margin-bottom: 24px;
     }
 
     .cta-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(30px, 4vw, 50px);
-      font-weight: 700;
+      font-family: 'Alliance No.1', sans-serif;
+      font-weight: 300;
+      font-size: clamp(34px, 4.5vw, 58px);
       color: var(--white);
-      line-height: 1.15;
-      margin-bottom: 40px;
+      line-height: 1.1;
+      margin-bottom: 48px;
     }
 
     .cta-buttons {
@@ -453,44 +438,42 @@
     .btn-call {
       display: inline-flex;
       align-items: center;
-      gap: 12px;
-      background: var(--accent);
-      color: var(--white);
+      gap: 10px;
+      background: var(--white);
+      color: var(--brand-blue);
       text-decoration: none;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 3px;
+      font-family: 'Alliance No.1', sans-serif;
+      font-weight: 400;
+      font-size: 11px;
+      letter-spacing: 2.5px;
       text-transform: uppercase;
-      padding: 20px 48px;
-      transition: background 0.2s, transform 0.15s;
+      padding: 18px 48px;
+      transition: background 0.2s;
     }
-
-    .btn-call:hover { background: var(--accent-dk); transform: translateY(-2px); }
-
-    .btn-call svg { width: 18px; height: 18px; fill: currentColor; }
+    .btn-call:hover { background: var(--light-beige); }
 
     .btn-wa {
       display: inline-flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       background: transparent;
-      color: rgba(255,255,255,0.7);
+      color: rgba(255,255,255,0.6);
       text-decoration: none;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 3px;
+      font-family: 'Alliance No.1', sans-serif;
+      font-weight: 400;
+      font-size: 11px;
+      letter-spacing: 2.5px;
       text-transform: uppercase;
-      padding: 20px 48px;
-      border: 1px solid rgba(255,255,255,0.2);
+      padding: 18px 48px;
+      border: 1px solid rgba(255,255,255,0.22);
       transition: border-color 0.2s, color 0.2s;
     }
-
     .btn-wa:hover { border-color: rgba(255,255,255,0.6); color: var(--white); }
 
-    /* ── FOOTER ─────────────────────────────────────── */
+    /* ── FOOTER ───────────────────────────────────────── */
     footer {
       background: var(--black);
-      padding: 24px 48px;
+      padding: 28px 56px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -498,23 +481,34 @@
       gap: 12px;
     }
 
-    .footer-logo { height: 24px; filter: brightness(0) invert(1); opacity: 0.5; }
+    .footer-logo { height: 22px; width: auto; display: block; }
 
-    .footer-copy { font-size: 11px; color: rgba(255,255,255,0.3); letter-spacing: 1px; }
+    .footer-copy {
+      font-family: 'Alliance No.1', sans-serif;
+      font-weight: 300;
+      font-size: 11px;
+      color: rgba(255,255,255,0.28);
+      letter-spacing: 1px;
+    }
 
-    .footer-address { font-size: 11px; color: rgba(255,255,255,0.3); text-align: right; }
+    .footer-address {
+      font-family: 'Alliance No.1', sans-serif;
+      font-weight: 300;
+      font-size: 11px;
+      color: rgba(255,255,255,0.28);
+      text-align: right;
+    }
 
-    /* ── LIGHTBOX ───────────────────────────────────── */
+    /* ── LIGHTBOX ─────────────────────────────────────── */
     .lightbox {
       display: none;
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.93);
+      background: rgba(0,0,0,0.95);
       z-index: 1000;
       align-items: center;
       justify-content: center;
     }
-
     .lightbox.open { display: flex; }
 
     .lightbox img {
@@ -525,87 +519,61 @@
 
     .lb-close {
       position: absolute;
-      top: 20px; right: 28px;
-      color: rgba(255,255,255,0.7);
-      font-size: 36px;
+      top: 24px; right: 32px;
+      color: rgba(255,255,255,0.55);
+      font-size: 30px;
       cursor: pointer;
       background: none;
       border: none;
       line-height: 1;
+      font-family: 'Alliance No.1', sans-serif;
+      font-weight: 300;
     }
 
     .lb-nav {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      color: rgba(255,255,255,0.6);
-      font-size: 48px;
+      color: rgba(255,255,255,0.45);
+      font-size: 44px;
       cursor: pointer;
       background: none;
       border: none;
-      padding: 0 20px;
+      padding: 0 24px;
       line-height: 1;
+      font-family: 'Alliance No.1', sans-serif;
+      font-weight: 300;
     }
-
     .lb-prev { left: 0; }
     .lb-next { right: 0; }
 
-    /* ── RESPONSIVE ─────────────────────────────────── */
+    /* ── RESPONSIVE ───────────────────────────────────── */
     @media (max-width: 860px) {
-      header { padding: 16px 20px; }
-      .hero { height: 70vh; min-height: 460px; }
-      .hero-content { padding: 0 24px; }
+      header { padding: 20px 24px; }
+      .hero { height: 72vh; min-height: 480px; }
+      .hero-content { padding: 0 24px 48px; }
       .info-strip { grid-template-columns: 1fr; }
-      .info-card { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); padding: 24px; }
+      .info-card { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); padding: 28px 24px; }
       .gallery-strip { grid-template-columns: repeat(2, 1fr); }
       .gallery-strip .g-item { height: 200px; }
-      .desc-section { grid-template-columns: 1fr; padding: 48px 24px; gap: 32px; }
-      .desc-img { height: 260px; }
-      .ficha-section { padding: 40px 24px; }
-      .ficha-grid { grid-template-columns: repeat(3, 1fr); }
-      .ubicacion-section { grid-template-columns: 1fr; padding: 48px 24px; }
-      .ubicacion-map { height: 260px; }
-      .servicios-section { padding: 40px 24px; }
-      .servicios-grid { grid-template-columns: repeat(2, 1fr); }
-      .cta-section { padding: 56px 24px; }
-      footer { padding: 20px 24px; flex-direction: column; align-items: flex-start; }
+      .desc-section { grid-template-columns: 1fr; padding: 56px 24px; gap: 40px; }
+      .desc-img { height: 300px; }
+      .ficha-section, .servicios-section { padding: 48px 24px; }
+      .ficha-list, .servicios-list { grid-template-columns: 1fr; column-gap: 0; }
+      .ubicacion-section { grid-template-columns: 1fr; padding: 56px 24px; gap: 40px; }
+      .ubicacion-map { height: 280px; }
+      .cta-section { padding: 64px 24px; }
+      footer { padding: 24px; flex-direction: column; align-items: flex-start; }
       .footer-address { text-align: left; }
     }
 
     @media (max-width: 480px) {
-      header { padding: 12px 16px; }
-      .logo-img { height: 26px; }
-      .hero { height: 60vh; min-height: 400px; }
-      .hero-content { padding: 0 16px; }
-      .hero-eyebrow { font-size: 10px; letter-spacing: 2px; }
-      .hero-title { font-size: clamp(26px, 7vw, 42px); }
-      .hero-subtitle { font-size: 14px; }
-      .info-strip { padding: 0; }
-      .info-card { padding: 20px 16px; }
-      .info-label { font-size: 9px; }
-      .info-value { font-size: 15px; }
+      .hero { height: 64vh; min-height: 400px; }
+      .hero-title { font-size: clamp(30px, 8vw, 48px); }
       .gallery-strip { grid-template-columns: 1fr; }
       .gallery-strip .g-item { height: 220px; }
-      .desc-section { padding: 36px 16px; gap: 24px; }
-      .desc-img { height: auto; max-height: 280px; }
-      .desc-title { font-size: clamp(20px, 5.5vw, 28px); }
-      .desc-text { font-size: 14px; }
-      .ficha-section { padding: 32px 16px; }
-      .ficha-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-      .ficha-item { padding: 14px 12px; }
-      .ficha-label { font-size: 9px; }
-      .ficha-value { font-size: 13px; }
-      .ubicacion-section { padding: 36px 16px; }
-      .ubicacion-title { font-size: clamp(20px, 5.5vw, 28px); }
-      .ubicacion-map { height: 220px; }
-      .servicios-section { padding: 32px 16px; }
-      .servicios-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-      .servicio-item { padding: 16px 12px; }
-      .cta-section { padding: 40px 16px; }
-      .cta-title { font-size: clamp(22px, 6vw, 34px); }
       .cta-buttons { flex-direction: column; gap: 12px; }
-      .btn-primary, .btn-secondary { width: 100%; text-align: center; padding: 14px 20px; justify-content: center; }
-      footer { padding: 20px 16px; }
+      .btn-call, .btn-wa { width: 100%; justify-content: center; }
     }
   </style>
 </head>
@@ -613,7 +581,7 @@
 
   <!-- HEADER -->
   <header>
-    <img class="logo-img" src="../pensaer-logo.png" alt="æ Pensaer Desarrollos" />
+    <img class="logo-img" src="../pensaer-logo.png" alt="Pensaer Desarrollos" />
     <a href="tel:+5493416980855" class="header-contact">Contactar</a>
   </header>
 
@@ -621,37 +589,33 @@
   <section class="hero">
     <div class="hero-bg"></div>
     <div class="hero-content">
-      <p class="hero-eyebrow">Oficina en venta</p>
-      <h1 class="hero-title">Espacio amplio, luminoso<br>y listo para trabajar.</h1>
-      <a href="tel:+5493416980855" class="btn-cta">Consultar ahora</a>
+      <p class="hero-eyebrow">Oficina en venta · San Lorenzo 1725</p>
+      <h1 class="hero-title">Espacio amplio,<br>luminoso y listo<br>para trabajar.</h1>
+      <div class="hero-actions">
+        <a href="tel:+5493416980855" class="btn-cta">Consultar ahora</a>
+        <a href="ficha.pdf" download="Pensaer - Oficina San Lorenzo 1725.pdf" class="btn-pdf">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 16l-4-4h2.5V4h3v8H16l-4 4zm-7 4h14v-2H5v2z"/></svg>
+          Descargar ficha PDF
+        </a>
+      </div>
     </div>
   </section>
 
   <!-- INFO STRIP -->
   <div class="info-strip">
     <div class="info-card">
-      <div class="info-icon">
-        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-      </div>
-      <div>
-        <p class="info-label">Ubicación</p>
-        <p class="info-value">San Lorenzo 1725</p>
-        <p class="info-sub">Zona centro · Rosario · Santa Fe</p>
-      </div>
+      <p class="info-label">Ubicación</p>
+      <p class="info-value">San Lorenzo 1725</p>
+      <p class="info-sub">Zona centro · Rosario · Santa Fe</p>
     </div>
     <div class="info-card">
-      <div class="info-icon">
-        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M9 3v18M15 3v18M3 9h18M3 15h18"/></svg>
-      </div>
-      <div>
-        <p class="info-label">Superficies y medidas</p>
-        <p class="info-value">110,25 m² equivalentes</p>
-        <p class="info-sub">Sup. exclusiva cubierta: 93 m²<br>Sup. patio (semi-cubierto): 34,5 m²</p>
-      </div>
+      <p class="info-label">Superficies</p>
+      <p class="info-value">110,25 m² equivalentes</p>
+      <p class="info-sub">Cubierta: 93 m² · Patio semi-cubierto: 34,5 m²</p>
     </div>
   </div>
 
-  <!-- GALLERY -->
+  <!-- GALERÍA -->
   <div class="gallery-strip">
     <div class="g-item" onclick="openLb(0)">
       <img src="fotos/03-interior-patio.jpeg" alt="Interior con vista al patio" />
@@ -667,11 +631,11 @@
   <!-- DESCRIPCIÓN -->
   <section class="desc-section">
     <div>
-      <p class="desc-tag">El espacio</p>
+      <p class="section-eyebrow">El espacio</p>
       <h2 class="desc-title">Funcionalidad y ubicación en un solo espacio.</h2>
       <p class="desc-text">
         Oficina en venta ubicada sobre calle San Lorenzo, entre Italia y España, en pleno centro de Rosario. Amplia oficina al contrafrente, vidriada a patio interno.<br><br>
-        El espacio cuenta con 2 baños, office y sala de reuniones separada con tabiques de vidrio tipo loft. Placares completos, alacenas, y baño mesada completos. Incluye termotanque eléctrico. Preinstalación de AA. Orientación Sur.
+        El espacio cuenta con 2 baños, office y sala de reuniones separada con tabiques de vidrio tipo loft. Placares completos, alacenas y baño mesada. Incluye termotanque eléctrico. Preinstalación de AA. Orientación Sur.
       </p>
       <span class="badge-entrega">Entrega inmediata</span>
     </div>
@@ -680,65 +644,40 @@
 
   <!-- FICHA TÉCNICA -->
   <section class="ficha-section">
-    <p class="ficha-label">Información general</p>
-    <div class="ficha-grid">
-
+    <p class="section-eyebrow">Información general</p>
+    <div class="ficha-list">
       <div class="ficha-item">
-        <div class="ficha-item-icon">
-          <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-        </div>
         <span class="ficha-item-sub">Ambiente</span>
         <span class="ficha-item-val">1</span>
       </div>
-
       <div class="ficha-item">
-        <div class="ficha-item-icon">
-          <svg viewBox="0 0 24 24"><path d="M4 12h16M4 12a4 4 0 004-4V4M4 12a4 4 0 004 4v4M20 12a4 4 0 01-4 4v4M20 12a4 4 0 01-4-4V4"/></svg>
-        </div>
         <span class="ficha-item-sub">Baños</span>
         <span class="ficha-item-val">2</span>
       </div>
-
       <div class="ficha-item">
-        <div class="ficha-item-icon">
-          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-        </div>
         <span class="ficha-item-sub">Condición</span>
         <span class="ficha-item-val">Excelente</span>
       </div>
-
       <div class="ficha-item">
-        <div class="ficha-item-icon">
-          <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-        </div>
         <span class="ficha-item-sub">Antigüedad</span>
         <span class="ficha-item-val">4 años</span>
       </div>
-
       <div class="ficha-item">
-        <div class="ficha-item-icon">
-          <svg viewBox="0 0 24 24"><path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11M8 14v3M12 14v3M16 14v3"/></svg>
-        </div>
         <span class="ficha-item-sub">Planta</span>
         <span class="ficha-item-val">1°</span>
       </div>
-
       <div class="ficha-item">
-        <div class="ficha-item-icon">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2v10l4 4"/></svg>
-        </div>
         <span class="ficha-item-sub">Orientación</span>
         <span class="ficha-item-val">Sur</span>
       </div>
-
       <div class="ficha-item">
-        <div class="ficha-item-icon">
-          <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
-        </div>
         <span class="ficha-item-sub">Uso</span>
         <span class="ficha-item-val">Oficina</span>
       </div>
-
+      <div class="ficha-item">
+        <span class="ficha-item-sub">Superficie equivalente</span>
+        <span class="ficha-item-val">110,25 m²</span>
+      </div>
     </div>
   </section>
 
@@ -753,10 +692,11 @@
     ></iframe>
 
     <div class="ubicacion-content">
+      <p class="section-eyebrow">Dónde encontrarnos</p>
       <h2 class="ubicacion-title">Ubicación</h2>
       <p class="ubicacion-text">
-        Propiedad ubicada sobre una de las principales calles del centro de la ciudad de Rosario.
-        <strong> San Lorenzo entre Italia y España.</strong> Zona comercial y de servicios de alta demanda.
+        Propiedad ubicada sobre una de las principales calles del centro de Rosario.
+        <strong>San Lorenzo entre Italia y España.</strong> Zona comercial y de servicios de alta demanda.
       </p>
       <div class="ubicacion-tags">
         <span class="ubicacion-tag">Zona centro</span>
@@ -770,24 +710,12 @@
 
   <!-- SERVICIOS -->
   <section class="servicios-section">
-    <p class="servicios-label">Servicios</p>
-    <div class="servicios-grid">
-      <div class="servicio-item">
-        <svg viewBox="0 0 24 24"><path d="M12 22a9 9 0 01-9-9c0-4.97 4-9 9-9s9 4.03 9 9a9 9 0 01-9 9z"/><path d="M12 13a3 3 0 100-6 3 3 0 000 6zM6.168 18.849A4.002 4.002 0 0110 16h4a4.002 4.002 0 013.832 2.849"/></svg>
-        <span class="servicio-name">Agua corriente</span>
-      </div>
-      <div class="servicio-item">
-        <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-        <span class="servicio-name">Electricidad</span>
-      </div>
-      <div class="servicio-item">
-        <svg viewBox="0 0 24 24"><rect x="2" y="18" width="20" height="3" rx="1"/><path d="M4 18V8a2 2 0 012-2h12a2 2 0 012 2v10M9 18v-5h6v5"/></svg>
-        <span class="servicio-name">Pavimento</span>
-      </div>
-      <div class="servicio-item">
-        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15v-4H7l5-8v4h4l-5 8z"/></svg>
-        <span class="servicio-name">Gas natural</span>
-      </div>
+    <p class="section-eyebrow">Servicios</p>
+    <div class="servicios-list">
+      <span class="servicio-item">Agua corriente</span>
+      <span class="servicio-item">Electricidad</span>
+      <span class="servicio-item">Pavimento</span>
+      <span class="servicio-item">Gas natural</span>
     </div>
   </section>
 
@@ -796,21 +724,15 @@
     <p class="cta-question">¿Te interesa esta unidad?</p>
     <h2 class="cta-title">Consultá ahora y<br>coordiná una visita.</h2>
     <div class="cta-buttons">
-      <a href="tel:+5493416980855" class="btn-call">
-        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.95 12a19.79 19.79 0 01-3.07-8.67A2 2 0 012.87 1.18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.78a16 16 0 006.29 6.29l1.67-1.21a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-        Llamar ahora
-      </a>
-      <a href="https://wa.me/5493416980855?text=Hola%2C%20me%20interesa%20la%20Oficina%201C%20en%20San%20Lorenzo%201725%2C%20Rosario" class="btn-wa" target="_blank" rel="noopener">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="rgba(255,255,255,0.7)" stroke="none"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        WhatsApp
-      </a>
+      <a href="tel:+5493416980855" class="btn-call">Llamar ahora</a>
+      <a href="https://wa.me/5493416980855?text=Hola%2C%20me%20interesa%20la%20Oficina%201C%20en%20San%20Lorenzo%201725%2C%20Rosario" class="btn-wa" target="_blank" rel="noopener">WhatsApp</a>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer>
     <img class="footer-logo" src="../pensaer-logo.png" alt="Pensaer" />
-    <span class="footer-copy">© 2024 Pensaer · pensaer.com.ar</span>
+    <span class="footer-copy">© 2025 Pensaer · pensaer.com.ar</span>
     <span class="footer-address">Córdoba 1336 Piso 3 · Rosario, Santa Fe</span>
   </footer>
 
