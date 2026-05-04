@@ -3,11 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <title>Ficha &middot; Elysian Lagos 06-01 &middot; Pensaer</title>
-
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500&display=swap" rel="stylesheet" />
-
   <style>
     @font-face {
       font-family: 'Alliance No.1';
@@ -24,7 +22,6 @@
       src: url('../manual/tipografia/Alliance No.1 Bold.otf') format('opentype');
       font-weight: 700; font-style: normal;
     }
-
     :root {
       --brand-blue:  #25283A;
       --beige:       #A99C8D;
@@ -33,147 +30,166 @@
       --light-gray:  #E8E8E8;
       --white:       #FFFFFF;
     }
-
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
     html, body {
-      width: 210mm;
-      height: 297mm;
+      width: 210mm; height: 297mm;
       font-family: 'Sora', sans-serif;
-      background: var(--white);
-      color: var(--brand-blue);
-      -webkit-print-color-adjust: exact;
-      print-color-adjust: exact;
+      background: var(--white); color: var(--brand-blue);
+      -webkit-print-color-adjust: exact; print-color-adjust: exact;
     }
+    .page { width: 210mm; height: 297mm; display: flex; flex-direction: column; overflow: hidden; }
 
-    .page {
-      width: 210mm;
-      height: 297mm;
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
-    }
-
+    /* HEADER */
     .header {
-      background: var(--brand-blue);
-      padding: 14px 24px;
-      display: flex; align-items: center; justify-content: space-between;
-      flex-shrink: 0;
+      background: var(--brand-blue); padding: 12px 22px;
+      display: flex; align-items: center; justify-content: space-between; flex-shrink: 0;
     }
-    .header-logo { height: 20px; width: auto; display: block; }
+    .header-logo { height: 18px; width: auto; display: block; }
     .header-tag {
-      font-family: 'Alliance No.1', sans-serif;
-      font-weight: 300; font-size: 8px;
-      letter-spacing: 2.5px; text-transform: uppercase;
+      font-family: 'Alliance No.1', sans-serif; font-weight: 300;
+      font-size: 7.5px; letter-spacing: 2.5px; text-transform: uppercase;
       color: rgba(255,255,255,0.45);
     }
 
+    /* HERO PHOTO */
     .hero-photo {
-      width: 100%; height: 72mm;
+      width: 100%; height: 55mm;
       object-fit: cover; object-position: center 30%;
       display: block; flex-shrink: 0;
     }
 
-    .id-bar {
+    /* STATS BAR */
+    .stats-bar {
       background: var(--light-beige);
-      padding: 11px 24px;
-      display: flex; align-items: baseline; justify-content: space-between;
+      display: grid; grid-template-columns: 1fr 1fr 1fr 1fr;
       flex-shrink: 0;
       border-bottom: 1px solid rgba(37,40,58,0.1);
     }
-    .id-title {
-      font-family: 'Alliance No.1', sans-serif;
-      font-weight: 300; font-size: 17px;
-      color: var(--brand-blue); line-height: 1;
+    .stat-cell {
+      padding: 9px 18px;
+      border-right: 1px solid rgba(37,40,58,0.1);
     }
-    .id-badge {
-      font-family: 'Alliance No.1', sans-serif;
-      font-weight: 400; font-size: 8px;
-      letter-spacing: 2px; text-transform: uppercase;
-      color: var(--brand-blue);
-      border: 1px solid var(--brand-blue);
-      padding: 4px 10px;
-      white-space: nowrap;
+    .stat-cell:last-child { border-right: none; }
+    .stat-label {
+      font-family: 'Alliance No.1', sans-serif; font-weight: 300;
+      font-size: 7px; letter-spacing: 2px; text-transform: uppercase;
+      color: var(--beige); margin-bottom: 3px;
+    }
+    .stat-value {
+      font-family: 'Alliance No.1', sans-serif; font-weight: 300;
+      font-size: 14px; color: var(--brand-blue); line-height: 1;
+    }
+    .stat-badge {
+      font-family: 'Alliance No.1', sans-serif; font-weight: 400;
+      font-size: 7px; letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--brand-blue); border: 1px solid var(--brand-blue);
+      padding: 3px 8px; display: inline-block; margin-top: 4px;
     }
 
-    .body {
-      display: grid; grid-template-columns: 1fr 68mm;
-      flex: 1; overflow: hidden;
-    }
+    /* BODY */
+    .body { display: grid; grid-template-columns: 1fr 70mm; flex: 1; overflow: hidden; }
 
+    /* LEFT COLUMN */
     .col-left {
-      padding: 18px 22px;
-      display: flex; flex-direction: column; gap: 12px;
+      padding: 14px 18px;
+      display: flex; flex-direction: column; gap: 10px;
       border-right: 1px solid var(--light-gray);
       overflow: hidden;
     }
-    .col-eyebrow {
-      font-family: 'Alliance No.1', sans-serif;
-      font-weight: 300; font-size: 8px;
-      letter-spacing: 2.5px; text-transform: uppercase;
+    .left-section { display: flex; flex-direction: column; gap: 7px; }
+    .section-eyebrow {
+      font-family: 'Alliance No.1', sans-serif; font-weight: 300;
+      font-size: 7.5px; letter-spacing: 2.5px; text-transform: uppercase;
       color: var(--beige);
     }
+    .section-eyebrow.dark {
+      color: rgba(37,40,58,0.4);
+    }
     .col-desc {
-      font-size: 9px; font-weight: 300;
-      color: var(--dark-gray); line-height: 1.75;
+      font-size: 8.5px; font-weight: 300;
+      color: var(--dark-gray); line-height: 1.7;
+    }
+    .two-col-list {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+    }
+    .list-item {
+      font-family: 'Alliance No.1', sans-serif; font-weight: 300;
+      font-size: 8px; color: var(--dark-gray); line-height: 1.4;
+      padding: 4px 0;
+      border-bottom: 1px solid rgba(37,40,58,0.07);
+      padding-right: 6px;
+    }
+    .loc-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 2px; }
+    .loc-tag {
+      font-family: 'Alliance No.1', sans-serif; font-weight: 300;
+      font-size: 7.5px; color: var(--dark-gray);
+      border: 1px solid rgba(37,40,58,0.2);
+      padding: 3px 8px;
+    }
+    .loc-text {
+      font-size: 8px; font-weight: 300;
+      color: var(--dark-gray); line-height: 1.6;
     }
 
+    /* RIGHT COLUMN */
     .col-right {
       background: var(--brand-blue);
-      padding: 18px 16px;
-      display: flex; flex-direction: column;
+      padding: 14px 14px;
+      display: flex; flex-direction: column; gap: 0;
     }
-    .ficha-eyebrow {
-      font-family: 'Alliance No.1', sans-serif;
-      font-weight: 300; font-size: 8px;
-      letter-spacing: 2.5px; text-transform: uppercase;
-      color: rgba(255,255,255,0.35); margin-bottom: 12px;
+    .right-eyebrow {
+      font-family: 'Alliance No.1', sans-serif; font-weight: 300;
+      font-size: 7.5px; letter-spacing: 2.5px; text-transform: uppercase;
+      color: rgba(255,255,255,0.35); margin-bottom: 8px;
+    }
+    .right-separator {
+      border: none; border-top: 1px solid rgba(255,255,255,0.1);
+      margin: 10px 0;
     }
     .ficha-row {
       display: flex; justify-content: space-between; align-items: baseline;
-      padding: 8px 0;
+      padding: 6.5px 0;
       border-bottom: 1px solid rgba(255,255,255,0.07);
     }
     .ficha-row:last-of-type { border-bottom: none; }
     .ficha-key {
-      font-family: 'Alliance No.1', sans-serif;
-      font-weight: 300; font-size: 8.5px;
-      color: rgba(255,255,255,0.45);
+      font-family: 'Alliance No.1', sans-serif; font-weight: 300;
+      font-size: 8px; color: rgba(255,255,255,0.45);
     }
     .ficha-val {
-      font-family: 'Alliance No.1', sans-serif;
-      font-weight: 400; font-size: 9px;
-      color: var(--white);
+      font-family: 'Alliance No.1', sans-serif; font-weight: 400;
+      font-size: 8.5px; color: var(--white);
+      text-align: right; max-width: 55%;
     }
+    .svc-list { display: flex; flex-direction: column; gap: 0; }
+    .svc-item {
+      font-family: 'Alliance No.1', sans-serif; font-weight: 300;
+      font-size: 8px; color: rgba(255,255,255,0.6);
+      padding: 5px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .svc-item:last-child { border-bottom: none; }
 
     .contacto-block {
-      margin-top: auto; padding-top: 14px;
-      border-top: 1px solid rgba(255,255,255,0.1);
-    }
-    .contacto-eyebrow {
-      font-family: 'Alliance No.1', sans-serif;
-      font-weight: 300; font-size: 8px;
-      letter-spacing: 2px; text-transform: uppercase;
-      color: rgba(255,255,255,0.35); margin-bottom: 8px;
+      margin-top: auto; padding-top: 10px;
+      border-top: 1px solid rgba(255,255,255,0.12);
     }
     .contacto-line {
-      font-family: 'Alliance No.1', sans-serif;
-      font-weight: 300; font-size: 9px;
-      color: rgba(255,255,255,0.75); line-height: 1.7;
+      font-family: 'Alliance No.1', sans-serif; font-weight: 300;
+      font-size: 8.5px; color: rgba(255,255,255,0.7); line-height: 1.65;
     }
     .contacto-line strong { font-weight: 400; color: var(--white); }
+    .contacto-line.muted { color: rgba(255,255,255,0.3); font-size: 7.5px; margin-top: 4px; }
 
+    /* FOOTER */
     .footer {
-      background: var(--light-beige);
-      padding: 8px 24px;
+      background: var(--light-beige); padding: 7px 22px;
       display: flex; align-items: center; justify-content: space-between;
-      flex-shrink: 0;
-      border-top: 1px solid rgba(37,40,58,0.1);
+      flex-shrink: 0; border-top: 1px solid rgba(37,40,58,0.1);
     }
     .footer-copy, .footer-address {
-      font-family: 'Alliance No.1', sans-serif;
-      font-weight: 300; font-size: 7.5px;
-      color: var(--beige); letter-spacing: 1px;
+      font-family: 'Alliance No.1', sans-serif; font-weight: 300;
+      font-size: 7px; color: var(--beige); letter-spacing: 1px;
     }
     .footer-address { text-align: right; }
 
@@ -193,20 +209,66 @@
 
     <img class="hero-photo" src="../render_p15_ol.jpg" alt="Elysian Lagos" />
 
-    <div class="id-bar">
-      <h1 class="id-title">Departamento 2 dormitorios &middot; Ovidio Lagos 1163, Rosario</h1>
-      <span class="id-badge">Disponible de tercero</span>
+    <div class="stats-bar">
+      <div class="stat-cell">
+        <p class="stat-label">Tipo</p>
+        <p class="stat-value" style="font-size:11px; line-height:1.2;">Departamento 2 dormitorios</p>
+      </div>
+      <div class="stat-cell">
+        <p class="stat-label">Superficie</p>
+        <p class="stat-value">78,5 m&sup2;</p>
+      </div>
+      <div class="stat-cell">
+        <p class="stat-label">Precio de lista</p>
+        <p class="stat-value" style="font-size:12px;">USD 150.000</p>
+      </div>
+      <div class="stat-cell">
+        <p class="stat-label">Estado</p>
+        <span class="stat-badge">Disponible de tercero</span>
+      </div>
     </div>
 
     <div class="body">
 
       <div class="col-left">
-        <p class="col-eyebrow">El espacio</p>
-        <p class="col-desc">Departamento en venta en el edificio Elysian, sobre Ovidio Lagos 1163, en el barrio Pichincha. Unidades con terminaciones de primera línea y distribución inteligente.<br><br><br><br>Edificio Pensaer con lobby, ascensores y amenities de alto nivel. A metros del Parque Yrigoyen y con fácil acceso a todos los puntos de interés de Rosario.</p>
+
+        <div class="left-section">
+          <p class="section-eyebrow">El proyecto</p>
+          <p class="col-desc">Departamento en venta en el edificio Elysian, sobre Ovidio Lagos 1163, en el barrio Pichincha. Unidades con terminaciones de primera línea y distribución inteligente.<br><br><br><br>Edificio Pensaer con lobby, ascensores y amenities de alto nivel. A metros del Parque Yrigoyen y con fácil acceso a todos los puntos de interés de Rosario.</p>
+        </div>
+
+        <div class="left-section">
+          <p class="section-eyebrow">Caracter&iacute;sticas de las unidades</p>
+          <div class="two-col-list"><span class="list-item">Aberturas de aluminio y vidrios DVH térmico de primera línea</span>
+<span class="list-item">Puertas WPC (Wood Plastic Composite) con medida extendida</span>
+<span class="list-item">Pisos interiores de porcelanato con zócalo EPS blanco</span>
+<span class="list-item">Baños con pisos y paredes de porcelanato de primera calidad</span>
+<span class="list-item">Amoblamiento de cocina completo con mesada de primera línea</span>
+<span class="list-item">Anafe y horno empotrado marca Longvie, grifería FV, loza primera línea</span>
+<span class="list-item">Frente de placares e interiores completos en todos los dormitorios</span>
+<span class="list-item">Preinstalación de AA, lavarropas y calefacción por radiadores</span>
+</div>
+        </div>
+
+      <div class="left-section">
+        <p class="section-eyebrow">Amenidades del edificio</p>
+        <div class="two-col-list"><span class="list-item">Hall de ingreso vidriado con diseño</span>
+<span class="list-item">Ascensores</span>
+<span class="list-item">Parrillas en terraza</span>
+<span class="list-item">Bauleras disponibles</span>
+<span class="list-item">Espacios comunes equipados</span>
+</div>
+      </div>
+        <div class="left-section">
+          <p class="section-eyebrow">Ubicaci&oacute;n</p>
+          <p class="loc-text">Edificio Elysian sobre Ovidio Lagos en el barrio Pichincha. A metros del Parque Yrigoyen, una de las zonas residenciales más valoradas de Rosario.</p>
+          <div class="loc-tags"><span class="loc-tag">Barrio Pichincha</span><span class="loc-tag">Parque Yrigoyen</span><span class="loc-tag">Parque Independencia</span><span class="loc-tag">Transporte público</span></div>
+        </div>
+
       </div>
 
       <div class="col-right">
-        <p class="ficha-eyebrow">Ficha t&eacute;cnica</p>
+        <p class="right-eyebrow">Ficha t&eacute;cnica</p>
         <div class="ficha-row"><span class="ficha-key">Tipo</span><span class="ficha-val">Departamento</span></div>
         <div class="ficha-row"><span class="ficha-key">Dormitorios</span><span class="ficha-val">2</span></div>
         <div class="ficha-row"><span class="ficha-key">Baños</span><span class="ficha-val">2</span></div>
@@ -216,14 +278,22 @@
         <div class="ficha-row"><span class="ficha-key">Estado</span><span class="ficha-val">Disponible de tercero</span></div>
         <div class="ficha-row"><span class="ficha-key">Edificio</span><span class="ficha-val">Elysian Lagos</span></div>
 
+        <hr class="right-separator" />
+        <p class="right-eyebrow">Servicios</p>
+        <div class="svc-list">
+        <span class="svc-item">Agua corriente</span>
+        <span class="svc-item">Electricidad</span>
+        <span class="svc-item">Gas natural</span>
+        <span class="svc-item">Cloacas</span>
+        <span class="svc-item">Pavimento</span>
+        </div>
+
         <div class="contacto-block">
-          <p class="contacto-eyebrow">Contacto</p>
+          <p class="right-eyebrow">Contacto</p>
           <p class="contacto-line"><strong>Pensaer Desarrollos</strong></p>
           <p class="contacto-line">+54 9 341 698-0855</p>
           <p class="contacto-line">pensaer.com.ar</p>
-          <p class="contacto-line" style="margin-top:6px; color:rgba(255,255,255,0.3); font-size:7.5px;">
-            C&oacute;rdoba 1336 Piso 3 &middot; Rosario, Santa Fe
-          </p>
+          <p class="contacto-line muted">C&oacute;rdoba 1336 Piso 3 &middot; Rosario, Santa Fe</p>
         </div>
       </div>
 
