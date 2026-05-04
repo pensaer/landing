@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ficha &middot; Dynha Pellegrini 01-02 &middot; Pensaer</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    @font-face {
+      font-family: 'Alliance No.1';
+      src: url('../manual/tipografia/Alliance No.1 Light.otf') format('opentype');
+      font-weight: 300; font-style: normal;
+    }
+    @font-face {
+      font-family: 'Alliance No.1';
+      src: url('../manual/tipografia/Alliance No.1 Regular.otf') format('opentype');
+      font-weight: 400; font-style: normal;
+    }
+    @font-face {
+      font-family: 'Alliance No.1';
+      src: url('../manual/tipografia/Alliance No.1 Bold.otf') format('opentype');
+      font-weight: 700; font-style: normal;
+    }
+
+    :root {
+      --brand-blue:  #25283A;
+      --beige:       #A99C8D;
+      --light-beige: #EDE2D1;
+      --dark-gray:   #3A3A38;
+      --light-gray:  #E8E8E8;
+      --white:       #FFFFFF;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body {
+      width: 210mm;
+      height: 297mm;
+      font-family: 'Sora', sans-serif;
+      background: var(--white);
+      color: var(--brand-blue);
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .page {
+      width: 210mm;
+      height: 297mm;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .header {
+      background: var(--brand-blue);
+      padding: 14px 24px;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-shrink: 0;
+    }
+    .header-logo { height: 20px; width: auto; display: block; }
+    .header-tag {
+      font-family: 'Alliance No.1', sans-serif;
+      font-weight: 300; font-size: 8px;
+      letter-spacing: 2.5px; text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+    }
+
+    .hero-photo {
+      width: 100%; height: 72mm;
+      object-fit: cover; object-position: center 30%;
+      display: block; flex-shrink: 0;
+    }
+
+    .id-bar {
+      background: var(--light-beige);
+      padding: 11px 24px;
+      display: flex; align-items: baseline; justify-content: space-between;
+      flex-shrink: 0;
+      border-bottom: 1px solid rgba(37,40,58,0.1);
+    }
+    .id-title {
+      font-family: 'Alliance No.1', sans-serif;
+      font-weight: 300; font-size: 17px;
+      color: var(--brand-blue); line-height: 1;
+    }
+    .id-badge {
+      font-family: 'Alliance No.1', sans-serif;
+      font-weight: 400; font-size: 8px;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--brand-blue);
+      border: 1px solid var(--brand-blue);
+      padding: 4px 10px;
+      white-space: nowrap;
+    }
+
+    .body {
+      display: grid; grid-template-columns: 1fr 68mm;
+      flex: 1; overflow: hidden;
+    }
+
+    .col-left {
+      padding: 18px 22px;
+      display: flex; flex-direction: column; gap: 12px;
+      border-right: 1px solid var(--light-gray);
+      overflow: hidden;
+    }
+    .col-eyebrow {
+      font-family: 'Alliance No.1', sans-serif;
+      font-weight: 300; font-size: 8px;
+      letter-spacing: 2.5px; text-transform: uppercase;
+      color: var(--beige);
+    }
+    .col-desc {
+      font-size: 9px; font-weight: 300;
+      color: var(--dark-gray); line-height: 1.75;
+    }
+
+    .col-right {
+      background: var(--brand-blue);
+      padding: 18px 16px;
+      display: flex; flex-direction: column;
+    }
+    .ficha-eyebrow {
+      font-family: 'Alliance No.1', sans-serif;
+      font-weight: 300; font-size: 8px;
+      letter-spacing: 2.5px; text-transform: uppercase;
+      color: rgba(255,255,255,0.35); margin-bottom: 12px;
+    }
+    .ficha-row {
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .ficha-row:last-of-type { border-bottom: none; }
+    .ficha-key {
+      font-family: 'Alliance No.1', sans-serif;
+      font-weight: 300; font-size: 8.5px;
+      color: rgba(255,255,255,0.45);
+    }
+    .ficha-val {
+      font-family: 'Alliance No.1', sans-serif;
+      font-weight: 400; font-size: 9px;
+      color: var(--white);
+    }
+
+    .contacto-block {
+      margin-top: auto; padding-top: 14px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    .contacto-eyebrow {
+      font-family: 'Alliance No.1', sans-serif;
+      font-weight: 300; font-size: 8px;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: rgba(255,255,255,0.35); margin-bottom: 8px;
+    }
+    .contacto-line {
+      font-family: 'Alliance No.1', sans-serif;
+      font-weight: 300; font-size: 9px;
+      color: rgba(255,255,255,0.75); line-height: 1.7;
+    }
+    .contacto-line strong { font-weight: 400; color: var(--white); }
+
+    .footer {
+      background: var(--light-beige);
+      padding: 8px 24px;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-shrink: 0;
+      border-top: 1px solid rgba(37,40,58,0.1);
+    }
+    .footer-copy, .footer-address {
+      font-family: 'Alliance No.1', sans-serif;
+      font-weight: 300; font-size: 7.5px;
+      color: var(--beige); letter-spacing: 1px;
+    }
+    .footer-address { text-align: right; }
+
+    @media print {
+      html, body { width: 210mm; height: 297mm; }
+      .page { page-break-after: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <div class="header">
+      <img class="header-logo" src="../pensaer-logo.png" alt="Pensaer Desarrollos" />
+      <span class="header-tag">Propiedad en venta &middot; Pensaer &middot; Dynha Pellegrini</span>
+    </div>
+
+
+    <div class="id-bar">
+      <h1 class="id-title">Departamento 2 dormitorios &middot; Av. Pellegrini 419, Rosario</h1>
+      <span class="id-badge">Disponible de tercero</span>
+    </div>
+
+    <div class="body">
+
+      <div class="col-left">
+        <p class="col-eyebrow">El espacio</p>
+        <p class="col-desc">Departamento en venta en el edificio Dynha, sobre Av. Pellegrini 419, en el corazón premium de Rosario. Unidades con calidad Pensaer en una ubicación de altísima demanda.<br><br><br><br>Edificio con terminaciones de primera línea y excelente acceso a los principales servicios, shopping y zonas comerciales de la ciudad.</p>
+      </div>
+
+      <div class="col-right">
+        <p class="ficha-eyebrow">Ficha t&eacute;cnica</p>
+        <div class="ficha-row"><span class="ficha-key">Tipo</span><span class="ficha-val">Departamento</span></div>
+        <div class="ficha-row"><span class="ficha-key">Dormitorios</span><span class="ficha-val">2</span></div>
+        <div class="ficha-row"><span class="ficha-key">Baños</span><span class="ficha-val">2</span></div>
+        <div class="ficha-row"><span class="ficha-key">Superficie</span><span class="ficha-val">115 m²</span></div>
+        <div class="ficha-row"><span class="ficha-key">Piso</span><span class="ficha-val">Piso 1</span></div>
+        <div class="ficha-row"><span class="ficha-key">Precio de lista</span><span class="ficha-val">USD 235.750</span></div>
+        <div class="ficha-row"><span class="ficha-key">Estado</span><span class="ficha-val">Disponible de tercero</span></div>
+        <div class="ficha-row"><span class="ficha-key">Edificio</span><span class="ficha-val">Dynha Pellegrini</span></div>
+
+        <div class="contacto-block">
+          <p class="contacto-eyebrow">Contacto</p>
+          <p class="contacto-line"><strong>Pensaer Desarrollos</strong></p>
+          <p class="contacto-line">+54 9 341 698-0855</p>
+          <p class="contacto-line">pensaer.com.ar</p>
+          <p class="contacto-line" style="margin-top:6px; color:rgba(255,255,255,0.3); font-size:7.5px;">
+            C&oacute;rdoba 1336 Piso 3 &middot; Rosario, Santa Fe
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer">
+      <span class="footer-copy">&copy; 2025 Pensaer &middot; pensaer.com.ar</span>
+      <span class="footer-address">C&oacute;rdoba 1336 Piso 3 &middot; Rosario, Santa Fe &middot; Argentina</span>
+    </div>
+
+  </div>
+</body>
+</html>
