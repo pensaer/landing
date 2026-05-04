@@ -147,6 +147,38 @@
     .desc-img { width: 100%; height: 500px; object-fit: cover; display: block; }
     .desc-img-contain { object-fit: contain; background: var(--light-beige); }
 
+    /* ── PLANTA Y AMBIENTES ──────────────────────────── */
+    .planta-section {
+      padding: 96px 56px; display: grid;
+      grid-template-columns: 1fr 1fr; gap: 64px; align-items: start;
+    }
+    .planta-title {
+      font-family: 'Alliance No.1', sans-serif; font-weight: 300;
+      font-size: clamp(28px, 3vw, 40px); color: var(--brand-blue); line-height: 1.1;
+      margin-bottom: 28px;
+    }
+    .dim-list { display: flex; flex-direction: column; margin-top: 4px; }
+    .dim-item {
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding: 11px 0; border-bottom: 1px solid var(--light-gray);
+    }
+    .dim-amb {
+      font-family: 'Alliance No.1', sans-serif; font-weight: 300;
+      font-size: 13px; color: var(--dark-gray);
+    }
+    .dim-val {
+      font-family: 'Alliance No.1', sans-serif; font-weight: 400;
+      font-size: 13px; color: var(--brand-blue);
+    }
+    .dim-note {
+      font-size: 11px; font-weight: 300; color: var(--beige);
+      margin-top: 10px; line-height: 1.6;
+    }
+    .planta-img { width: 100%; height: auto; display: block; border: 1px solid var(--light-gray); }
+    @media (max-width: 860px) {
+      .planta-section { grid-template-columns: 1fr; padding: 56px 24px; gap: 40px; }
+    }
+
     /* ── CARRUSEL DE RENDERS ─────────────────────────── */
     .renders-carousel { position: relative; width: 100%; height: 520px; overflow: hidden; background: var(--brand-blue); }
     .renders-carousel .slide { position: absolute; inset: 0; opacity: 0; transition: opacity 0.7s ease; }
@@ -331,6 +363,7 @@
     </div>
     <img class="desc-img desc-img-contain" src="Ficha_Dynha Pellegrini 01-01.png" alt="Dynha Pellegrini" loading="lazy" />
   </section>
+
 
 
   <section class="ficha-section">
