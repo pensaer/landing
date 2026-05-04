@@ -4,142 +4,353 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pensaer &middot; Propiedades disponibles &middot; Rosario</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500&display=swap" rel="stylesheet" />
+
   <style>
+    @font-face {
+      font-family: 'Alliance No.1';
+      src: url('manual/tipografia/Alliance No.1 Light.otf') format('opentype');
+      font-weight: 300; font-style: normal;
+    }
+    @font-face {
+      font-family: 'Alliance No.1';
+      src: url('manual/tipografia/Alliance No.1 Regular.otf') format('opentype');
+      font-weight: 400; font-style: normal;
+    }
+    @font-face {
+      font-family: 'Alliance No.1';
+      src: url('manual/tipografia/Alliance No.1 SemiBold.otf') format('opentype');
+      font-weight: 600; font-style: normal;
+    }
+    @font-face {
+      font-family: 'Alliance No.1';
+      src: url('manual/tipografia/Alliance No.1 Bold.otf') format('opentype');
+      font-weight: 700; font-style: normal;
+    }
+    @font-face {
+      font-family: 'Alliance No.1';
+      src: url('manual/tipografia/Alliance No.1 ExtraBold.otf') format('opentype');
+      font-weight: 800; font-style: normal;
+    }
+
     :root {
-      --gold:       #9E8656;
-      --gold-light: #C9B48A;
-      --gold-dark:  #7A6340;
-      --brown-deep: #2A1F14;
-      --brown-mid:  #3D2E1E;
-      --beige:      #F5EFE4;
-      --beige-dark: #EAE0CE;
-      --white:      #FFFFFF;
-      --text-dark:  #1E1610;
-      --text-mid:   #5A4A35;
+      --brand-blue:  #25283A;
+      --beige:       #A99C8D;
+      --light-beige: #EDE2D1;
+      --dark-gray:   #3A3A38;
+      --light-gray:  #E8E8E8;
+      --white:       #FFFFFF;
+      --black:       #000000;
     }
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body { font-family:'Inter',sans-serif; background:var(--beige); color:var(--text-dark); min-height:100vh; display:flex; flex-direction:column; }
-    header { background:var(--brown-deep); padding:20px 48px; display:flex; align-items:center; justify-content:space-between; }
-    .logo-wordmark { display:flex; flex-direction:column; gap:6px; }
-    .logo-img { height:36px; width:auto; display:block; filter:brightness(0) invert(1); opacity:0.92; }
-    .logo-sub { font-size:10px; font-weight:400; color:var(--gold-light); letter-spacing:3px; text-transform:uppercase; }
-    .header-contact { font-size:13px; letter-spacing:2px; color:var(--gold-light); text-transform:uppercase; text-decoration:none; border:1px solid var(--gold); padding:8px 20px; transition:background .2s,color .2s; }
-    .header-contact:hover { background:var(--gold); color:var(--white); }
-    .hero { background:var(--brown-mid); padding:64px 48px; text-align:center; }
-    .hero-label { font-size:11px; letter-spacing:4px; text-transform:uppercase; color:var(--gold-light); margin-bottom:16px; }
-    .hero-title { font-family:'Playfair Display',serif; font-size:clamp(32px,5vw,54px); font-weight:700; color:var(--white); line-height:1.15; margin-bottom:8px; }
-    .hero-title span { color:var(--gold-light); font-weight:400; }
-    .hero-subtitle { font-size:13px; letter-spacing:3px; text-transform:uppercase; color:var(--gold); margin-bottom:24px; }
-    .hero-divider { width:48px; height:2px; background:var(--gold); margin:0 auto; }
-    .strip { background:var(--gold); display:flex; align-items:center; justify-content:center; gap:40px; padding:16px 48px; flex-wrap:wrap; }
-    .strip-item { font-size:11px; letter-spacing:3px; text-transform:uppercase; color:var(--brown-deep); font-weight:600; }
-    .strip-dot { width:4px; height:4px; background:var(--brown-deep); border-radius:50%; }
-    .grid-section { padding:64px 48px; flex:1; }
-    .grid-tag { font-size:10px; letter-spacing:4px; text-transform:uppercase; color:var(--gold); margin-bottom:12px; }
-    .grid-title { font-family:'Playfair Display',serif; font-size:clamp(24px,3vw,36px); font-weight:600; color:var(--brown-deep); margin-bottom:48px; }
-    .grid-title::after { content:''; display:block; width:48px; height:2px; background:var(--gold); margin-top:14px; }
-    .project-group { margin-bottom:64px; }
-    .project-heading { margin-bottom:24px; padding-bottom:16px; border-bottom:1px solid var(--beige-dark); display:flex; align-items:baseline; gap:16px; flex-wrap:wrap; }
-    .project-heading-title { font-family:'Playfair Display',serif; font-size:clamp(18px,2.5vw,26px); font-weight:600; color:var(--brown-deep); }
-    .project-heading-address { font-size:12px; letter-spacing:2px; text-transform:uppercase; color:var(--gold); }
-    .units-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:24px; }
-    .unit-card { background:var(--white); display:flex; flex-direction:column; text-decoration:none; color:inherit; transition:transform .25s,box-shadow .25s; overflow:hidden; }
-    .unit-card:hover { transform:translateY(-6px); box-shadow:0 16px 40px rgba(42,31,20,0.14); }
-    .card-img-wrap { position:relative; height:220px; overflow:hidden; background:var(--beige-dark); }
-    .card-img-wrap img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .4s; }
-    .unit-card:hover .card-img-wrap img { transform:scale(1.05); }
-    .card-img-overlay { position:absolute; inset:0; background:linear-gradient(to top,rgba(42,31,20,0.6) 0%,transparent 55%); }
-    .card-badge { position:absolute; top:14px; right:14px; font-size:9px; letter-spacing:2px; text-transform:uppercase; font-weight:700; color:var(--brown-deep); background:var(--gold); padding:5px 12px; }
-    .card-img-label { position:absolute; bottom:14px; left:16px; display:flex; flex-direction:column; gap:2px; }
-    .card-img-project { font-size:10px; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,0.7); }
-    .card-img-unit { font-family:'Playfair Display',serif; font-size:20px; font-weight:700; color:var(--white); line-height:1; }
-    .card-no-img { width:100%; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; background:var(--brown-mid); padding:24px; }
-    .card-no-img-badge { font-size:9px; letter-spacing:2px; text-transform:uppercase; font-weight:700; color:var(--brown-deep); background:var(--gold); padding:4px 12px; }
-    .card-no-img-unit { font-family:'Playfair Display',serif; font-size:22px; font-weight:700; color:var(--white); text-align:center; }
-    .card-no-img-project { font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--gold-light); text-align:center; }
-    .card-body { padding:22px 24px; flex:1; display:flex; flex-direction:column; gap:14px; border-top:3px solid var(--gold); }
-    .card-type { font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--gold-dark); font-weight:600; }
-    .card-address { font-size:12px; color:var(--text-mid); display:flex; align-items:center; gap:6px; }
-    .card-address svg { width:12px; height:12px; stroke:var(--gold); fill:none; stroke-width:2; flex-shrink:0; }
-    .card-stats { display:flex; gap:20px; }
-    .card-stat { display:flex; flex-direction:column; gap:3px; }
-    .card-stat-value { font-family:'Playfair Display',serif; font-size:20px; font-weight:700; color:var(--brown-deep); line-height:1; }
-    .card-stat-label { font-size:9px; letter-spacing:2px; text-transform:uppercase; color:var(--text-mid); }
-    .card-divider { width:1px; background:var(--beige-dark); }
-    .card-price { background:var(--beige); padding:12px 16px; display:flex; flex-direction:column; gap:2px; margin-top:auto; }
-    .card-price-label { font-size:9px; letter-spacing:3px; text-transform:uppercase; color:var(--gold-dark); font-weight:600; }
-    .card-price-value { font-family:'Playfair Display',serif; font-size:19px; font-weight:700; color:var(--brown-deep); }
-    .card-cta { background:var(--brown-deep); color:var(--gold-light); text-align:center; padding:14px; font-size:11px; letter-spacing:3px; text-transform:uppercase; font-weight:600; transition:background .2s,color .2s; }
-    .unit-card:hover .card-cta { background:var(--gold); color:var(--brown-deep); }
-    .cta-strip { background:var(--brown-deep); padding:56px 48px; display:flex; align-items:center; justify-content:space-between; gap:32px; flex-wrap:wrap; }
-    .cta-strip-text { display:flex; flex-direction:column; gap:8px; }
-    .cta-strip-label { font-size:10px; letter-spacing:4px; text-transform:uppercase; color:var(--gold); }
-    .cta-strip-title { font-family:'Playfair Display',serif; font-size:clamp(22px,3vw,34px); font-weight:600; color:var(--white); line-height:1.2; }
-    .cta-strip-buttons { display:flex; gap:16px; flex-wrap:wrap; }
-    .btn-primary { display:inline-flex; align-items:center; gap:10px; background:var(--gold); color:var(--brown-deep); text-decoration:none; font-size:13px; font-weight:700; letter-spacing:2px; text-transform:uppercase; padding:18px 36px; transition:background .2s,transform .15s; }
-    .btn-primary:hover { background:var(--gold-light); transform:translateY(-2px); }
-    .btn-secondary { display:inline-flex; align-items:center; gap:10px; background:transparent; color:var(--gold-light); text-decoration:none; font-size:13px; font-weight:600; letter-spacing:2px; text-transform:uppercase; padding:18px 36px; border:1px solid var(--gold-dark); transition:border-color .2s,color .2s; }
-    .btn-secondary:hover { border-color:var(--gold-light); color:var(--white); }
-    footer { background:var(--text-dark); padding:28px 48px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; }
-    .footer-logo { height:24px; filter:brightness(0) invert(1); opacity:0.5; }
-    .footer-copy { font-size:11px; color:var(--gold-dark); letter-spacing:1px; }
-    .footer-address { font-size:11px; color:var(--gold-dark); letter-spacing:1px; text-align:right; }
-    @media (max-width:768px) {
-      header { padding:16px 20px; }
-      .hero { padding:48px 20px; }
-      .strip { gap:16px; padding:12px 20px; justify-content:flex-start; }
-      .grid-section { padding:40px 20px; }
-      .units-grid { grid-template-columns:1fr; }
-      .project-group { margin-bottom:40px; }
-      .cta-strip { padding:36px 20px; flex-direction:column; align-items:flex-start; gap:20px; }
-      footer { padding:24px 20px; flex-direction:column; align-items:flex-start; }
-      .footer-address { text-align:left; }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Sora', sans-serif;
+      background: var(--white);
+      color: var(--dark-gray);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
-    @media (max-width:480px) {
-      header { padding:12px 16px; }
-      .logo-img { height:28px; }
-      .hero { padding:36px 16px; }
-      .strip { gap:12px; padding:10px 16px; }
-      .grid-section { padding:32px 16px; }
-      .units-grid { gap:16px; }
-      .cta-strip { padding:28px 16px; }
-      footer { padding:20px 16px; }
+
+    /* ── HEADER ── */
+    header {
+      background: var(--brand-blue);
+      padding: 24px 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo-img { height: 28px; width: auto; display: block; }
+    .header-contact {
+      font-family: 'Alliance No.1', sans-serif;
+      font-weight: 400; font-size: 11px;
+      letter-spacing: 2.5px; text-transform: uppercase;
+      color: var(--white); text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.5);
+      padding: 10px 28px;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .header-contact:hover { background: rgba(255,255,255,0.1); border-color: var(--white); }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--brand-blue);
+      padding: 72px 56px 64px;
+      border-top: 1px solid rgba(255,255,255,0.07);
+    }
+    .hero-eyebrow {
+      font-family: 'Alliance No.1', sans-serif; font-weight: 300;
+      font-size: 11px; letter-spacing: 4px; text-transform: uppercase;
+      color: var(--beige); margin-bottom: 20px;
+    }
+    .hero-title {
+      font-family: 'Alliance No.1', sans-serif; font-weight: 300;
+      font-size: clamp(36px, 5vw, 62px);
+      color: var(--white); line-height: 1.05;
+      max-width: 680px;
+    }
+
+    /* ── INFO STRIP ── */
+    .info-strip {
+      background: var(--light-beige);
+      display: flex;
+      align-items: stretch;
+    }
+    .strip-item {
+      font-family: 'Alliance No.1', sans-serif; font-weight: 300;
+      font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+      color: var(--dark-gray);
+      padding: 18px 36px;
+      border-right: 1px solid rgba(37,40,58,0.12);
+    }
+    .strip-item:last-child { border-right: none; }
+
+    /* ── GRID SECTION ── */
+    .grid-section {
+      padding: 72px 56px;
+      flex: 1;
+    }
+    .grid-eyebrow {
+      font-family: 'Alliance No.1', sans-serif; font-weight: 300;
+      font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+      color: var(--beige); margin-bottom: 12px;
+    }
+    .grid-title {
+      font-family: 'Alliance No.1', sans-serif; font-weight: 300;
+      font-size: clamp(28px, 3vw, 40px);
+      color: var(--brand-blue); line-height: 1.1;
+      margin-bottom: 56px;
+    }
+
+    /* ── PROJECT GROUP ── */
+    .project-group { margin-bottom: 72px; }
+    .project-heading {
+      margin-bottom: 24px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--light-gray);
+      display: flex; align-items: baseline;
+      gap: 20px; flex-wrap: wrap;
+    }
+    .project-heading-title {
+      font-family: 'Alliance No.1', sans-serif; font-weight: 300;
+      font-size: clamp(17px, 2.2vw, 23px);
+      color: var(--brand-blue);
+    }
+    .project-heading-address {
+      font-family: 'Alliance No.1', sans-serif; font-weight: 300;
+      font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase;
+      color: var(--beige);
+    }
+    .units-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    /* ── CARD ── */
+    .unit-card {
+      background: var(--white);
+      display: flex; flex-direction: column;
+      text-decoration: none; color: inherit;
+      transition: transform 0.25s, box-shadow 0.25s;
+      overflow: hidden;
+      border: 1px solid var(--light-gray);
+    }
+    .unit-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(37,40,58,0.12); }
+
+    .card-img-wrap { position: relative; height: 210px; overflow: hidden; background: var(--light-beige); }
+    .card-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s; }
+    .unit-card:hover .card-img-wrap img { transform: scale(1.04); }
+    .card-img-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(37,40,58,0.52) 0%, transparent 55%);
+    }
+    .card-badge {
+      position: absolute; top: 14px; right: 14px;
+      font-family: 'Alliance No.1', sans-serif; font-weight: 400;
+      font-size: 9px; letter-spacing: 2px; text-transform: uppercase;
+      color: var(--brand-blue); background: rgba(255,255,255,0.92);
+      padding: 5px 10px;
+    }
+    .card-img-label { position: absolute; bottom: 14px; left: 16px; display: flex; flex-direction: column; gap: 3px; }
+    .card-img-project {
+      font-family: 'Alliance No.1', sans-serif; font-weight: 300;
+      font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+    }
+    .card-img-unit {
+      font-family: 'Alliance No.1', sans-serif; font-weight: 300;
+      font-size: 17px; color: var(--white); line-height: 1.1;
+    }
+
+    /* No-image card */
+    .card-no-img {
+      width: 100%; height: 100%;
+      display: flex; flex-direction: column;
+      align-items: flex-start;
+      background: var(--brand-blue);
+      padding: 18px;
+      gap: 6px;
+    }
+    .card-badge-noimg {
+      position: static;
+      color: var(--brand-blue); background: rgba(255,255,255,0.9);
+      margin-bottom: auto;
+    }
+    .card-no-img-unit {
+      font-family: 'Alliance No.1', sans-serif; font-weight: 300;
+      font-size: 17px; color: var(--white); line-height: 1.1;
+    }
+    .card-no-img-project {
+      font-family: 'Alliance No.1', sans-serif; font-weight: 300;
+      font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+      color: rgba(255,255,255,0.38);
+    }
+
+    /* Card body */
+    .card-body { padding: 20px 22px; flex: 1; display: flex; flex-direction: column; gap: 12px; }
+    .card-type {
+      font-family: 'Alliance No.1', sans-serif; font-weight: 300;
+      font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+      color: var(--beige);
+    }
+    .card-address {
+      font-family: 'Sora', sans-serif; font-size: 12px; font-weight: 300;
+      color: var(--dark-gray); display: flex; align-items: center; gap: 6px;
+    }
+    .card-address svg { width: 11px; height: 11px; flex-shrink: 0; color: var(--beige); }
+    .card-stats { display: flex; gap: 16px; align-items: center; }
+    .card-stat { display: flex; flex-direction: column; gap: 2px; }
+    .card-stat-value {
+      font-family: 'Alliance No.1', sans-serif; font-weight: 300;
+      font-size: 18px; color: var(--brand-blue); line-height: 1;
+    }
+    .card-stat-label {
+      font-family: 'Alliance No.1', sans-serif; font-weight: 300;
+      font-size: 9px; letter-spacing: 2px; text-transform: uppercase;
+      color: rgba(37,40,58,0.4);
+    }
+    .card-divider { width: 1px; height: 26px; background: var(--light-gray); }
+    .card-price {
+      background: var(--light-beige); padding: 10px 14px;
+      display: flex; flex-direction: column; gap: 2px; margin-top: auto;
+    }
+    .card-price-label {
+      font-family: 'Alliance No.1', sans-serif; font-weight: 300;
+      font-size: 9px; letter-spacing: 3px; text-transform: uppercase;
+      color: var(--beige);
+    }
+    .card-price-value {
+      font-family: 'Alliance No.1', sans-serif; font-weight: 400;
+      font-size: 17px; color: var(--brand-blue);
+    }
+    .card-cta {
+      background: var(--brand-blue); color: var(--white);
+      text-align: center; padding: 14px;
+      font-family: 'Alliance No.1', sans-serif; font-weight: 400;
+      font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+      transition: background 0.2s;
+    }
+    .unit-card:hover .card-cta { background: #1a1d2b; }
+
+    /* ── CTA SECTION ── */
+    .cta-section {
+      background: var(--brand-blue); padding: 80px 56px;
+      display: flex; align-items: center;
+      justify-content: space-between; gap: 32px; flex-wrap: wrap;
+    }
+    .cta-text { display: flex; flex-direction: column; gap: 12px; }
+    .cta-eyebrow {
+      font-family: 'Alliance No.1', sans-serif; font-weight: 300;
+      font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+      color: rgba(255,255,255,0.38);
+    }
+    .cta-title {
+      font-family: 'Alliance No.1', sans-serif; font-weight: 300;
+      font-size: clamp(24px, 3.5vw, 40px); color: var(--white); line-height: 1.1;
+    }
+    .cta-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
+    .btn-call {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--white); color: var(--brand-blue); text-decoration: none;
+      font-family: 'Alliance No.1', sans-serif; font-weight: 400;
+      font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase;
+      padding: 16px 40px; transition: background 0.2s;
+    }
+    .btn-call:hover { background: var(--light-beige); }
+    .btn-wa {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: transparent; color: rgba(255,255,255,0.6); text-decoration: none;
+      font-family: 'Alliance No.1', sans-serif; font-weight: 400;
+      font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase;
+      padding: 16px 40px; border: 1px solid rgba(255,255,255,0.22);
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-wa:hover { border-color: rgba(255,255,255,0.6); color: var(--white); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--black); padding: 28px 56px;
+      display: flex; align-items: center;
+      justify-content: space-between; flex-wrap: wrap; gap: 12px;
+    }
+    .footer-logo { height: 22px; width: auto; display: block; }
+    .footer-copy, .footer-address {
+      font-family: 'Alliance No.1', sans-serif; font-weight: 300;
+      font-size: 11px; color: rgba(255,255,255,0.28); letter-spacing: 1px;
+    }
+    .footer-address { text-align: right; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 860px) {
+      header { padding: 20px 24px; }
+      .hero { padding: 48px 24px 40px; }
+      .info-strip { flex-wrap: wrap; }
+      .strip-item { padding: 14px 20px; border-right: none; border-bottom: 1px solid rgba(37,40,58,0.12); flex: 1 1 auto; min-width: 50%; }
+      .strip-item:last-child { border-bottom: none; }
+      .grid-section { padding: 48px 24px; }
+      .units-grid { grid-template-columns: 1fr; }
+      .project-group { margin-bottom: 48px; }
+      .cta-section { padding: 56px 24px; flex-direction: column; align-items: flex-start; }
+      footer { padding: 24px; }
+      .footer-address { text-align: left; }
+    }
+    @media (max-width: 480px) {
+      header { padding: 16px; }
+      .hero { padding: 36px 16px 32px; }
+      .strip-item { min-width: 100%; }
+      .grid-section { padding: 36px 16px; }
+      .cta-section { padding: 40px 16px; }
+      footer { padding: 20px 16px; }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <div class="logo-wordmark">
-      <img class="logo-img" src="pensaer-logo.png" alt="Pensaer Desarrollos" />
-      <span class="logo-sub">Propiedades disponibles &middot; Rosario</span>
-    </div>
+    <img class="logo-img" src="pensaer-logo.png" alt="Pensaer Desarrollos" />
     <a href="tel:+5493416980855" class="header-contact">Contactar</a>
   </header>
 
   <section class="hero">
-    <p class="hero-label">Rosario &middot; Santa Fe &middot; Argentina</p>
-    <h1 class="hero-title">Pensaer<br><span>Propiedades</span></h1>
-    <p class="hero-subtitle">Unidades disponibles</p>
-    <div class="hero-divider"></div>
+    <p class="hero-eyebrow">Rosario &middot; Santa Fe &middot; Argentina</p>
+    <h1 class="hero-title">Propiedades<br>disponibles.</h1>
   </section>
 
-  <div class="strip">
+  <div class="info-strip">
     <span class="strip-item">Departamentos</span>
-    <span class="strip-dot"></span>
     <span class="strip-item">Oficinas</span>
-    <span class="strip-dot"></span>
     <span class="strip-item">Rosario &middot; Funes</span>
-    <span class="strip-dot"></span>
     <span class="strip-item">Entrega inmediata</span>
   </div>
 
   <section class="grid-section">
-    <p class="grid-tag">Cat&aacute;logo</p>
-    <h2 class="grid-title">Propiedades disponibles</h2>
+    <p class="grid-eyebrow">Cat&aacute;logo</p>
+    <h2 class="grid-title">Unidades disponibles</h2>
 
     <div class="project-group">
       <div class="project-heading">
@@ -149,7 +360,7 @@
       <div class="units-grid">
       <a href="p14_dram_1-01-01/p14_dram_1-01-01.html" class="unit-card">
         <div class="card-img-wrap">
-        <img src="render_p14.jpg" alt="DRAM San Martin 470" />
+        <img src="render_p14.jpg" alt="DRAM San Martin 470" loading="lazy" />
         <div class="card-img-overlay"></div>
         <span class="card-badge">Disponible</span>
         <div class="card-img-label">
@@ -159,11 +370,11 @@
         </div>
         <div class="card-body">
           <span class="card-type">Departamento &middot; 3 Dormitorios</span>
-          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>San Mart&iacute;n 470-476 &middot; Rosario</span>
+          <span class="card-address"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>San Mart&iacute;n 470-476 &middot; Rosario</span>
           <div class="card-stats">
             <div class="card-stat">
               <span class="card-stat-value">183</span>
-              <span class="card-stat-label">M²</span>
+              <span class="card-stat-label">M&sup2;</span>
             </div>
             <div class="card-divider"></div>
             <div class="card-stat">
@@ -173,7 +384,7 @@
             <div class="card-divider"></div>
             <div class="card-stat">
               <span class="card-stat-value">2</span>
-              <span class="card-stat-label">Baños</span>
+              <span class="card-stat-label">Ba&ntilde;os</span>
             </div>
           </div>
           <div class="card-price">
@@ -181,11 +392,11 @@
             <span class="card-price-value">USD 366.000</span>
           </div>
         </div>
-        <div class="card-cta">Ver detalle completo &rarr;</div>
+        <div class="card-cta">Ver detalle &rarr;</div>
       </a>
       <a href="p14_dram_2-02-04/p14_dram_2-02-04.html" class="unit-card">
         <div class="card-img-wrap">
-        <img src="render_p14.jpg" alt="DRAM San Martin 470" />
+        <img src="render_p14.jpg" alt="DRAM San Martin 470" loading="lazy" />
         <div class="card-img-overlay"></div>
         <span class="card-badge">Disponible</span>
         <div class="card-img-label">
@@ -195,11 +406,11 @@
         </div>
         <div class="card-body">
           <span class="card-type">Departamento &middot; 2 Dormitorios</span>
-          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>San Mart&iacute;n 470-476 &middot; Rosario</span>
+          <span class="card-address"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>San Mart&iacute;n 470-476 &middot; Rosario</span>
           <div class="card-stats">
             <div class="card-stat">
               <span class="card-stat-value">88</span>
-              <span class="card-stat-label">M²</span>
+              <span class="card-stat-label">M&sup2;</span>
             </div>
             <div class="card-divider"></div>
             <div class="card-stat">
@@ -209,7 +420,7 @@
             <div class="card-divider"></div>
             <div class="card-stat">
               <span class="card-stat-value">2</span>
-              <span class="card-stat-label">Baños</span>
+              <span class="card-stat-label">Ba&ntilde;os</span>
             </div>
           </div>
           <div class="card-price">
@@ -217,11 +428,11 @@
             <span class="card-price-value">USD 198.000</span>
           </div>
         </div>
-        <div class="card-cta">Ver detalle completo &rarr;</div>
+        <div class="card-cta">Ver detalle &rarr;</div>
       </a>
       <a href="p14_dram_3-03-01/p14_dram_3-03-01.html" class="unit-card">
         <div class="card-img-wrap">
-        <img src="render_p14.jpg" alt="DRAM San Martin 470" />
+        <img src="render_p14.jpg" alt="DRAM San Martin 470" loading="lazy" />
         <div class="card-img-overlay"></div>
         <span class="card-badge">Disponible</span>
         <div class="card-img-label">
@@ -231,11 +442,11 @@
         </div>
         <div class="card-body">
           <span class="card-type">Departamento &middot; 3 Dormitorios</span>
-          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>San Mart&iacute;n 470-476 &middot; Rosario</span>
+          <span class="card-address"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>San Mart&iacute;n 470-476 &middot; Rosario</span>
           <div class="card-stats">
             <div class="card-stat">
               <span class="card-stat-value">148</span>
-              <span class="card-stat-label">M²</span>
+              <span class="card-stat-label">M&sup2;</span>
             </div>
             <div class="card-divider"></div>
             <div class="card-stat">
@@ -245,7 +456,7 @@
             <div class="card-divider"></div>
             <div class="card-stat">
               <span class="card-stat-value">2</span>
-              <span class="card-stat-label">Baños</span>
+              <span class="card-stat-label">Ba&ntilde;os</span>
             </div>
           </div>
           <div class="card-price">
@@ -253,11 +464,11 @@
             <span class="card-price-value">USD 333.000</span>
           </div>
         </div>
-        <div class="card-cta">Ver detalle completo &rarr;</div>
+        <div class="card-cta">Ver detalle &rarr;</div>
       </a>
       <a href="p14_dram_8-08-01/p14_dram_8-08-01.html" class="unit-card">
         <div class="card-img-wrap">
-        <img src="render_p14.jpg" alt="DRAM San Martin 470" />
+        <img src="render_p14.jpg" alt="DRAM San Martin 470" loading="lazy" />
         <div class="card-img-overlay"></div>
         <span class="card-badge">Disponible</span>
         <div class="card-img-label">
@@ -267,11 +478,11 @@
         </div>
         <div class="card-body">
           <span class="card-type">Departamento &middot; 3 Dormitorios</span>
-          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>San Mart&iacute;n 470-476 &middot; Rosario</span>
+          <span class="card-address"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>San Mart&iacute;n 470-476 &middot; Rosario</span>
           <div class="card-stats">
             <div class="card-stat">
               <span class="card-stat-value">148</span>
-              <span class="card-stat-label">M²</span>
+              <span class="card-stat-label">M&sup2;</span>
             </div>
             <div class="card-divider"></div>
             <div class="card-stat">
@@ -281,7 +492,7 @@
             <div class="card-divider"></div>
             <div class="card-stat">
               <span class="card-stat-value">2</span>
-              <span class="card-stat-label">Baños</span>
+              <span class="card-stat-label">Ba&ntilde;os</span>
             </div>
           </div>
           <div class="card-price">
@@ -289,7 +500,7 @@
             <span class="card-price-value">USD 355.200</span>
           </div>
         </div>
-        <div class="card-cta">Ver detalle completo &rarr;</div>
+        <div class="card-cta">Ver detalle &rarr;</div>
       </a>
       </div>
     </div>
@@ -301,7 +512,7 @@
       <div class="units-grid">
       <a href="p15_elyol_2-02-02/p15_elyol_2-02-02.html" class="unit-card">
         <div class="card-img-wrap">
-        <img src="render_p15_ol.jpg" alt="Elysian Ovidio Lagos 1163" />
+        <img src="render_p15_ol.jpg" alt="Elysian Ovidio Lagos 1163" loading="lazy" />
         <div class="card-img-overlay"></div>
         <span class="card-badge">Disponible</span>
         <div class="card-img-label">
@@ -311,11 +522,11 @@
         </div>
         <div class="card-body">
           <span class="card-type">Departamento &middot; 1 Dormitorio</span>
-          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Ovidio Lagos 1163 &middot; Rosario</span>
+          <span class="card-address"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Ovidio Lagos 1163 &middot; Rosario</span>
           <div class="card-stats">
             <div class="card-stat">
               <span class="card-stat-value">53,5</span>
-              <span class="card-stat-label">M²</span>
+              <span class="card-stat-label">M&sup2;</span>
             </div>
             <div class="card-divider"></div>
             <div class="card-stat">
@@ -325,7 +536,7 @@
             <div class="card-divider"></div>
             <div class="card-stat">
               <span class="card-stat-value">1</span>
-              <span class="card-stat-label">Baño</span>
+              <span class="card-stat-label">Ba&ntilde;o</span>
             </div>
           </div>
           <div class="card-price">
@@ -333,11 +544,11 @@
             <span class="card-price-value">USD 98.000</span>
           </div>
         </div>
-        <div class="card-cta">Ver detalle completo &rarr;</div>
+        <div class="card-cta">Ver detalle &rarr;</div>
       </a>
       <a href="p15_elyol_3-03-02/p15_elyol_3-03-02.html" class="unit-card">
         <div class="card-img-wrap">
-        <img src="render_p15_ol.jpg" alt="Elysian Ovidio Lagos 1163" />
+        <img src="render_p15_ol.jpg" alt="Elysian Ovidio Lagos 1163" loading="lazy" />
         <div class="card-img-overlay"></div>
         <span class="card-badge">Disponible</span>
         <div class="card-img-label">
@@ -347,11 +558,11 @@
         </div>
         <div class="card-body">
           <span class="card-type">Departamento &middot; 1 Dormitorio</span>
-          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Ovidio Lagos 1163 &middot; Rosario</span>
+          <span class="card-address"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Ovidio Lagos 1163 &middot; Rosario</span>
           <div class="card-stats">
             <div class="card-stat">
               <span class="card-stat-value">52</span>
-              <span class="card-stat-label">M²</span>
+              <span class="card-stat-label">M&sup2;</span>
             </div>
             <div class="card-divider"></div>
             <div class="card-stat">
@@ -361,7 +572,7 @@
             <div class="card-divider"></div>
             <div class="card-stat">
               <span class="card-stat-value">1</span>
-              <span class="card-stat-label">Baño</span>
+              <span class="card-stat-label">Ba&ntilde;o</span>
             </div>
           </div>
           <div class="card-price">
@@ -369,11 +580,11 @@
             <span class="card-price-value">USD 95.000</span>
           </div>
         </div>
-        <div class="card-cta">Ver detalle completo &rarr;</div>
+        <div class="card-cta">Ver detalle &rarr;</div>
       </a>
       <a href="p15_elyol_4-04-02/p15_elyol_4-04-02.html" class="unit-card">
         <div class="card-img-wrap">
-        <img src="render_p15_ol.jpg" alt="Elysian Ovidio Lagos 1163" />
+        <img src="render_p15_ol.jpg" alt="Elysian Ovidio Lagos 1163" loading="lazy" />
         <div class="card-img-overlay"></div>
         <span class="card-badge">Disponible</span>
         <div class="card-img-label">
@@ -383,11 +594,11 @@
         </div>
         <div class="card-body">
           <span class="card-type">Departamento &middot; 1 Dormitorio</span>
-          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Ovidio Lagos 1163 &middot; Rosario</span>
+          <span class="card-address"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Ovidio Lagos 1163 &middot; Rosario</span>
           <div class="card-stats">
             <div class="card-stat">
               <span class="card-stat-value">52</span>
-              <span class="card-stat-label">M²</span>
+              <span class="card-stat-label">M&sup2;</span>
             </div>
             <div class="card-divider"></div>
             <div class="card-stat">
@@ -397,7 +608,7 @@
             <div class="card-divider"></div>
             <div class="card-stat">
               <span class="card-stat-value">1</span>
-              <span class="card-stat-label">Baño</span>
+              <span class="card-stat-label">Ba&ntilde;o</span>
             </div>
           </div>
           <div class="card-price">
@@ -405,11 +616,11 @@
             <span class="card-price-value">USD 95.000</span>
           </div>
         </div>
-        <div class="card-cta">Ver detalle completo &rarr;</div>
+        <div class="card-cta">Ver detalle &rarr;</div>
       </a>
       <a href="p15_elyol_6-06-01/p15_elyol_6-06-01.html" class="unit-card">
         <div class="card-img-wrap">
-        <img src="render_p15_ol.jpg" alt="Elysian Ovidio Lagos 1163" />
+        <img src="render_p15_ol.jpg" alt="Elysian Ovidio Lagos 1163" loading="lazy" />
         <div class="card-img-overlay"></div>
         <span class="card-badge">Disponible</span>
         <div class="card-img-label">
@@ -419,11 +630,11 @@
         </div>
         <div class="card-body">
           <span class="card-type">Departamento &middot; 2 Dormitorios</span>
-          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Ovidio Lagos 1163 &middot; Rosario</span>
+          <span class="card-address"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Ovidio Lagos 1163 &middot; Rosario</span>
           <div class="card-stats">
             <div class="card-stat">
               <span class="card-stat-value">78,5</span>
-              <span class="card-stat-label">M²</span>
+              <span class="card-stat-label">M&sup2;</span>
             </div>
             <div class="card-divider"></div>
             <div class="card-stat">
@@ -433,7 +644,7 @@
             <div class="card-divider"></div>
             <div class="card-stat">
               <span class="card-stat-value">2</span>
-              <span class="card-stat-label">Baños</span>
+              <span class="card-stat-label">Ba&ntilde;os</span>
             </div>
           </div>
           <div class="card-price">
@@ -441,11 +652,11 @@
             <span class="card-price-value">USD 150.000</span>
           </div>
         </div>
-        <div class="card-cta">Ver detalle completo &rarr;</div>
+        <div class="card-cta">Ver detalle &rarr;</div>
       </a>
       <a href="p15_elyol_7-07-02/p15_elyol_7-07-02.html" class="unit-card">
         <div class="card-img-wrap">
-        <img src="render_p15_ol.jpg" alt="Elysian Ovidio Lagos 1163" />
+        <img src="render_p15_ol.jpg" alt="Elysian Ovidio Lagos 1163" loading="lazy" />
         <div class="card-img-overlay"></div>
         <span class="card-badge">Disponible</span>
         <div class="card-img-label">
@@ -455,11 +666,11 @@
         </div>
         <div class="card-body">
           <span class="card-type">Departamento &middot; 1 Dormitorio</span>
-          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Ovidio Lagos 1163 &middot; Rosario</span>
+          <span class="card-address"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Ovidio Lagos 1163 &middot; Rosario</span>
           <div class="card-stats">
             <div class="card-stat">
               <span class="card-stat-value">52</span>
-              <span class="card-stat-label">M²</span>
+              <span class="card-stat-label">M&sup2;</span>
             </div>
             <div class="card-divider"></div>
             <div class="card-stat">
@@ -469,7 +680,7 @@
             <div class="card-divider"></div>
             <div class="card-stat">
               <span class="card-stat-value">1</span>
-              <span class="card-stat-label">Baño</span>
+              <span class="card-stat-label">Ba&ntilde;o</span>
             </div>
           </div>
           <div class="card-price">
@@ -477,11 +688,11 @@
             <span class="card-price-value">USD 98.000</span>
           </div>
         </div>
-        <div class="card-cta">Ver detalle completo &rarr;</div>
+        <div class="card-cta">Ver detalle &rarr;</div>
       </a>
       <a href="p15_elyol_10y11-01/p15_elyol_10y11-01.html" class="unit-card">
         <div class="card-img-wrap">
-        <img src="render_p15_ol.jpg" alt="Elysian Ovidio Lagos 1163" />
+        <img src="render_p15_ol.jpg" alt="Elysian Ovidio Lagos 1163" loading="lazy" />
         <div class="card-img-overlay"></div>
         <span class="card-badge">Disponible</span>
         <div class="card-img-label">
@@ -491,11 +702,11 @@
         </div>
         <div class="card-body">
           <span class="card-type">D&uacute;plex &middot; 3 Dormitorios</span>
-          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Ovidio Lagos 1163 &middot; Rosario</span>
+          <span class="card-address"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Ovidio Lagos 1163 &middot; Rosario</span>
           <div class="card-stats">
             <div class="card-stat">
               <span class="card-stat-value">127,5</span>
-              <span class="card-stat-label">M²</span>
+              <span class="card-stat-label">M&sup2;</span>
             </div>
             <div class="card-divider"></div>
             <div class="card-stat">
@@ -505,7 +716,7 @@
             <div class="card-divider"></div>
             <div class="card-stat">
               <span class="card-stat-value">3</span>
-              <span class="card-stat-label">Baños</span>
+              <span class="card-stat-label">Ba&ntilde;os</span>
             </div>
           </div>
           <div class="card-price">
@@ -513,11 +724,11 @@
             <span class="card-price-value">USD 235.000</span>
           </div>
         </div>
-        <div class="card-cta">Ver detalle completo &rarr;</div>
+        <div class="card-cta">Ver detalle &rarr;</div>
       </a>
       <a href="p15_elyol_10y11-02/p15_elyol_10y11-02.html" class="unit-card">
         <div class="card-img-wrap">
-        <img src="render_p15_ol.jpg" alt="Elysian Ovidio Lagos 1163" />
+        <img src="render_p15_ol.jpg" alt="Elysian Ovidio Lagos 1163" loading="lazy" />
         <div class="card-img-overlay"></div>
         <span class="card-badge">Disponible</span>
         <div class="card-img-label">
@@ -527,11 +738,11 @@
         </div>
         <div class="card-body">
           <span class="card-type">D&uacute;plex &middot; 3 Dormitorios</span>
-          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Ovidio Lagos 1163 &middot; Rosario</span>
+          <span class="card-address"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Ovidio Lagos 1163 &middot; Rosario</span>
           <div class="card-stats">
             <div class="card-stat">
               <span class="card-stat-value">190</span>
-              <span class="card-stat-label">M²</span>
+              <span class="card-stat-label">M&sup2;</span>
             </div>
             <div class="card-divider"></div>
             <div class="card-stat">
@@ -541,7 +752,7 @@
             <div class="card-divider"></div>
             <div class="card-stat">
               <span class="card-stat-value">3</span>
-              <span class="card-stat-label">Baños</span>
+              <span class="card-stat-label">Ba&ntilde;os</span>
             </div>
           </div>
           <div class="card-price">
@@ -549,7 +760,7 @@
             <span class="card-price-value">USD 325.000</span>
           </div>
         </div>
-        <div class="card-cta">Ver detalle completo &rarr;</div>
+        <div class="card-cta">Ver detalle &rarr;</div>
       </a>
       </div>
     </div>
@@ -559,9 +770,45 @@
         <p class="project-heading-address">San Juan 2741-53 &middot; Rosario</p>
       </div>
       <div class="units-grid">
+      <a href="p15_elysj_5-05-07/p15_elysj_5-05-07.html" class="unit-card">
+        <div class="card-img-wrap">
+        <img src="render_p15_sj.jpg" alt="Elysian San Juan 2741" loading="lazy" />
+        <div class="card-img-overlay"></div>
+        <span class="card-badge">Disponible</span>
+        <div class="card-img-label">
+          <span class="card-img-project">Pensaer 15 &middot; Elysian</span>
+          <span class="card-img-unit">05-07 &middot; Piso 5</span>
+        </div>
+        </div>
+        <div class="card-body">
+          <span class="card-type">Departamento &middot; 1 Dormitorio</span>
+          <span class="card-address"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>San Juan 2741-53 &middot; Rosario</span>
+          <div class="card-stats">
+            <div class="card-stat">
+              <span class="card-stat-value">58,5</span>
+              <span class="card-stat-label">M&sup2;</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">1</span>
+              <span class="card-stat-label">Dorm.</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">1</span>
+              <span class="card-stat-label">Ba&ntilde;o</span>
+            </div>
+          </div>
+          <div class="card-price">
+            <span class="card-price-label">Precio de lista</span>
+            <span class="card-price-value">USD 110.000</span>
+          </div>
+        </div>
+        <div class="card-cta">Ver detalle &rarr;</div>
+      </a>
       <a href="p15_elysj_6-06-04/p15_elysj_6-06-04.html" class="unit-card">
         <div class="card-img-wrap">
-        <img src="render_p15_sj.jpg" alt="Elysian San Juan 2741" />
+        <img src="render_p15_sj.jpg" alt="Elysian San Juan 2741" loading="lazy" />
         <div class="card-img-overlay"></div>
         <span class="card-badge">Disponible</span>
         <div class="card-img-label">
@@ -571,11 +818,11 @@
         </div>
         <div class="card-body">
           <span class="card-type">Departamento &middot; 2 Dormitorios</span>
-          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>San Juan 2741-53 &middot; Rosario</span>
+          <span class="card-address"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>San Juan 2741-53 &middot; Rosario</span>
           <div class="card-stats">
             <div class="card-stat">
               <span class="card-stat-value">63,5</span>
-              <span class="card-stat-label">M²</span>
+              <span class="card-stat-label">M&sup2;</span>
             </div>
             <div class="card-divider"></div>
             <div class="card-stat">
@@ -585,7 +832,7 @@
             <div class="card-divider"></div>
             <div class="card-stat">
               <span class="card-stat-value">2</span>
-              <span class="card-stat-label">Baños</span>
+              <span class="card-stat-label">Ba&ntilde;os</span>
             </div>
           </div>
           <div class="card-price">
@@ -593,7 +840,43 @@
             <span class="card-price-value">USD 150.000</span>
           </div>
         </div>
-        <div class="card-cta">Ver detalle completo &rarr;</div>
+        <div class="card-cta">Ver detalle &rarr;</div>
+      </a>
+      <a href="p15_elysj_9-09-02/p15_elysj_9-09-02.html" class="unit-card">
+        <div class="card-img-wrap">
+        <img src="render_p15_sj.jpg" alt="Elysian San Juan 2741" loading="lazy" />
+        <div class="card-img-overlay"></div>
+        <span class="card-badge">Disponible</span>
+        <div class="card-img-label">
+          <span class="card-img-project">Pensaer 15 &middot; Elysian</span>
+          <span class="card-img-unit">09-02 &middot; Piso 9</span>
+        </div>
+        </div>
+        <div class="card-body">
+          <span class="card-type">Departamento &middot; 1 Dormitorio</span>
+          <span class="card-address"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>San Juan 2741-53 &middot; Rosario</span>
+          <div class="card-stats">
+            <div class="card-stat">
+              <span class="card-stat-value">52</span>
+              <span class="card-stat-label">M&sup2;</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">1</span>
+              <span class="card-stat-label">Dorm.</span>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-stat">
+              <span class="card-stat-value">1</span>
+              <span class="card-stat-label">Ba&ntilde;o</span>
+            </div>
+          </div>
+          <div class="card-price">
+            <span class="card-price-label">Precio de lista</span>
+            <span class="card-price-value">USD 110.000</span>
+          </div>
+        </div>
+        <div class="card-cta">Ver detalle &rarr;</div>
       </a>
       </div>
     </div>
@@ -605,7 +888,7 @@
       <div class="units-grid">
       <a href="p16_eryn_1-01-03/p16_eryn_1-01-03.html" class="unit-card">
         <div class="card-img-wrap">
-        <img src="render_p16.jpg" alt="Eryn Salta 1466" />
+        <img src="render_p16.jpg" alt="Eryn Salta 1466" loading="lazy" />
         <div class="card-img-overlay"></div>
         <span class="card-badge">Disponible</span>
         <div class="card-img-label">
@@ -615,11 +898,11 @@
         </div>
         <div class="card-body">
           <span class="card-type">Departamento &middot; 3 Dormitorios</span>
-          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Salta 1466-1474 &middot; Rosario</span>
+          <span class="card-address"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Salta 1466-1474 &middot; Rosario</span>
           <div class="card-stats">
             <div class="card-stat">
               <span class="card-stat-value">175</span>
-              <span class="card-stat-label">M²</span>
+              <span class="card-stat-label">M&sup2;</span>
             </div>
             <div class="card-divider"></div>
             <div class="card-stat">
@@ -629,7 +912,7 @@
             <div class="card-divider"></div>
             <div class="card-stat">
               <span class="card-stat-value">2</span>
-              <span class="card-stat-label">Baños</span>
+              <span class="card-stat-label">Ba&ntilde;os</span>
             </div>
           </div>
           <div class="card-price">
@@ -637,11 +920,11 @@
             <span class="card-price-value">USD 367.500</span>
           </div>
         </div>
-        <div class="card-cta">Ver detalle completo &rarr;</div>
+        <div class="card-cta">Ver detalle &rarr;</div>
       </a>
       <a href="p16_eryn_1-01-04/p16_eryn_1-01-04.html" class="unit-card">
         <div class="card-img-wrap">
-        <img src="render_p16.jpg" alt="Eryn Salta 1466" />
+        <img src="render_p16.jpg" alt="Eryn Salta 1466" loading="lazy" />
         <div class="card-img-overlay"></div>
         <span class="card-badge">Disponible</span>
         <div class="card-img-label">
@@ -651,11 +934,11 @@
         </div>
         <div class="card-body">
           <span class="card-type">Departamento &middot; 3 Dormitorios</span>
-          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Salta 1466-1474 &middot; Rosario</span>
+          <span class="card-address"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Salta 1466-1474 &middot; Rosario</span>
           <div class="card-stats">
             <div class="card-stat">
               <span class="card-stat-value">172</span>
-              <span class="card-stat-label">M²</span>
+              <span class="card-stat-label">M&sup2;</span>
             </div>
             <div class="card-divider"></div>
             <div class="card-stat">
@@ -665,7 +948,7 @@
             <div class="card-divider"></div>
             <div class="card-stat">
               <span class="card-stat-value">2</span>
-              <span class="card-stat-label">Baños</span>
+              <span class="card-stat-label">Ba&ntilde;os</span>
             </div>
           </div>
           <div class="card-price">
@@ -673,11 +956,11 @@
             <span class="card-price-value">USD 361.200</span>
           </div>
         </div>
-        <div class="card-cta">Ver detalle completo &rarr;</div>
+        <div class="card-cta">Ver detalle &rarr;</div>
       </a>
       <a href="p16_eryn_3-03-03/p16_eryn_3-03-03.html" class="unit-card">
         <div class="card-img-wrap">
-        <img src="render_p16.jpg" alt="Eryn Salta 1466" />
+        <img src="render_p16.jpg" alt="Eryn Salta 1466" loading="lazy" />
         <div class="card-img-overlay"></div>
         <span class="card-badge">Disponible</span>
         <div class="card-img-label">
@@ -687,11 +970,11 @@
         </div>
         <div class="card-body">
           <span class="card-type">Departamento &middot; 2 Dormitorios</span>
-          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Salta 1466-1474 &middot; Rosario</span>
+          <span class="card-address"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Salta 1466-1474 &middot; Rosario</span>
           <div class="card-stats">
             <div class="card-stat">
               <span class="card-stat-value">83</span>
-              <span class="card-stat-label">M²</span>
+              <span class="card-stat-label">M&sup2;</span>
             </div>
             <div class="card-divider"></div>
             <div class="card-stat">
@@ -701,7 +984,7 @@
             <div class="card-divider"></div>
             <div class="card-stat">
               <span class="card-stat-value">2</span>
-              <span class="card-stat-label">Baños</span>
+              <span class="card-stat-label">Ba&ntilde;os</span>
             </div>
           </div>
           <div class="card-price">
@@ -709,11 +992,11 @@
             <span class="card-price-value">USD 215.800</span>
           </div>
         </div>
-        <div class="card-cta">Ver detalle completo &rarr;</div>
+        <div class="card-cta">Ver detalle &rarr;</div>
       </a>
       <a href="p16_eryn_10-10-01/p16_eryn_10-10-01.html" class="unit-card">
         <div class="card-img-wrap">
-        <img src="render_p16.jpg" alt="Eryn Salta 1466" />
+        <img src="render_p16.jpg" alt="Eryn Salta 1466" loading="lazy" />
         <div class="card-img-overlay"></div>
         <span class="card-badge">Disponible</span>
         <div class="card-img-label">
@@ -723,11 +1006,11 @@
         </div>
         <div class="card-body">
           <span class="card-type">Departamento &middot; 3 Dormitorios</span>
-          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Salta 1466-1474 &middot; Rosario</span>
+          <span class="card-address"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Salta 1466-1474 &middot; Rosario</span>
           <div class="card-stats">
             <div class="card-stat">
               <span class="card-stat-value">200</span>
-              <span class="card-stat-label">M²</span>
+              <span class="card-stat-label">M&sup2;</span>
             </div>
             <div class="card-divider"></div>
             <div class="card-stat">
@@ -737,7 +1020,7 @@
             <div class="card-divider"></div>
             <div class="card-stat">
               <span class="card-stat-value">2</span>
-              <span class="card-stat-label">Baños</span>
+              <span class="card-stat-label">Ba&ntilde;os</span>
             </div>
           </div>
           <div class="card-price">
@@ -745,7 +1028,7 @@
             <span class="card-price-value">USD 450.000</span>
           </div>
         </div>
-        <div class="card-cta">Ver detalle completo &rarr;</div>
+        <div class="card-cta">Ver detalle &rarr;</div>
       </a>
       </div>
     </div>
@@ -757,7 +1040,7 @@
       <div class="units-grid">
       <a href="p17_nythu_3-03-01/p17_nythu_3-03-01.html" class="unit-card">
         <div class="card-img-wrap">
-        <img src="render_p17.jpg" alt="Nythu Brown 1902" />
+        <img src="render_p17.jpg" alt="Nythu Brown 1902" loading="lazy" />
         <div class="card-img-overlay"></div>
         <span class="card-badge">Disponible</span>
         <div class="card-img-label">
@@ -767,11 +1050,11 @@
         </div>
         <div class="card-body">
           <span class="card-type">Departamento &middot; 3 Dormitorios</span>
-          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Brown 1902 &middot; Rosario</span>
+          <span class="card-address"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Brown 1902 &middot; Rosario</span>
           <div class="card-stats">
             <div class="card-stat">
               <span class="card-stat-value">164</span>
-              <span class="card-stat-label">M²</span>
+              <span class="card-stat-label">M&sup2;</span>
             </div>
             <div class="card-divider"></div>
             <div class="card-stat">
@@ -781,7 +1064,7 @@
             <div class="card-divider"></div>
             <div class="card-stat">
               <span class="card-stat-value">2</span>
-              <span class="card-stat-label">Baños</span>
+              <span class="card-stat-label">Ba&ntilde;os</span>
             </div>
           </div>
           <div class="card-price">
@@ -789,11 +1072,11 @@
             <span class="card-price-value">USD 388.000</span>
           </div>
         </div>
-        <div class="card-cta">Ver detalle completo &rarr;</div>
+        <div class="card-cta">Ver detalle &rarr;</div>
       </a>
       <a href="p17_nythu_5-05-01/p17_nythu_5-05-01.html" class="unit-card">
         <div class="card-img-wrap">
-        <img src="render_p17.jpg" alt="Nythu Brown 1902" />
+        <img src="render_p17.jpg" alt="Nythu Brown 1902" loading="lazy" />
         <div class="card-img-overlay"></div>
         <span class="card-badge">Disponible</span>
         <div class="card-img-label">
@@ -803,11 +1086,11 @@
         </div>
         <div class="card-body">
           <span class="card-type">Departamento &middot; 3 Dormitorios</span>
-          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Brown 1902 &middot; Rosario</span>
+          <span class="card-address"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Brown 1902 &middot; Rosario</span>
           <div class="card-stats">
             <div class="card-stat">
               <span class="card-stat-value">164</span>
-              <span class="card-stat-label">M²</span>
+              <span class="card-stat-label">M&sup2;</span>
             </div>
             <div class="card-divider"></div>
             <div class="card-stat">
@@ -817,7 +1100,7 @@
             <div class="card-divider"></div>
             <div class="card-stat">
               <span class="card-stat-value">2</span>
-              <span class="card-stat-label">Baños</span>
+              <span class="card-stat-label">Ba&ntilde;os</span>
             </div>
           </div>
           <div class="card-price">
@@ -825,11 +1108,11 @@
             <span class="card-price-value">USD 398.000</span>
           </div>
         </div>
-        <div class="card-cta">Ver detalle completo &rarr;</div>
+        <div class="card-cta">Ver detalle &rarr;</div>
       </a>
       <a href="p17_nythu_7-07-02/p17_nythu_7-07-02.html" class="unit-card">
         <div class="card-img-wrap">
-        <img src="render_p17.jpg" alt="Nythu Brown 1902" />
+        <img src="render_p17.jpg" alt="Nythu Brown 1902" loading="lazy" />
         <div class="card-img-overlay"></div>
         <span class="card-badge">Disponible</span>
         <div class="card-img-label">
@@ -839,11 +1122,11 @@
         </div>
         <div class="card-body">
           <span class="card-type">Departamento &middot; 3 Dormitorios</span>
-          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Brown 1902 &middot; Rosario</span>
+          <span class="card-address"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Brown 1902 &middot; Rosario</span>
           <div class="card-stats">
             <div class="card-stat">
               <span class="card-stat-value">138,5</span>
-              <span class="card-stat-label">M²</span>
+              <span class="card-stat-label">M&sup2;</span>
             </div>
             <div class="card-divider"></div>
             <div class="card-stat">
@@ -853,7 +1136,7 @@
             <div class="card-divider"></div>
             <div class="card-stat">
               <span class="card-stat-value">2</span>
-              <span class="card-stat-label">Baños</span>
+              <span class="card-stat-label">Ba&ntilde;os</span>
             </div>
           </div>
           <div class="card-price">
@@ -861,11 +1144,11 @@
             <span class="card-price-value">USD 340.000</span>
           </div>
         </div>
-        <div class="card-cta">Ver detalle completo &rarr;</div>
+        <div class="card-cta">Ver detalle &rarr;</div>
       </a>
       <a href="p17_nythu_9-09-02/p17_nythu_9-09-02.html" class="unit-card">
         <div class="card-img-wrap">
-        <img src="render_p17.jpg" alt="Nythu Brown 1902" />
+        <img src="render_p17.jpg" alt="Nythu Brown 1902" loading="lazy" />
         <div class="card-img-overlay"></div>
         <span class="card-badge">Disponible</span>
         <div class="card-img-label">
@@ -875,11 +1158,11 @@
         </div>
         <div class="card-body">
           <span class="card-type">Departamento &middot; 2 Dormitorios</span>
-          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Brown 1902 &middot; Rosario</span>
+          <span class="card-address"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Brown 1902 &middot; Rosario</span>
           <div class="card-stats">
             <div class="card-stat">
               <span class="card-stat-value">123</span>
-              <span class="card-stat-label">M²</span>
+              <span class="card-stat-label">M&sup2;</span>
             </div>
             <div class="card-divider"></div>
             <div class="card-stat">
@@ -889,7 +1172,7 @@
             <div class="card-divider"></div>
             <div class="card-stat">
               <span class="card-stat-value">2</span>
-              <span class="card-stat-label">Baños</span>
+              <span class="card-stat-label">Ba&ntilde;os</span>
             </div>
           </div>
           <div class="card-price">
@@ -897,11 +1180,11 @@
             <span class="card-price-value">USD 296.300</span>
           </div>
         </div>
-        <div class="card-cta">Ver detalle completo &rarr;</div>
+        <div class="card-cta">Ver detalle &rarr;</div>
       </a>
       <a href="p17_nythu_10-10-01/p17_nythu_10-10-01.html" class="unit-card">
         <div class="card-img-wrap">
-        <img src="render_p17.jpg" alt="Nythu Brown 1902" />
+        <img src="render_p17.jpg" alt="Nythu Brown 1902" loading="lazy" />
         <div class="card-img-overlay"></div>
         <span class="card-badge">Disponible</span>
         <div class="card-img-label">
@@ -911,11 +1194,11 @@
         </div>
         <div class="card-body">
           <span class="card-type">Departamento &middot; 3 Dormitorios</span>
-          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Brown 1902 &middot; Rosario</span>
+          <span class="card-address"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Brown 1902 &middot; Rosario</span>
           <div class="card-stats">
             <div class="card-stat">
               <span class="card-stat-value">218,5</span>
-              <span class="card-stat-label">M²</span>
+              <span class="card-stat-label">M&sup2;</span>
             </div>
             <div class="card-divider"></div>
             <div class="card-stat">
@@ -925,7 +1208,7 @@
             <div class="card-divider"></div>
             <div class="card-stat">
               <span class="card-stat-value">2</span>
-              <span class="card-stat-label">Baños</span>
+              <span class="card-stat-label">Ba&ntilde;os</span>
             </div>
           </div>
           <div class="card-price">
@@ -933,7 +1216,7 @@
             <span class="card-price-value">USD 525.000</span>
           </div>
         </div>
-        <div class="card-cta">Ver detalle completo &rarr;</div>
+        <div class="card-cta">Ver detalle &rarr;</div>
       </a>
       </div>
     </div>
@@ -945,7 +1228,7 @@
       <div class="units-grid">
       <a href="p18_dynha_1-01-01/p18_dynha_1-01-01.html" class="unit-card">
         <div class="card-img-wrap">
-        <img src="p18_dynha_1-01-01/Ficha_Dynha Pellegrini 01-01.png" alt="Ficha 01-01" />
+        <img src="p18_dynha_1-01-01/Ficha_Dynha Pellegrini 01-01.png" alt="Ficha 01-01" loading="lazy" />
         <div class="card-img-overlay"></div>
         <span class="card-badge">Disponible</span>
         <div class="card-img-label">
@@ -955,11 +1238,11 @@
         </div>
         <div class="card-body">
           <span class="card-type">Departamento &middot; 2 Dormitorios</span>
-          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Av. Pellegrini 419 &middot; Rosario</span>
+          <span class="card-address"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Av. Pellegrini 419 &middot; Rosario</span>
           <div class="card-stats">
             <div class="card-stat">
               <span class="card-stat-value">86,5</span>
-              <span class="card-stat-label">M²</span>
+              <span class="card-stat-label">M&sup2;</span>
             </div>
             <div class="card-divider"></div>
             <div class="card-stat">
@@ -969,7 +1252,7 @@
             <div class="card-divider"></div>
             <div class="card-stat">
               <span class="card-stat-value">2</span>
-              <span class="card-stat-label">Baños</span>
+              <span class="card-stat-label">Ba&ntilde;os</span>
             </div>
           </div>
           <div class="card-price">
@@ -977,11 +1260,11 @@
             <span class="card-price-value">USD 181.650</span>
           </div>
         </div>
-        <div class="card-cta">Ver detalle completo &rarr;</div>
+        <div class="card-cta">Ver detalle &rarr;</div>
       </a>
       <a href="p18_dynha_1-01-02/p18_dynha_1-01-02.html" class="unit-card">
         <div class="card-img-wrap">
-        <img src="p18_dynha_1-01-02/Ficha_Dynha Pellegrini 01-02.png" alt="Ficha 01-02" />
+        <img src="p18_dynha_1-01-02/Ficha_Dynha Pellegrini 01-02.png" alt="Ficha 01-02" loading="lazy" />
         <div class="card-img-overlay"></div>
         <span class="card-badge">Disponible</span>
         <div class="card-img-label">
@@ -991,11 +1274,11 @@
         </div>
         <div class="card-body">
           <span class="card-type">Departamento &middot; 2 Dormitorios</span>
-          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Av. Pellegrini 419 &middot; Rosario</span>
+          <span class="card-address"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Av. Pellegrini 419 &middot; Rosario</span>
           <div class="card-stats">
             <div class="card-stat">
               <span class="card-stat-value">115</span>
-              <span class="card-stat-label">M²</span>
+              <span class="card-stat-label">M&sup2;</span>
             </div>
             <div class="card-divider"></div>
             <div class="card-stat">
@@ -1005,7 +1288,7 @@
             <div class="card-divider"></div>
             <div class="card-stat">
               <span class="card-stat-value">2</span>
-              <span class="card-stat-label">Baños</span>
+              <span class="card-stat-label">Ba&ntilde;os</span>
             </div>
           </div>
           <div class="card-price">
@@ -1013,11 +1296,11 @@
             <span class="card-price-value">USD 235.750</span>
           </div>
         </div>
-        <div class="card-cta">Ver detalle completo &rarr;</div>
+        <div class="card-cta">Ver detalle &rarr;</div>
       </a>
       <a href="p18_dynha_2-02-01/p18_dynha_2-02-01.html" class="unit-card">
         <div class="card-img-wrap">
-        <img src="p18_dynha_2-02-01/Ficha_Dynha Pellegrini 02-01.png" alt="Ficha 02-01" />
+        <img src="p18_dynha_2-02-01/Ficha_Dynha Pellegrini 02-01.png" alt="Ficha 02-01" loading="lazy" />
         <div class="card-img-overlay"></div>
         <span class="card-badge">Disponible</span>
         <div class="card-img-label">
@@ -1027,11 +1310,11 @@
         </div>
         <div class="card-body">
           <span class="card-type">Departamento &middot; 2 Dormitorios</span>
-          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Av. Pellegrini 419 &middot; Rosario</span>
+          <span class="card-address"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Av. Pellegrini 419 &middot; Rosario</span>
           <div class="card-stats">
             <div class="card-stat">
               <span class="card-stat-value">86,5</span>
-              <span class="card-stat-label">M²</span>
+              <span class="card-stat-label">M&sup2;</span>
             </div>
             <div class="card-divider"></div>
             <div class="card-stat">
@@ -1041,7 +1324,7 @@
             <div class="card-divider"></div>
             <div class="card-stat">
               <span class="card-stat-value">2</span>
-              <span class="card-stat-label">Baños</span>
+              <span class="card-stat-label">Ba&ntilde;os</span>
             </div>
           </div>
           <div class="card-price">
@@ -1049,11 +1332,11 @@
             <span class="card-price-value">USD 194.625</span>
           </div>
         </div>
-        <div class="card-cta">Ver detalle completo &rarr;</div>
+        <div class="card-cta">Ver detalle &rarr;</div>
       </a>
       <a href="p18_dynha_3-03-02/p18_dynha_3-03-02.html" class="unit-card">
         <div class="card-img-wrap">
-        <img src="p18_dynha_3-03-02/Ficha_Dynha Pellegrini 03-02.png" alt="Ficha 03-02" />
+        <img src="p18_dynha_3-03-02/Ficha_Dynha Pellegrini 03-02.png" alt="Ficha 03-02" loading="lazy" />
         <div class="card-img-overlay"></div>
         <span class="card-badge">Disponible</span>
         <div class="card-img-label">
@@ -1063,11 +1346,11 @@
         </div>
         <div class="card-body">
           <span class="card-type">Departamento &middot; 2 Dormitorios</span>
-          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Av. Pellegrini 419 &middot; Rosario</span>
+          <span class="card-address"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Av. Pellegrini 419 &middot; Rosario</span>
           <div class="card-stats">
             <div class="card-stat">
               <span class="card-stat-value">85</span>
-              <span class="card-stat-label">M²</span>
+              <span class="card-stat-label">M&sup2;</span>
             </div>
             <div class="card-divider"></div>
             <div class="card-stat">
@@ -1077,7 +1360,7 @@
             <div class="card-divider"></div>
             <div class="card-stat">
               <span class="card-stat-value">2</span>
-              <span class="card-stat-label">Baños</span>
+              <span class="card-stat-label">Ba&ntilde;os</span>
             </div>
           </div>
           <div class="card-price">
@@ -1085,11 +1368,11 @@
             <span class="card-price-value">USD 199.750</span>
           </div>
         </div>
-        <div class="card-cta">Ver detalle completo &rarr;</div>
+        <div class="card-cta">Ver detalle &rarr;</div>
       </a>
       <a href="p18_dynha_5-05-02/p18_dynha_5-05-02.html" class="unit-card">
         <div class="card-img-wrap">
-        <img src="p18_dynha_5-05-02/Ficha_Dynha Pellegrini 05-02.png" alt="Ficha 05-02" />
+        <img src="p18_dynha_5-05-02/Ficha_Dynha Pellegrini 05-02.png" alt="Ficha 05-02" loading="lazy" />
         <div class="card-img-overlay"></div>
         <span class="card-badge">Disponible</span>
         <div class="card-img-label">
@@ -1099,16 +1382,16 @@
         </div>
         <div class="card-body">
           <span class="card-type">Departamento &middot; Monoambiente</span>
-          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Av. Pellegrini 419 &middot; Rosario</span>
+          <span class="card-address"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Av. Pellegrini 419 &middot; Rosario</span>
           <div class="card-stats">
             <div class="card-stat">
               <span class="card-stat-value">37</span>
-              <span class="card-stat-label">M²</span>
+              <span class="card-stat-label">M&sup2;</span>
             </div>
             <div class="card-divider"></div>
             <div class="card-stat">
               <span class="card-stat-value">1</span>
-              <span class="card-stat-label">Baño</span>
+              <span class="card-stat-label">Ba&ntilde;o</span>
             </div>
           </div>
           <div class="card-price">
@@ -1116,11 +1399,11 @@
             <span class="card-price-value">USD 79.550</span>
           </div>
         </div>
-        <div class="card-cta">Ver detalle completo &rarr;</div>
+        <div class="card-cta">Ver detalle &rarr;</div>
       </a>
       <a href="p18_dynha_7-07-01/p18_dynha_7-07-01.html" class="unit-card">
         <div class="card-img-wrap">
-        <img src="p18_dynha_7-07-01/Ficha_Dynha Pellegrini 07-01.png" alt="Ficha 07-01" />
+        <img src="p18_dynha_7-07-01/Ficha_Dynha Pellegrini 07-01.png" alt="Ficha 07-01" loading="lazy" />
         <div class="card-img-overlay"></div>
         <span class="card-badge">Disponible</span>
         <div class="card-img-label">
@@ -1130,11 +1413,11 @@
         </div>
         <div class="card-body">
           <span class="card-type">Departamento &middot; 2 Dormitorios</span>
-          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Av. Pellegrini 419 &middot; Rosario</span>
+          <span class="card-address"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Av. Pellegrini 419 &middot; Rosario</span>
           <div class="card-stats">
             <div class="card-stat">
               <span class="card-stat-value">86,5</span>
-              <span class="card-stat-label">M²</span>
+              <span class="card-stat-label">M&sup2;</span>
             </div>
             <div class="card-divider"></div>
             <div class="card-stat">
@@ -1144,7 +1427,7 @@
             <div class="card-divider"></div>
             <div class="card-stat">
               <span class="card-stat-value">2</span>
-              <span class="card-stat-label">Baños</span>
+              <span class="card-stat-label">Ba&ntilde;os</span>
             </div>
           </div>
           <div class="card-price">
@@ -1152,11 +1435,11 @@
             <span class="card-price-value">USD 220.575</span>
           </div>
         </div>
-        <div class="card-cta">Ver detalle completo &rarr;</div>
+        <div class="card-cta">Ver detalle &rarr;</div>
       </a>
       <a href="p18_dynha_7-07-02/p18_dynha_7-07-02.html" class="unit-card">
         <div class="card-img-wrap">
-        <img src="p18_dynha_7-07-02/Ficha_Dynha Pellegrini 07-02.png" alt="Ficha 07-02" />
+        <img src="p18_dynha_7-07-02/Ficha_Dynha Pellegrini 07-02.png" alt="Ficha 07-02" loading="lazy" />
         <div class="card-img-overlay"></div>
         <span class="card-badge">Disponible</span>
         <div class="card-img-label">
@@ -1166,16 +1449,16 @@
         </div>
         <div class="card-body">
           <span class="card-type">Departamento &middot; Monoambiente</span>
-          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Av. Pellegrini 419 &middot; Rosario</span>
+          <span class="card-address"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Av. Pellegrini 419 &middot; Rosario</span>
           <div class="card-stats">
             <div class="card-stat">
               <span class="card-stat-value">37</span>
-              <span class="card-stat-label">M²</span>
+              <span class="card-stat-label">M&sup2;</span>
             </div>
             <div class="card-divider"></div>
             <div class="card-stat">
               <span class="card-stat-value">1</span>
-              <span class="card-stat-label">Baño</span>
+              <span class="card-stat-label">Ba&ntilde;o</span>
             </div>
           </div>
           <div class="card-price">
@@ -1183,11 +1466,11 @@
             <span class="card-price-value">USD 81.400</span>
           </div>
         </div>
-        <div class="card-cta">Ver detalle completo &rarr;</div>
+        <div class="card-cta">Ver detalle &rarr;</div>
       </a>
       <a href="p18_dynha_7-07-03/p18_dynha_7-07-03.html" class="unit-card">
         <div class="card-img-wrap">
-        <img src="p18_dynha_7-07-03/Ficha_Dynha Pellegrini 07-03.png" alt="Ficha 07-03" />
+        <img src="p18_dynha_7-07-03/Ficha_Dynha Pellegrini 07-03.png" alt="Ficha 07-03" loading="lazy" />
         <div class="card-img-overlay"></div>
         <span class="card-badge">Disponible</span>
         <div class="card-img-label">
@@ -1197,11 +1480,11 @@
         </div>
         <div class="card-body">
           <span class="card-type">Departamento &middot; 1 Dormitorio</span>
-          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Av. Pellegrini 419 &middot; Rosario</span>
+          <span class="card-address"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Av. Pellegrini 419 &middot; Rosario</span>
           <div class="card-stats">
             <div class="card-stat">
               <span class="card-stat-value">47</span>
-              <span class="card-stat-label">M²</span>
+              <span class="card-stat-label">M&sup2;</span>
             </div>
             <div class="card-divider"></div>
             <div class="card-stat">
@@ -1211,7 +1494,7 @@
             <div class="card-divider"></div>
             <div class="card-stat">
               <span class="card-stat-value">1</span>
-              <span class="card-stat-label">Baño</span>
+              <span class="card-stat-label">Ba&ntilde;o</span>
             </div>
           </div>
           <div class="card-price">
@@ -1219,11 +1502,11 @@
             <span class="card-price-value">USD 110.450</span>
           </div>
         </div>
-        <div class="card-cta">Ver detalle completo &rarr;</div>
+        <div class="card-cta">Ver detalle &rarr;</div>
       </a>
       <a href="p18_dynha_10y11-01/p18_dynha_10y11-01.html" class="unit-card">
         <div class="card-img-wrap">
-        <img src="p18_dynha_10y11-01/Ficha_Dynha Pellegrini 10y11-01.png" alt="Ficha 10y11-01" />
+        <img src="p18_dynha_10y11-01/Ficha_Dynha Pellegrini 10y11-01.png" alt="Ficha 10y11-01" loading="lazy" />
         <div class="card-img-overlay"></div>
         <span class="card-badge">Disponible</span>
         <div class="card-img-label">
@@ -1233,11 +1516,11 @@
         </div>
         <div class="card-body">
           <span class="card-type">D&uacute;plex &middot; 3 Dormitorios</span>
-          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Av. Pellegrini 419 &middot; Rosario</span>
+          <span class="card-address"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Av. Pellegrini 419 &middot; Rosario</span>
           <div class="card-stats">
             <div class="card-stat">
               <span class="card-stat-value">163,5</span>
-              <span class="card-stat-label">M²</span>
+              <span class="card-stat-label">M&sup2;</span>
             </div>
             <div class="card-divider"></div>
             <div class="card-stat">
@@ -1247,7 +1530,7 @@
             <div class="card-divider"></div>
             <div class="card-stat">
               <span class="card-stat-value">2</span>
-              <span class="card-stat-label">Baños</span>
+              <span class="card-stat-label">Ba&ntilde;os</span>
             </div>
           </div>
           <div class="card-price">
@@ -1255,11 +1538,11 @@
             <span class="card-price-value">USD 376.050</span>
           </div>
         </div>
-        <div class="card-cta">Ver detalle completo &rarr;</div>
+        <div class="card-cta">Ver detalle &rarr;</div>
       </a>
       <a href="p18_dynha_10y11-02/p18_dynha_10y11-02.html" class="unit-card">
         <div class="card-img-wrap">
-        <img src="p18_dynha_10y11-02/Ficha_Dynha Pellegrini 10y11-02.png" alt="Ficha 10y11-02" />
+        <img src="p18_dynha_10y11-02/Ficha_Dynha Pellegrini 10y11-02.png" alt="Ficha 10y11-02" loading="lazy" />
         <div class="card-img-overlay"></div>
         <span class="card-badge">Disponible</span>
         <div class="card-img-label">
@@ -1269,11 +1552,11 @@
         </div>
         <div class="card-body">
           <span class="card-type">D&uacute;plex &middot; 2 Dormitorios</span>
-          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Av. Pellegrini 419 &middot; Rosario</span>
+          <span class="card-address"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Av. Pellegrini 419 &middot; Rosario</span>
           <div class="card-stats">
             <div class="card-stat">
               <span class="card-stat-value">132</span>
-              <span class="card-stat-label">M²</span>
+              <span class="card-stat-label">M&sup2;</span>
             </div>
             <div class="card-divider"></div>
             <div class="card-stat">
@@ -1283,7 +1566,7 @@
             <div class="card-divider"></div>
             <div class="card-stat">
               <span class="card-stat-value">2</span>
-              <span class="card-stat-label">Baños</span>
+              <span class="card-stat-label">Ba&ntilde;os</span>
             </div>
           </div>
           <div class="card-price">
@@ -1291,7 +1574,7 @@
             <span class="card-price-value">USD 330.000</span>
           </div>
         </div>
-        <div class="card-cta">Ver detalle completo &rarr;</div>
+        <div class="card-cta">Ver detalle &rarr;</div>
       </a>
       </div>
     </div>
@@ -1303,7 +1586,7 @@
       <div class="units-grid">
       <a href="p20_elsj_2y3-02-01/p20_elsj_2y3-02-01.html" class="unit-card">
         <div class="card-img-wrap">
-        <img src="p20_elsj_2y3-02-01/ficha.png" alt="Ficha duplex 02-01" />
+        <img src="p20_elsj_2y3-02-01/ficha.png" alt="Ficha duplex 02-01" loading="lazy" />
         <div class="card-img-overlay"></div>
         <span class="card-badge">Disponible</span>
         <div class="card-img-label">
@@ -1313,11 +1596,11 @@
         </div>
         <div class="card-body">
           <span class="card-type">D&uacute;plex &middot; 3 Dormitorios</span>
-          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>San Jos&eacute; 2736 &middot; Funes</span>
+          <span class="card-address"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>San Jos&eacute; 2736 &middot; Funes</span>
           <div class="card-stats">
             <div class="card-stat">
               <span class="card-stat-value">163</span>
-              <span class="card-stat-label">M²</span>
+              <span class="card-stat-label">M&sup2;</span>
             </div>
             <div class="card-divider"></div>
             <div class="card-stat">
@@ -1327,7 +1610,7 @@
             <div class="card-divider"></div>
             <div class="card-stat">
               <span class="card-stat-value">3</span>
-              <span class="card-stat-label">Baños</span>
+              <span class="card-stat-label">Ba&ntilde;os</span>
             </div>
           </div>
           <div class="card-price">
@@ -1335,11 +1618,11 @@
             <span class="card-price-value">USD 395.000</span>
           </div>
         </div>
-        <div class="card-cta">Ver detalle completo &rarr;</div>
+        <div class="card-cta">Ver detalle &rarr;</div>
       </a>
       <a href="p20_elsj_2y3-02-02/p20_elsj_2y3-02-02.html" class="unit-card">
         <div class="card-img-wrap">
-        <img src="p20_elsj_2y3-02-02/ficha.png" alt="Ficha duplex 02-02" />
+        <img src="p20_elsj_2y3-02-02/ficha.png" alt="Ficha duplex 02-02" loading="lazy" />
         <div class="card-img-overlay"></div>
         <span class="card-badge">Disponible</span>
         <div class="card-img-label">
@@ -1349,11 +1632,11 @@
         </div>
         <div class="card-body">
           <span class="card-type">D&uacute;plex &middot; 3 Dormitorios</span>
-          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>San Jos&eacute; 2736 &middot; Funes</span>
+          <span class="card-address"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>San Jos&eacute; 2736 &middot; Funes</span>
           <div class="card-stats">
             <div class="card-stat">
               <span class="card-stat-value">144,5</span>
-              <span class="card-stat-label">M²</span>
+              <span class="card-stat-label">M&sup2;</span>
             </div>
             <div class="card-divider"></div>
             <div class="card-stat">
@@ -1363,7 +1646,7 @@
             <div class="card-divider"></div>
             <div class="card-stat">
               <span class="card-stat-value">3</span>
-              <span class="card-stat-label">Baños</span>
+              <span class="card-stat-label">Ba&ntilde;os</span>
             </div>
           </div>
           <div class="card-price">
@@ -1371,11 +1654,11 @@
             <span class="card-price-value">USD 350.000</span>
           </div>
         </div>
-        <div class="card-cta">Ver detalle completo &rarr;</div>
+        <div class="card-cta">Ver detalle &rarr;</div>
       </a>
       <a href="p20_elsj_2y3-02-04/p20_elsj_2y3-02-04.html" class="unit-card">
         <div class="card-img-wrap">
-        <img src="p20_elsj_2y3-02-04/ficha.png" alt="Ficha duplex 02-04" />
+        <img src="p20_elsj_2y3-02-04/ficha.png" alt="Ficha duplex 02-04" loading="lazy" />
         <div class="card-img-overlay"></div>
         <span class="card-badge">Disponible</span>
         <div class="card-img-label">
@@ -1385,11 +1668,11 @@
         </div>
         <div class="card-body">
           <span class="card-type">D&uacute;plex &middot; 3 Dormitorios</span>
-          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>San Jos&eacute; 2736 &middot; Funes</span>
+          <span class="card-address"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>San Jos&eacute; 2736 &middot; Funes</span>
           <div class="card-stats">
             <div class="card-stat">
               <span class="card-stat-value">128</span>
-              <span class="card-stat-label">M²</span>
+              <span class="card-stat-label">M&sup2;</span>
             </div>
             <div class="card-divider"></div>
             <div class="card-stat">
@@ -1399,7 +1682,7 @@
             <div class="card-divider"></div>
             <div class="card-stat">
               <span class="card-stat-value">3</span>
-              <span class="card-stat-label">Baños</span>
+              <span class="card-stat-label">Ba&ntilde;os</span>
             </div>
           </div>
           <div class="card-price">
@@ -1407,11 +1690,11 @@
             <span class="card-price-value">USD 320.000</span>
           </div>
         </div>
-        <div class="card-cta">Ver detalle completo &rarr;</div>
+        <div class="card-cta">Ver detalle &rarr;</div>
       </a>
       <a href="p20_elsj_2y3-02-05/p20_elsj_2y3-02-05.html" class="unit-card">
         <div class="card-img-wrap">
-        <img src="p20_elsj_2y3-02-05/ficha.png" alt="Ficha duplex 02-05" />
+        <img src="p20_elsj_2y3-02-05/ficha.png" alt="Ficha duplex 02-05" loading="lazy" />
         <div class="card-img-overlay"></div>
         <span class="card-badge">Disponible</span>
         <div class="card-img-label">
@@ -1421,11 +1704,11 @@
         </div>
         <div class="card-body">
           <span class="card-type">D&uacute;plex &middot; 3 Dormitorios</span>
-          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>San Jos&eacute; 2736 &middot; Funes</span>
+          <span class="card-address"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>San Jos&eacute; 2736 &middot; Funes</span>
           <div class="card-stats">
             <div class="card-stat">
               <span class="card-stat-value">146</span>
-              <span class="card-stat-label">M²</span>
+              <span class="card-stat-label">M&sup2;</span>
             </div>
             <div class="card-divider"></div>
             <div class="card-stat">
@@ -1435,7 +1718,7 @@
             <div class="card-divider"></div>
             <div class="card-stat">
               <span class="card-stat-value">3</span>
-              <span class="card-stat-label">Baños</span>
+              <span class="card-stat-label">Ba&ntilde;os</span>
             </div>
           </div>
           <div class="card-price">
@@ -1443,11 +1726,11 @@
             <span class="card-price-value">USD 355.000</span>
           </div>
         </div>
-        <div class="card-cta">Ver detalle completo &rarr;</div>
+        <div class="card-cta">Ver detalle &rarr;</div>
       </a>
       <a href="p20_elsj_2y3-02-06/p20_elsj_2y3-02-06.html" class="unit-card">
         <div class="card-img-wrap">
-        <img src="p20_elsj_2y3-02-06/ficha.png" alt="Ficha duplex 02-06" />
+        <img src="p20_elsj_2y3-02-06/ficha.png" alt="Ficha duplex 02-06" loading="lazy" />
         <div class="card-img-overlay"></div>
         <span class="card-badge">Disponible</span>
         <div class="card-img-label">
@@ -1457,11 +1740,11 @@
         </div>
         <div class="card-body">
           <span class="card-type">D&uacute;plex &middot; 2 Dormitorios</span>
-          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>San Jos&eacute; 2736 &middot; Funes</span>
+          <span class="card-address"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>San Jos&eacute; 2736 &middot; Funes</span>
           <div class="card-stats">
             <div class="card-stat">
               <span class="card-stat-value">95,5</span>
-              <span class="card-stat-label">M²</span>
+              <span class="card-stat-label">M&sup2;</span>
             </div>
             <div class="card-divider"></div>
             <div class="card-stat">
@@ -1471,7 +1754,7 @@
             <div class="card-divider"></div>
             <div class="card-stat">
               <span class="card-stat-value">2</span>
-              <span class="card-stat-label">Baños</span>
+              <span class="card-stat-label">Ba&ntilde;os</span>
             </div>
           </div>
           <div class="card-price">
@@ -1479,11 +1762,11 @@
             <span class="card-price-value">USD 240.000</span>
           </div>
         </div>
-        <div class="card-cta">Ver detalle completo &rarr;</div>
+        <div class="card-cta">Ver detalle &rarr;</div>
       </a>
       <a href="p20_elsj_2y3-02-08/p20_elsj_2y3-02-08.html" class="unit-card">
         <div class="card-img-wrap">
-        <img src="p20_elsj_2y3-02-08/ficha.png" alt="Ficha duplex 02-08" />
+        <img src="p20_elsj_2y3-02-08/ficha.png" alt="Ficha duplex 02-08" loading="lazy" />
         <div class="card-img-overlay"></div>
         <span class="card-badge">Disponible</span>
         <div class="card-img-label">
@@ -1493,11 +1776,11 @@
         </div>
         <div class="card-body">
           <span class="card-type">D&uacute;plex &middot; 2 Dormitorios</span>
-          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>San Jos&eacute; 2736 &middot; Funes</span>
+          <span class="card-address"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>San Jos&eacute; 2736 &middot; Funes</span>
           <div class="card-stats">
             <div class="card-stat">
               <span class="card-stat-value">90,5</span>
-              <span class="card-stat-label">M²</span>
+              <span class="card-stat-label">M&sup2;</span>
             </div>
             <div class="card-divider"></div>
             <div class="card-stat">
@@ -1507,7 +1790,7 @@
             <div class="card-divider"></div>
             <div class="card-stat">
               <span class="card-stat-value">2</span>
-              <span class="card-stat-label">Baños</span>
+              <span class="card-stat-label">Ba&ntilde;os</span>
             </div>
           </div>
           <div class="card-price">
@@ -1515,11 +1798,11 @@
             <span class="card-price-value">USD 210.000</span>
           </div>
         </div>
-        <div class="card-cta">Ver detalle completo &rarr;</div>
+        <div class="card-cta">Ver detalle &rarr;</div>
       </a>
       <a href="p20_elsj_2y3-02-09/p20_elsj_2y3-02-09.html" class="unit-card">
         <div class="card-img-wrap">
-        <img src="p20_elsj_2y3-02-09/ficha.png" alt="Ficha duplex 02-09" />
+        <img src="p20_elsj_2y3-02-09/ficha.png" alt="Ficha duplex 02-09" loading="lazy" />
         <div class="card-img-overlay"></div>
         <span class="card-badge">Disponible</span>
         <div class="card-img-label">
@@ -1529,11 +1812,11 @@
         </div>
         <div class="card-body">
           <span class="card-type">D&uacute;plex &middot; 2 Dormitorios</span>
-          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>San Jos&eacute; 2736 &middot; Funes</span>
+          <span class="card-address"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>San Jos&eacute; 2736 &middot; Funes</span>
           <div class="card-stats">
             <div class="card-stat">
               <span class="card-stat-value">95,5</span>
-              <span class="card-stat-label">M²</span>
+              <span class="card-stat-label">M&sup2;</span>
             </div>
             <div class="card-divider"></div>
             <div class="card-stat">
@@ -1543,7 +1826,7 @@
             <div class="card-divider"></div>
             <div class="card-stat">
               <span class="card-stat-value">2</span>
-              <span class="card-stat-label">Baños</span>
+              <span class="card-stat-label">Ba&ntilde;os</span>
             </div>
           </div>
           <div class="card-price">
@@ -1551,11 +1834,11 @@
             <span class="card-price-value">USD 240.000</span>
           </div>
         </div>
-        <div class="card-cta">Ver detalle completo &rarr;</div>
+        <div class="card-cta">Ver detalle &rarr;</div>
       </a>
       <a href="p20_elsj_2y3-02-10/p20_elsj_2y3-02-10.html" class="unit-card">
         <div class="card-img-wrap">
-        <img src="p20_elsj_2y3-02-10/ficha.png" alt="Ficha duplex 02-10" />
+        <img src="p20_elsj_2y3-02-10/ficha.png" alt="Ficha duplex 02-10" loading="lazy" />
         <div class="card-img-overlay"></div>
         <span class="card-badge">Disponible</span>
         <div class="card-img-label">
@@ -1565,11 +1848,11 @@
         </div>
         <div class="card-body">
           <span class="card-type">D&uacute;plex &middot; 3 Dormitorios</span>
-          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>San Jos&eacute; 2736 &middot; Funes</span>
+          <span class="card-address"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>San Jos&eacute; 2736 &middot; Funes</span>
           <div class="card-stats">
             <div class="card-stat">
               <span class="card-stat-value">164</span>
-              <span class="card-stat-label">M²</span>
+              <span class="card-stat-label">M&sup2;</span>
             </div>
             <div class="card-divider"></div>
             <div class="card-stat">
@@ -1579,7 +1862,7 @@
             <div class="card-divider"></div>
             <div class="card-stat">
               <span class="card-stat-value">3</span>
-              <span class="card-stat-label">Baños</span>
+              <span class="card-stat-label">Ba&ntilde;os</span>
             </div>
           </div>
           <div class="card-price">
@@ -1587,7 +1870,7 @@
             <span class="card-price-value">USD 395.000</span>
           </div>
         </div>
-        <div class="card-cta">Ver detalle completo &rarr;</div>
+        <div class="card-cta">Ver detalle &rarr;</div>
       </a>
       </div>
     </div>
@@ -1599,7 +1882,7 @@
       <div class="units-grid">
       <a href="p7_oficina_sl/p7_oficina_sl.html" class="unit-card">
         <div class="card-img-wrap">
-        <img src="p7_oficina_sl/fotos/04-salon.jpeg" alt="Oficina 1C San Lorenzo 1725" />
+        <img src="p7_oficina_sl/fotos/04-salon.jpeg" alt="Oficina 1C San Lorenzo 1725" loading="lazy" />
         <div class="card-img-overlay"></div>
         <span class="card-badge">Disponible</span>
         <div class="card-img-label">
@@ -1609,16 +1892,16 @@
         </div>
         <div class="card-body">
           <span class="card-type">Oficina &middot; Planta baja</span>
-          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>San Lorenzo 1725 &middot; Rosario</span>
+          <span class="card-address"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>San Lorenzo 1725 &middot; Rosario</span>
           <div class="card-stats">
             <div class="card-stat">
               <span class="card-stat-value">93</span>
-              <span class="card-stat-label">M²</span>
+              <span class="card-stat-label">M&sup2;</span>
             </div>
             <div class="card-divider"></div>
             <div class="card-stat">
               <span class="card-stat-value">2</span>
-              <span class="card-stat-label">Baños</span>
+              <span class="card-stat-label">Ba&ntilde;os</span>
             </div>
           </div>
           <div class="card-price">
@@ -1626,7 +1909,7 @@
             <span class="card-price-value">Consultar</span>
           </div>
         </div>
-        <div class="card-cta">Ver detalle completo &rarr;</div>
+        <div class="card-cta">Ver detalle &rarr;</div>
       </a>
       </div>
     </div>
@@ -1639,18 +1922,18 @@
       <a href="z_italia1165_8c/z_italia1165_8c.html" class="unit-card">
         <div class="card-img-wrap">
         <div class="card-no-img">
-          <span class="card-no-img-badge">Disponible</span>
+          <span class="card-badge card-badge-noimg">Disponible</span>
           <span class="card-no-img-unit">8 C &middot; Piso 8</span>
           <span class="card-no-img-project">Italia 1165 &middot; Rosario</span>
         </div>
         </div>
         <div class="card-body">
           <span class="card-type">Departamento &middot; 2 Dormitorios</span>
-          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Italia 1165 &middot; Rosario</span>
+          <span class="card-address"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Italia 1165 &middot; Rosario</span>
           <div class="card-stats">
             <div class="card-stat">
               <span class="card-stat-value">55</span>
-              <span class="card-stat-label">M²</span>
+              <span class="card-stat-label">M&sup2;</span>
             </div>
             <div class="card-divider"></div>
             <div class="card-stat">
@@ -1660,7 +1943,7 @@
             <div class="card-divider"></div>
             <div class="card-stat">
               <span class="card-stat-value">2</span>
-              <span class="card-stat-label">Baños</span>
+              <span class="card-stat-label">Ba&ntilde;os</span>
             </div>
           </div>
           <div class="card-price">
@@ -1668,23 +1951,23 @@
             <span class="card-price-value">USD 95.000</span>
           </div>
         </div>
-        <div class="card-cta">Ver detalle completo &rarr;</div>
+        <div class="card-cta">Ver detalle &rarr;</div>
       </a>
       <a href="z_rosas930_10-01/z_rosas930_10-01.html" class="unit-card">
         <div class="card-img-wrap">
         <div class="card-no-img">
-          <span class="card-no-img-badge">Disponible</span>
+          <span class="card-badge card-badge-noimg">Disponible</span>
           <span class="card-no-img-unit">10-01 &middot; Piso 10</span>
           <span class="card-no-img-project">Rosas 930/32 &middot; Rosario</span>
         </div>
         </div>
         <div class="card-body">
           <span class="card-type">Departamento &middot; 3 Dormitorios + Cochera</span>
-          <span class="card-address"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>J.M. de Rosas 930/32 &middot; Rosario</span>
+          <span class="card-address"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>J.M. de Rosas 930/32 &middot; Rosario</span>
           <div class="card-stats">
             <div class="card-stat">
               <span class="card-stat-value">126</span>
-              <span class="card-stat-label">M²</span>
+              <span class="card-stat-label">M&sup2;</span>
             </div>
             <div class="card-divider"></div>
             <div class="card-stat">
@@ -1694,7 +1977,7 @@
             <div class="card-divider"></div>
             <div class="card-stat">
               <span class="card-stat-value">2</span>
-              <span class="card-stat-label">Baños</span>
+              <span class="card-stat-label">Ba&ntilde;os</span>
             </div>
           </div>
           <div class="card-price">
@@ -1702,24 +1985,24 @@
             <span class="card-price-value">USD 260.000</span>
           </div>
         </div>
-        <div class="card-cta">Ver detalle completo &rarr;</div>
+        <div class="card-cta">Ver detalle &rarr;</div>
       </a>
       </div>
     </div>
   </section>
 
-  <div class="cta-strip">
-    <div class="cta-strip-text">
-      <span class="cta-strip-label">Necesit&aacute;s m&aacute;s informaci&oacute;n?</span>
-      <span class="cta-strip-title">Consult&aacute; por cualquier propiedad<br>con nuestro equipo comercial</span>
+  <div class="cta-section">
+    <div class="cta-text">
+      <span class="cta-eyebrow">Necesit&aacute;s m&aacute;s informaci&oacute;n?</span>
+      <span class="cta-title">Consult&aacute; por cualquier<br>propiedad con nuestro equipo.</span>
     </div>
-    <div class="cta-strip-buttons">
-      <a href="tel:+5493416980855" class="btn-primary">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.95 12a19.79 19.79 0 01-3.07-8.67A2 2 0 012.87 1.18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.78a16 16 0 006.29 6.29l1.67-1.21a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+    <div class="cta-buttons">
+      <a href="tel:+5493416980855" class="btn-call">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.95 12a19.79 19.79 0 01-3.07-8.67A2 2 0 012.87 1.18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.78a16 16 0 006.29 6.29l1.67-1.21a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
         341 698-0855
       </a>
-      <a href="https://wa.me/5493416980855?text=Hola%2C%20me%20interesa%20una%20propiedad%20Pensaer" class="btn-secondary" target="_blank" rel="noopener">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--gold-light)" stroke="none"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      <a href="https://wa.me/5493416980855?text=Hola%2C%20me%20interesa%20una%20propiedad%20Pensaer" class="btn-wa" target="_blank" rel="noopener">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         WhatsApp
       </a>
     </div>
@@ -1728,7 +2011,7 @@
   <footer>
     <img class="footer-logo" src="pensaer-logo.png" alt="Pensaer" />
     <span class="footer-copy">&copy; 2025 Pensaer &middot; pensaer.com.ar</span>
-    <div class="footer-address">C&oacute;rdoba 1336 Piso 3 &middot; Rosario &middot; Santa Fe</div>
+    <span class="footer-address">C&oacute;rdoba 1336 Piso 3 &middot; Rosario &middot; Santa Fe</span>
   </footer>
 
 </body>
