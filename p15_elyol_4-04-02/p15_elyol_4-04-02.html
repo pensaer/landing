@@ -175,8 +175,15 @@
       margin-top: 10px; line-height: 1.6;
     }
     .planta-img { width: 100%; height: auto; display: block; border: 1px solid var(--light-gray); }
+    .planta-section-wide {
+      display: block; text-align: center;
+    }
+    .planta-section-wide .section-eyebrow { margin-bottom: 16px; }
+    .planta-section-wide .planta-title { margin-bottom: 40px; }
+    .planta-section-wide .planta-img { max-width: 1080px; margin: 0 auto; }
     @media (max-width: 860px) {
       .planta-section { grid-template-columns: 1fr; padding: 56px 24px; gap: 40px; }
+      .planta-section-wide { padding: 56px 24px; }
     }
 
     /* ── CARRUSEL DE RENDERS ─────────────────────────── */
@@ -365,6 +372,58 @@
   </section>
 
 
+  <section class="renders-carousel" id="renders-carousel">
+    <p class="rc-eyebrow">Renders del proyecto</p>
+  <div class="slide"><img src="../renders_p15ol/01_fachada.jpg" alt="Render 1" loading="lazy" /></div>
+  <div class="slide"><img src="../renders_p15ol/02_amenities.jpg" alt="Render 2" loading="lazy" /></div>
+  <div class="slide"><img src="../renders_p15ol/03_render_1.jpg" alt="Render 3" loading="lazy" /></div>
+  <div class="slide"><img src="../renders_p15ol/04_render_2.jpg" alt="Render 4" loading="lazy" /></div>
+  <div class="slide"><img src="../renders_p15ol/05_render_3.jpg" alt="Render 5" loading="lazy" /></div>
+  <div class="slide"><img src="../renders_p15ol/06_sum_exterior.jpg" alt="Render 6" loading="lazy" /></div>
+  <div class="slide"><img src="../renders_p15ol/07_sum_interior.jpg" alt="Render 7" loading="lazy" /></div>
+    <button class="rc-nav rc-prev" onclick="rcNav(-1)" aria-label="Anterior">&#x2039;</button>
+    <button class="rc-nav rc-next" onclick="rcNav(1)" aria-label="Siguiente">&#x203a;</button>
+    <div class="rc-dots" id="rc-dots">
+    <button class="rc-dot" aria-label="Slide 1"></button>
+    <button class="rc-dot" aria-label="Slide 2"></button>
+    <button class="rc-dot" aria-label="Slide 3"></button>
+    <button class="rc-dot" aria-label="Slide 4"></button>
+    <button class="rc-dot" aria-label="Slide 5"></button>
+    <button class="rc-dot" aria-label="Slide 6"></button>
+    <button class="rc-dot" aria-label="Slide 7"></button>
+    </div>
+  </section>
+  <script>
+    (function() {
+      const slides = document.querySelectorAll('#renders-carousel .slide');
+      const dots   = document.querySelectorAll('#rc-dots .rc-dot');
+      let cur = 0, timer;
+      function show(i) {
+        slides[cur].classList.remove('active'); dots[cur].classList.remove('active');
+        cur = (i + slides.length) % slides.length;
+        slides[cur].classList.add('active'); dots[cur].classList.add('active');
+      }
+      window.rcNav = function(d) { clearInterval(timer); show(cur + d); start(); };
+      dots.forEach((dot, i) => dot.addEventListener('click', () => { clearInterval(timer); show(i); start(); }));
+      function start() { timer = setInterval(() => show(cur + 1), 5000); }
+      slides[0].classList.add('active'); dots[0].classList.add('active');
+      start();
+      let sx = 0;
+      const el = document.getElementById('renders-carousel');
+      el.addEventListener('touchstart', e => { sx = e.changedTouches[0].clientX; }, {passive: true});
+      el.addEventListener('touchend', e => {
+        const dx = e.changedTouches[0].clientX - sx;
+        if (Math.abs(dx) > 40) { clearInterval(timer); show(cur + (dx < 0 ? 1 : -1)); start(); }
+      }, {passive: true});
+    })();
+  </script>
+
+
+  <section class="planta-section planta-section-wide">
+    <p class="section-eyebrow">Diseño y planta</p>
+    <h2 class="planta-title">Planta del Piso 3° al 5°.</h2>
+    <img class="planta-img" src="../plantas_p15ol/planta_p3-5.png" alt="Planta Elysian Lagos 04-02" loading="lazy" />
+  </section>
 
   <section class="ficha-section">
     <p class="section-eyebrow">Información general</p>
