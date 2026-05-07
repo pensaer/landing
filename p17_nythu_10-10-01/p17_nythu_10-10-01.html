@@ -356,7 +356,7 @@
     </div>
     <div class="info-card">
       <p class="info-label">Superficie y tipo</p>
-      <p class="info-value">218,5 m²</p>
+      <p class="info-value">218 m²</p>
       <p class="info-sub">Departamento 3 dormitorios · Piso 10</p>
     </div>
   </div>
@@ -372,6 +372,76 @@
   </section>
 
 
+  <section class="renders-carousel" id="renders-carousel">
+    <p class="rc-eyebrow">Renders del proyecto</p>
+  <div class="slide"><img src="../renders_p17/cam_11.jpg" alt="Render 1" loading="lazy" /></div>
+  <div class="slide"><img src="../renders_p17/cam_12.jpg" alt="Render 2" loading="lazy" /></div>
+  <div class="slide"><img src="../renders_p17/cam_02.jpg" alt="Render 3" loading="lazy" /></div>
+  <div class="slide"><img src="../renders_p17/cam_05.jpg" alt="Render 4" loading="lazy" /></div>
+  <div class="slide"><img src="../renders_p17/cam_08.jpg" alt="Render 5" loading="lazy" /></div>
+  <div class="slide"><img src="../renders_p17/cam_09.jpg" alt="Render 6" loading="lazy" /></div>
+  <div class="slide"><img src="../renders_p17/cam_10.jpg" alt="Render 7" loading="lazy" /></div>
+    <button class="rc-nav rc-prev" onclick="rcNav(-1)" aria-label="Anterior">&#x2039;</button>
+    <button class="rc-nav rc-next" onclick="rcNav(1)" aria-label="Siguiente">&#x203a;</button>
+    <div class="rc-dots" id="rc-dots">
+    <button class="rc-dot" aria-label="Slide 1"></button>
+    <button class="rc-dot" aria-label="Slide 2"></button>
+    <button class="rc-dot" aria-label="Slide 3"></button>
+    <button class="rc-dot" aria-label="Slide 4"></button>
+    <button class="rc-dot" aria-label="Slide 5"></button>
+    <button class="rc-dot" aria-label="Slide 6"></button>
+    <button class="rc-dot" aria-label="Slide 7"></button>
+    </div>
+  </section>
+  <script>
+    (function() {
+      const slides = document.querySelectorAll('#renders-carousel .slide');
+      const dots   = document.querySelectorAll('#rc-dots .rc-dot');
+      let cur = 0, timer;
+      function show(i) {
+        slides[cur].classList.remove('active'); dots[cur].classList.remove('active');
+        cur = (i + slides.length) % slides.length;
+        slides[cur].classList.add('active'); dots[cur].classList.add('active');
+      }
+      window.rcNav = function(d) { clearInterval(timer); show(cur + d); start(); };
+      dots.forEach((dot, i) => dot.addEventListener('click', () => { clearInterval(timer); show(i); start(); }));
+      function start() { timer = setInterval(() => show(cur + 1), 5000); }
+      slides[0].classList.add('active'); dots[0].classList.add('active');
+      start();
+      let sx = 0;
+      const el = document.getElementById('renders-carousel');
+      el.addEventListener('touchstart', e => { sx = e.changedTouches[0].clientX; }, {passive: true});
+      el.addEventListener('touchend', e => {
+        const dx = e.changedTouches[0].clientX - sx;
+        if (Math.abs(dx) > 40) { clearInterval(timer); show(cur + (dx < 0 ? 1 : -1)); start(); }
+      }, {passive: true});
+    })();
+  </script>
+
+
+  <section class="planta-section">
+    <div>
+      <p class="section-eyebrow">Diseño y planta</p>
+      <h2 class="planta-title">Planta del Piso 10°<br>+ terrazas exclusivas.</h2>
+      <div class="dim-list">
+      <div class="dim-item"><span class="dim-amb">Estar comedor</span><span class="dim-val">4,26 × 9,00 m</span></div>
+      <div class="dim-item"><span class="dim-amb">Cocina</span><span class="dim-val">7,30 × 2,62 m</span></div>
+      <div class="dim-item"><span class="dim-amb">Lavadero</span><span class="dim-val">2,48 × 1,50 m</span></div>
+      <div class="dim-item"><span class="dim-amb">Dormitorio 1</span><span class="dim-val">3,45 × 3,15 m</span></div>
+      <div class="dim-item"><span class="dim-amb">Dormitorio 2</span><span class="dim-val">3,55 × 3,13 m</span></div>
+      <div class="dim-item"><span class="dim-amb">Baño</span><span class="dim-val">2,77 × 1,56 m</span></div>
+      <div class="dim-item"><span class="dim-amb">Toilette</span><span class="dim-val">1,93 × 1,23 m</span></div>
+      <div class="dim-item"><span class="dim-amb">Dormitorio ppal.</span><span class="dim-val">4,43 × 4,58 m</span></div>
+      <div class="dim-item"><span class="dim-amb">Comodín</span><span class="dim-val">4,50 × 1,07 m</span></div>
+      <div class="dim-item"><span class="dim-amb">Baño en suite</span><span class="dim-val">1,85 × 2,70 m</span></div>
+      <div class="dim-item"><span class="dim-amb">Terraza L Sur</span><span class="dim-val">2,50 × 12,50 m</span></div>
+      <div class="dim-item"><span class="dim-amb">Terraza L Este</span><span class="dim-val">18,78 × 2,38 m</span></div>
+      <div class="dim-item"><span class="dim-amb">Terraza chica</span><span class="dim-val">8,33 × 2,30 m</span></div>
+      </div>
+      <p class="dim-note">Las medidas de los dormitorios incluyen placares.</p>
+    </div>
+    <img class="planta-img" src="../plantas_p17/planta_10_a.png" alt="Planta Nythu 10-01" loading="lazy" />
+  </section>
 
   <section class="ficha-section">
     <p class="section-eyebrow">Información general</p>
@@ -386,11 +456,19 @@
       </div>
       <div class="ficha-item">
         <span class="ficha-item-sub">Baños</span>
-        <span class="ficha-item-val">2</span>
+        <span class="ficha-item-val">3</span>
       </div>
       <div class="ficha-item">
-        <span class="ficha-item-sub">Superficie</span>
-        <span class="ficha-item-val">218,5 m²</span>
+        <span class="ficha-item-sub">Sup. cubierta exclusiva</span>
+        <span class="ficha-item-val">168 m²</span>
+      </div>
+      <div class="ficha-item">
+        <span class="ficha-item-sub">Terrazas</span>
+        <span class="ficha-item-val">100 m²</span>
+      </div>
+      <div class="ficha-item">
+        <span class="ficha-item-sub">Sup. equivalente</span>
+        <span class="ficha-item-val">218 m²</span>
       </div>
       <div class="ficha-item">
         <span class="ficha-item-sub">Piso</span>
