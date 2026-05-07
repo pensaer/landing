@@ -12,7 +12,18 @@ CLAUDE.md
 # Scripts de generación (herramientas de desarrollo)
 gen_landings.py
 gen_index.py
+gen_pdfs.py
 export_data.py
+
+# Datos exportados (JSON/CSV para Airtable — sensible)
+data/
+
+# Documentos comerciales (PDFs de inserts y páginas de desarrollo)
+renders_*/insert_*.pdf
+renders_*/insert_pages/
+renders_*/check/
+renders_p*/cam_*.jpg
+renders_p*/render_*.jpg
 
 # Instrucciones de skills de GitHub Copilot/Claude
 .github/
