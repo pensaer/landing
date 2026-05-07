@@ -12,6 +12,7 @@ CLAUDE.md
 # Scripts de generación (herramientas de desarrollo)
 gen_landings.py
 gen_index.py
+export_data.py
 
 # Instrucciones de skills de GitHub Copilot/Claude
 .github/
