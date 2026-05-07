@@ -9,6 +9,11 @@ CLAUDE.md
 .claude/
 .mcp.json
 
+# Documentación privada (instalación, setup)
+INSTALACION.md
+SETUP.md
+DEVELOPMENT.md
+
 # Scripts de generación (herramientas de desarrollo)
 gen_landings.py
 gen_index.py
