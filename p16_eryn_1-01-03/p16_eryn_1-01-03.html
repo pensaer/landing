@@ -372,6 +372,73 @@
   </section>
 
 
+  <section class="renders-carousel" id="renders-carousel">
+    <p class="rc-eyebrow">Renders del proyecto</p>
+  <div class="slide"><img src="../renders_p16/02_fachada_v6.jpg" alt="Render 1" loading="lazy" /></div>
+  <div class="slide"><img src="../renders_p16/render_pileta.jpg" alt="Render 2" loading="lazy" /></div>
+  <div class="slide"><img src="../renders_p16/render_02.jpg" alt="Render 3" loading="lazy" /></div>
+  <div class="slide"><img src="../renders_p16/render_03.jpg" alt="Render 4" loading="lazy" /></div>
+  <div class="slide"><img src="../renders_p16/render_08.jpg" alt="Render 5" loading="lazy" /></div>
+  <div class="slide"><img src="../renders_p16/render_06_final.jpg" alt="Render 6" loading="lazy" /></div>
+  <div class="slide"><img src="../renders_p16/render_07.jpg" alt="Render 7" loading="lazy" /></div>
+    <button class="rc-nav rc-prev" onclick="rcNav(-1)" aria-label="Anterior">&#x2039;</button>
+    <button class="rc-nav rc-next" onclick="rcNav(1)" aria-label="Siguiente">&#x203a;</button>
+    <div class="rc-dots" id="rc-dots">
+    <button class="rc-dot" aria-label="Slide 1"></button>
+    <button class="rc-dot" aria-label="Slide 2"></button>
+    <button class="rc-dot" aria-label="Slide 3"></button>
+    <button class="rc-dot" aria-label="Slide 4"></button>
+    <button class="rc-dot" aria-label="Slide 5"></button>
+    <button class="rc-dot" aria-label="Slide 6"></button>
+    <button class="rc-dot" aria-label="Slide 7"></button>
+    </div>
+  </section>
+  <script>
+    (function() {
+      const slides = document.querySelectorAll('#renders-carousel .slide');
+      const dots   = document.querySelectorAll('#rc-dots .rc-dot');
+      let cur = 0, timer;
+      function show(i) {
+        slides[cur].classList.remove('active'); dots[cur].classList.remove('active');
+        cur = (i + slides.length) % slides.length;
+        slides[cur].classList.add('active'); dots[cur].classList.add('active');
+      }
+      window.rcNav = function(d) { clearInterval(timer); show(cur + d); start(); };
+      dots.forEach((dot, i) => dot.addEventListener('click', () => { clearInterval(timer); show(i); start(); }));
+      function start() { timer = setInterval(() => show(cur + 1), 5000); }
+      slides[0].classList.add('active'); dots[0].classList.add('active');
+      start();
+      let sx = 0;
+      const el = document.getElementById('renders-carousel');
+      el.addEventListener('touchstart', e => { sx = e.changedTouches[0].clientX; }, {passive: true});
+      el.addEventListener('touchend', e => {
+        const dx = e.changedTouches[0].clientX - sx;
+        if (Math.abs(dx) > 40) { clearInterval(timer); show(cur + (dx < 0 ? 1 : -1)); start(); }
+      }, {passive: true});
+    })();
+  </script>
+
+
+  <section class="planta-section">
+    <div>
+      <p class="section-eyebrow">Diseño y planta</p>
+      <h2 class="planta-title">Distribución<br>de la unidad C.</h2>
+      <div class="dim-list">
+      <div class="dim-item"><span class="dim-amb">Estar comedor</span><span class="dim-val">6,65 × 5,10 m</span></div>
+      <div class="dim-item"><span class="dim-amb">Cocina</span><span class="dim-val">5,02 × 3,12 m</span></div>
+      <div class="dim-item"><span class="dim-amb">Dormitorio 1</span><span class="dim-val">3,06 × 3,71 m</span></div>
+      <div class="dim-item"><span class="dim-amb">Dormitorio 2</span><span class="dim-val">3,00 × 3,71 m</span></div>
+      <div class="dim-item"><span class="dim-amb">Dormitorio ppal.</span><span class="dim-val">3,00 × 4,71 m</span></div>
+      <div class="dim-item"><span class="dim-amb">Vestidor</span><span class="dim-val">2,14 × 3,04 m</span></div>
+      <div class="dim-item"><span class="dim-amb">Baño 1</span><span class="dim-val">1,70 × 1,67 m</span></div>
+      <div class="dim-item"><span class="dim-amb">Baño 2</span><span class="dim-val">2,43 × 2,31 m</span></div>
+      <div class="dim-item"><span class="dim-amb">Baño en suite</span><span class="dim-val">2,54 × 2,91 m</span></div>
+      <div class="dim-item"><span class="dim-amb">Patio exclusivo</span><span class="dim-val">87,65 m²</span></div>
+      </div>
+      <p class="dim-note">Las medidas de los dormitorios incluyen placares.</p>
+    </div>
+    <img class="planta-img" src="../plantas_p16/planta_1_c.png" alt="Planta Eryn 01-03" loading="lazy" />
+  </section>
 
   <section class="ficha-section">
     <p class="section-eyebrow">Información general</p>
@@ -386,10 +453,18 @@
       </div>
       <div class="ficha-item">
         <span class="ficha-item-sub">Baños</span>
-        <span class="ficha-item-val">2</span>
+        <span class="ficha-item-val">3</span>
       </div>
       <div class="ficha-item">
-        <span class="ficha-item-sub">Superficie</span>
+        <span class="ficha-item-sub">Sup. cubierta exclusiva</span>
+        <span class="ficha-item-val">131 m²</span>
+      </div>
+      <div class="ficha-item">
+        <span class="ficha-item-sub">Patio exclusivo</span>
+        <span class="ficha-item-val">88 m²</span>
+      </div>
+      <div class="ficha-item">
+        <span class="ficha-item-sub">Sup. equivalente</span>
         <span class="ficha-item-val">175 m²</span>
       </div>
       <div class="ficha-item">
