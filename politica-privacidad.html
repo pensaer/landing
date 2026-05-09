@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Política de Privacidad · Pensaer Desarrollos</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── Tipografía ─────────────────────────────────────────────────────────────── */
+    @font-face {
+      font-family: 'Alliance No.1';
+      src: url('./manual/tipografia/Alliance No.1 Light.otf') format('opentype');
+      font-weight: 300; font-style: normal;
+    }
+    @font-face {
+      font-family: 'Alliance No.1';
+      src: url('./manual/tipografia/Alliance No.1 Regular.otf') format('opentype');
+      font-weight: 400; font-style: normal;
+    }
+    @font-face {
+      font-family: 'Alliance No.1';
+      src: url('./manual/tipografia/Alliance No.1 SemiBold.otf') format('opentype');
+      font-weight: 600; font-style: normal;
+    }
+    @font-face {
+      font-family: 'Alliance No.1';
+      src: url('./manual/tipografia/Alliance No.1 Bold.otf') format('opentype');
+      font-weight: 700; font-style: normal;
+    }
+
+    /* ── Tokens de color ────────────────────────────────────────────────────────── */
+    :root {
+      --brand-blue:  #25283A;
+      --beige:       #A99C8D;
+      --light-beige: #EDE2D1;
+      --dark-gray:   #3A3A38;
+      --light-gray:  #E8E8E8;
+      --white:       #FFFFFF;
+      --black:       #000000;
+    }
+
+    /* ── Reset ──────────────────────────────────────────────────────────────────── */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Sora', sans-serif;
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--dark-gray);
+      background: var(--white);
+    }
+
+    /* ── Header ─────────────────────────────────────────────────────────────────── */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--white);
+      border-bottom: 1px solid var(--light-gray);
+      padding: 20px 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo-img {
+      height: 28px;
+      width: auto;
+      display: block;
+    }
+    .header-contact {
+      font-family: 'Alliance No.1', sans-serif;
+      font-weight: 400;
+      font-size: 11px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--brand-blue);
+      text-decoration: none;
+      border: 1px solid var(--brand-blue);
+      padding: 10px 24px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .header-contact:hover {
+      background: var(--brand-blue);
+      color: var(--white);
+    }
+
+    /* ── Hero / Page header ─────────────────────────────────────────────────────── */
+    .page-hero {
+      background: var(--brand-blue);
+      color: var(--white);
+      padding: 96px 56px;
+      text-align: center;
+    }
+    .page-hero h1 {
+      font-family: 'Alliance No.1', sans-serif;
+      font-weight: 300;
+      font-size: clamp(36px, 4vw, 54px);
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+    .page-hero p {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.7);
+      font-weight: 300;
+    }
+
+    /* ── Main content ───────────────────────────────────────────────────────────── */
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 72px 56px;
+    }
+
+    /* ── Sections ───────────────────────────────────────────────────────────────── */
+    .policy-section {
+      margin-bottom: 64px;
+    }
+    .policy-section h2 {
+      font-family: 'Alliance No.1', sans-serif;
+      font-weight: 300;
+      font-size: 24px;
+      color: var(--brand-blue);
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--light-gray);
+    }
+    .policy-section h3 {
+      font-family: 'Alliance No.1', sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      color: var(--dark-gray);
+      margin-top: 16px;
+      margin-bottom: 8px;
+    }
+    .policy-section p {
+      margin-bottom: 12px;
+      line-height: 1.8;
+    }
+    .policy-section ul {
+      margin-left: 20px;
+      margin-bottom: 12px;
+    }
+    .policy-section li {
+      margin-bottom: 10px;
+      line-height: 1.8;
+    }
+    .policy-section strong {
+      font-weight: 500;
+      color: var(--brand-blue);
+    }
+
+    /* ── Header info (empresa) ──────────────────────────────────────────────────── */
+    .company-info {
+      background: var(--light-beige);
+      padding: 40px 56px;
+      margin-bottom: 72px;
+      text-align: center;
+      border-radius: 2px;
+    }
+    .company-info p {
+      font-family: 'Alliance No.1', sans-serif;
+      font-weight: 300;
+      font-size: 13px;
+      color: var(--dark-gray);
+      margin-bottom: 8px;
+    }
+    .company-info .date {
+      font-weight: 400;
+      color: var(--brand-blue);
+    }
+
+    /* ── Links ──────────────────────────────────────────────────────────────────── */
+    a {
+      color: var(--brand-blue);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+    a:hover {
+      border-bottom-color: var(--brand-blue);
+    }
+
+    /* ── Footer ─────────────────────────────────────────────────────────────────── */
+    footer {
+      background: var(--black);
+      padding: 28px 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-logo {
+      height: 22px;
+      width: auto;
+      display: block;
+    }
+    .footer-copy, .footer-address {
+      font-family: 'Alliance No.1', sans-serif;
+      font-weight: 300;
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.28);
+      letter-spacing: 1px;
+    }
+    .footer-address {
+      text-align: right;
+    }
+
+    /* ── Responsive ─────────────────────────────────────────────────────────────── */
+    @media (max-width: 860px) {
+      header { padding: 20px 24px; }
+      .page-hero { padding: 56px 24px; }
+      main { padding: 48px 24px; }
+      .company-info { padding: 32px 24px; margin-bottom: 48px; }
+      .policy-section { margin-bottom: 48px; }
+      .policy-section h2 { font-size: 20px; }
+      footer {
+        padding: 24px;
+        justify-content: center;
+        text-align: center;
+      }
+      .footer-address { text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════════════════════════════════════════ -->
+<!-- HEADER                                                                       -->
+<!-- ════════════════════════════════════════════════════════════════════════════ -->
+<header>
+  <img class="logo-img" src="./pensaer-logo.png" alt="Pensaer Desarrollos" />
+  <a href="tel:+5493416980855" class="header-contact">Contactar</a>
+</header>
+
+<!-- ════════════════════════════════════════════════════════════════════════════ -->
+<!-- PAGE HERO                                                                    -->
+<!-- ════════════════════════════════════════════════════════════════════════════ -->
+<section class="page-hero">
+  <h1>Política de Privacidad</h1>
+  <p>Pensaer Desarrollos · Rosario, Santa Fe, Argentina</p>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════════════════════ -->
+<!-- MAIN CONTENT                                                                 -->
+<!-- ════════════════════════════════════════════════════════════════════════════ -->
+<main>
+
+  <div class="company-info">
+    <p><strong>Pensaer Desarrollos</strong></p>
+    <p>Rosario, provincia de Santa Fe, República Argentina</p>
+    <p>Vigente a partir de: <span class="date">mayo de 2026</span></p>
+  </div>
+
+  <!-- ──────────────────────────────────────────────────────────────────────────── -->
+  <!-- 1. Responsable del tratamiento ────────────────────────────────────────────── -->
+  <!-- ──────────────────────────────────────────────────────────────────────────── -->
+  <section class="policy-section">
+    <h2>1. Responsable del tratamiento de datos</h2>
+    <p><strong>Pensaer Desarrollos</strong> (en adelante, "la Empresa") es la responsable del archivo, registro y tratamiento de los datos personales recopilados a través de esta aplicación web, con domicilio en la ciudad de Rosario, provincia de Santa Fe, República Argentina.</p>
+  </section>
+
+  <!-- ──────────────────────────────────────────────────────────────────────────── -->
+  <!-- 2. Marco legal ──────────────────────────────────────────────────────────── -->
+  <!-- ──────────────────────────────────────────────────────────────────────────── -->
+  <section class="policy-section">
+    <h2>2. Marco legal aplicable</h2>
+    <p>La presente política se rige por la <strong>Ley N.º 25.326 de Protección de los Datos Personales</strong> y su Decreto Reglamentario N.º 1558/2001, así como por las disposiciones complementarias de la <strong>Agencia de Acceso a la Información Pública (AAIP)</strong>, autoridad de aplicación en la materia.</p>
+  </section>
+
+  <!-- ──────────────────────────────────────────────────────────────────────────── -->
+  <!-- 3. Datos personales ──────────────────────────────────────────────────────── -->
+  <!-- ──────────────────────────────────────────────────────────────────────────── -->
+  <section class="policy-section">
+    <h2>3. Datos personales que recopilamos</h2>
+    <p>A través de esta aplicación, la Empresa recopila exclusivamente los siguientes datos personales de sus usuarios:</p>
+    <ul>
+      <li>Nombre y apellido</li>
+      <li>Dirección de correo electrónico</li>
+      <li>Número de teléfono</li>
+    </ul>
+    <p>Dichos datos son proporcionados voluntariamente por el propio usuario al momento de utilizar los canales de contacto o soporte disponibles en la aplicación.</p>
+  </section>
+
+  <!-- ──────────────────────────────────────────────────────────────────────────── -->
+  <!-- 4. Finalidad del tratamiento ───────────────────────────────────────────── -->
+  <!-- ──────────────────────────────────────────────────────────────────────────── -->
+  <section class="policy-section">
+    <h2>4. Finalidad del tratamiento</h2>
+    <p>Los datos personales recabados serán utilizados únicamente para la siguiente finalidad:</p>
+    <ul>
+      <li><strong>Atención al cliente y soporte:</strong> brindar respuesta a consultas, solicitudes y requerimientos efectuados por los usuarios a través de la aplicación.</li>
+    </ul>
+    <p>Los datos no serán utilizados para ninguna otra finalidad sin el previo consentimiento expreso del titular.</p>
+  </section>
+
+  <!-- ──────────────────────────────────────────────────────────────────────────── -->
+  <!-- 5. Destinatarios ───────────────────────────────────────────────────────────── -->
+  <!-- ──────────────────────────────────────────────────────────────────────────── -->
+  <section class="policy-section">
+    <h2>5. Destinatarios de los datos</h2>
+    <p>Los datos personales recopilados son de uso <strong>estrictamente interno</strong> de Pensaer Desarrollos. No serán cedidos, transferidos, vendidos ni compartidos con terceros, salvo obligación legal expresa que lo requiera.</p>
+  </section>
+
+  <!-- ──────────────────────────────────────────────────────────────────────────── -->
+  <!-- 6. Plazo de conservación ──────────────────────────────────────────────────── -->
+  <!-- ──────────────────────────────────────────────────────────────────────────── -->
+  <section class="policy-section">
+    <h2>6. Plazo de conservación</h2>
+    <p>Los datos se conservarán durante el tiempo necesario para cumplir con la finalidad para la que fueron recopilados, o hasta que el titular solicite su supresión, lo que ocurra primero.</p>
+  </section>
+
+  <!-- ──────────────────────────────────────────────────────────────────────────── -->
+  <!-- 7. Derechos del titular ────────────────────────────────────────────────── -->
+  <!-- ──────────────────────────────────────────────────────────────────────────── -->
+  <section class="policy-section">
+    <h2>7. Derechos del titular de los datos</h2>
+    <p>De conformidad con el artículo 14 y concordantes de la Ley 25.326, el titular de los datos personales tiene derecho a:</p>
+    <ul>
+      <li><strong>Acceso:</strong> solicitar en forma gratuita información sobre sus datos personales en poder de la Empresa.</li>
+      <li><strong>Rectificación:</strong> requerir la corrección de datos inexactos, incompletos o desactualizados.</li>
+      <li><strong>Supresión:</strong> solicitar la eliminación de sus datos cuando no exista una obligación legal de conservarlos.</li>
+      <li><strong>Confidencialidad:</strong> ser informado sobre el tratamiento que reciben sus datos.</li>
+    </ul>
+    <p>Para ejercer cualquiera de estos derechos, el usuario puede comunicarse con la Empresa a través de los canales de contacto habilitados en la aplicación.</p>
+  </section>
+
+  <!-- ──────────────────────────────────────────────────────────────────────────── -->
+  <!-- 8. Seguridad ───────────────────────────────────────────────────────────── -->
+  <!-- ──────────────────────────────────────────────────────────────────────────── -->
+  <section class="policy-section">
+    <h2>8. Seguridad de los datos</h2>
+    <p>La Empresa adopta las medidas técnicas y organizativas razonables para proteger los datos personales contra accesos no autorizados, pérdida, alteración o divulgación indebida, de acuerdo con los estándares exigidos por la normativa vigente.</p>
+  </section>
+
+  <!-- ──────────────────────────────────────────────────────────────────────────── -->
+  <!-- 9. Menores de edad ──────────────────────────────────────────────────────── -->
+  <!-- ──────────────────────────────────────────────────────────────────────────── -->
+  <section class="policy-section">
+    <h2>9. Usuarios menores de edad</h2>
+    <p>Esta aplicación está dirigida exclusivamente a personas mayores de 18 años. La Empresa no recopila ni procesa deliberadamente datos de menores de edad.</p>
+  </section>
+
+  <!-- ──────────────────────────────────────────────────────────────────────────── -->
+  <!-- 10. Modificaciones ───────────────────────────────────────────────────────── -->
+  <!-- ──────────────────────────────────────────────────────────────────────────── -->
+  <section class="policy-section">
+    <h2>10. Modificaciones a esta política</h2>
+    <p>La Empresa se reserva el derecho de actualizar esta política en cualquier momento. Cualquier modificación será publicada en esta misma sección con indicación de la fecha de vigencia.</p>
+  </section>
+
+  <!-- ──────────────────────────────────────────────────────────────────────────── -->
+  <!-- 11. Autoridad de control ───────────────────────────────────────────────── -->
+  <!-- ──────────────────────────────────────────────────────────────────────────── -->
+  <section class="policy-section">
+    <h2>11. Autoridad de control</h2>
+    <p>Si el usuario considera que sus derechos han sido vulnerados, puede presentar una reclamación ante la <strong>Agencia de Acceso a la Información Pública (AAIP)</strong>, autoridad de control en materia de protección de datos personales en Argentina, con sitio web en <a href="https://www.argentina.gob.ar/aaip" target="_blank" rel="noopener">www.argentina.gob.ar/aaip</a>.</p>
+  </section>
+
+  <p style="margin-top: 96px; padding-top: 24px; border-top: 1px solid var(--light-gray); font-style: italic; font-size: 12px; color: rgba(58, 58, 56, 0.6);">
+    Este documento fue redactado conforme a la legislación argentina vigente en materia de protección de datos personales.
+  </p>
+
+</main>
+
+<!-- ════════════════════════════════════════════════════════════════════════════ -->
+<!-- FOOTER                                                                       -->
+<!-- ════════════════════════════════════════════════════════════════════════════ -->
+<footer>
+  <img class="footer-logo" src="./pensaer-logo.png" alt="Pensaer" />
+  <span class="footer-copy">© 2026 Pensaer · pensaer.com.ar</span>
+  <span class="footer-address">Córdoba 1336 Piso 3 · Rosario, Santa Fe</span>
+</footer>
+
+</body>
+</html>
