@@ -109,7 +109,7 @@
     .btn-pdf svg { width: 14px; height: 14px; fill: currentColor; flex-shrink: 0; }
 
     /* ── INFO STRIP ───────────────────────────────────── */
-    .info-strip { background: var(--brand-blue); display: grid; grid-template-columns: 1fr 1fr; }
+    .info-strip { background: var(--brand-blue); display: grid; grid-template-columns: 1fr 1fr 1fr; }
     .info-card { padding: 36px 56px; border-right: 1px solid rgba(255,255,255,0.07); }
     .info-card:last-child { border-right: none; }
     .info-label {
@@ -144,6 +144,12 @@
       font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase;
       color: var(--brand-blue); border: 1px solid var(--brand-blue); padding: 10px 22px; display: inline-block;
     }
+    .badge-estado-tercero {
+      color: rgba(255,255,255,0.6); border: 1px solid rgba(255,255,255,0.4);
+      padding: 8px 16px; display: inline-flex; flex-direction: column; align-items: center;
+    }
+    .badge-label { font-size: 8px; color: rgba(255,255,255,0.45); margin-bottom: 4px; letter-spacing: 1.5px; }
+    .badge-value { font-size: 11px; letter-spacing: 1px; color: rgba(255,255,255,0.8); font-weight: 500; }
     .desc-img { width: 100%; height: 500px; object-fit: cover; display: block; }
     .desc-img-contain { object-fit: contain; background: var(--light-beige); }
 
@@ -324,6 +330,73 @@
       .cta-buttons { flex-direction: column; gap: 12px; }
       .btn-call, .btn-wa { width: 100%; justify-content: center; }
     }
+
+    /* ── AVANCE DE OBRA ────────────────────────────────── */
+    .avance-section {
+      background: var(--light-beige);
+      padding: 96px 56px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .avance-progress-container {
+      background: var(--white);
+      border: 1px solid var(--light-gray);
+      padding: 40px;
+      box-shadow: 0 10px 30px rgba(37,40,58,0.05);
+    }
+    .avance-progress-bar-bg {
+      background: var(--light-gray);
+      height: 12px;
+      border-radius: 6px;
+      width: 100%;
+      margin: 20px 0 10px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .avance-progress-bar-fill {
+      background: linear-gradient(90deg, var(--beige) 0%, var(--brand-blue) 100%);
+      height: 100%;
+      border-radius: 6px;
+      transition: width 1.5s cubic-bezier(0.1, 0.8, 0.2, 1);
+    }
+    .avance-percentage {
+      font-family: 'Alliance No.1', sans-serif;
+      font-weight: 600;
+      font-size: 48px;
+      color: var(--brand-blue);
+      line-height: 1;
+    }
+    .avance-meta {
+      font-family: 'Alliance No.1', sans-serif;
+      font-size: 10px;
+      color: var(--beige);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    .avance-comment-box {
+      font-size: 15px;
+      line-height: 1.8;
+      color: var(--dark-gray);
+      font-weight: 300;
+    }
+    .avance-comment-quote {
+      font-style: italic;
+      position: relative;
+      padding-left: 20px;
+      border-left: 3px solid var(--beige);
+    }
+    @media (max-width: 860px) {
+      .avance-section {
+        grid-template-columns: 1fr;
+        padding: 56px 24px;
+        gap: 40px;
+      }
+      .avance-progress-container {
+        padding: 30px 20px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -359,6 +432,11 @@
       <p class="info-value">90,5 m²</p>
       <p class="info-sub">Duplex 2 dormitorios · Piso 2/3</p>
     </div>
+    <div class="info-card">
+      <p class="info-label">Estado de disponibilidad</p>
+      <p class="info-value" style="font-size: 14px;">Disponible</p>
+      <p class="info-sub">Consultar por esta unidad</p>
+    </div>
   </div>
 
   <section class="desc-section">
@@ -369,6 +447,28 @@
       <span class="badge-estado">Disponible</span>
     </div>
     <img class="desc-img" src="../renders_p20/render_pileta.jpg" alt="Elysian San José" loading="lazy" />
+  </section>
+
+
+  <section class="avance-section">
+    <div>
+      <p class="section-eyebrow">Progreso de la construcción</p>
+      <h2 class="planta-title">Avance de Obra</h2>
+      <p class="desc-text" style="margin-bottom: 24px;">Monitoreamos constantemente el desarrollo del proyecto para asegurar los estándares de calidad y tiempos de entrega de Pensaer.</p>
+      <div class="avance-comment-box">
+        <p class="avance-comment-quote">"Movimiento de suelos en el terreno."</p>
+      </div>
+    </div>
+    <div class="avance-progress-container">
+      <div style="display: flex; justify-content: space-between; align-items: baseline;">
+        <span class="avance-percentage">5%</span>
+        <span class="avance-meta">Completado</span>
+      </div>
+      <div class="avance-progress-bar-bg">
+        <div class="avance-progress-bar-fill" style="width: 5%;"></div>
+      </div>
+      <p style="font-size: 11px; color: var(--beige); text-transform: uppercase; letter-spacing: 1px; margin-top: 10px; text-align: right;">Última actualización: 05/05/2026</p>
+    </div>
   </section>
 
 
