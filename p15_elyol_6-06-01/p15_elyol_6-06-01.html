@@ -331,72 +331,6 @@
       .btn-call, .btn-wa { width: 100%; justify-content: center; }
     }
 
-    /* ── AVANCE DE OBRA ────────────────────────────────── */
-    .avance-section {
-      background: var(--light-beige);
-      padding: 96px 56px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: center;
-    }
-    .avance-progress-container {
-      background: var(--white);
-      border: 1px solid var(--light-gray);
-      padding: 40px;
-      box-shadow: 0 10px 30px rgba(37,40,58,0.05);
-    }
-    .avance-progress-bar-bg {
-      background: var(--light-gray);
-      height: 12px;
-      border-radius: 6px;
-      width: 100%;
-      margin: 20px 0 10px 0;
-      position: relative;
-      overflow: hidden;
-    }
-    .avance-progress-bar-fill {
-      background: linear-gradient(90deg, var(--beige) 0%, var(--brand-blue) 100%);
-      height: 100%;
-      border-radius: 6px;
-      transition: width 1.5s cubic-bezier(0.1, 0.8, 0.2, 1);
-    }
-    .avance-percentage {
-      font-family: 'Alliance No.1', sans-serif;
-      font-weight: 600;
-      font-size: 48px;
-      color: var(--brand-blue);
-      line-height: 1;
-    }
-    .avance-meta {
-      font-family: 'Alliance No.1', sans-serif;
-      font-size: 10px;
-      color: var(--beige);
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
-    .avance-comment-box {
-      font-size: 15px;
-      line-height: 1.8;
-      color: var(--dark-gray);
-      font-weight: 300;
-    }
-    .avance-comment-quote {
-      font-style: italic;
-      position: relative;
-      padding-left: 20px;
-      border-left: 3px solid var(--beige);
-    }
-    @media (max-width: 860px) {
-      .avance-section {
-        grid-template-columns: 1fr;
-        padding: 56px 24px;
-        gap: 40px;
-      }
-      .avance-progress-container {
-        padding: 30px 20px;
-      }
-    }
   </style>
 </head>
 <body>
@@ -447,28 +381,6 @@
       <span class="badge-estado">Disponible de tercero</span>
     </div>
     <img class="desc-img" src="../render_p15_ol.jpg" alt="Elysian Lagos" loading="lazy" />
-  </section>
-
-
-  <section class="avance-section">
-    <div>
-      <p class="section-eyebrow">Progreso de la construcción</p>
-      <h2 class="planta-title">Avance de Obra</h2>
-      <p class="desc-text" style="margin-bottom: 24px;">Monitoreamos constantemente el desarrollo del proyecto para asegurar los estándares de calidad y tiempos de entrega de Pensaer.</p>
-      <div class="avance-comment-box">
-        <p class="avance-comment-quote">"Estructura de hormigón en 4to piso."</p>
-      </div>
-    </div>
-    <div class="avance-progress-container">
-      <div style="display: flex; justify-content: space-between; align-items: baseline;">
-        <span class="avance-percentage">40%</span>
-        <span class="avance-meta">Completado</span>
-      </div>
-      <div class="avance-progress-bar-bg">
-        <div class="avance-progress-bar-fill" style="width: 40%;"></div>
-      </div>
-      <p style="font-size: 11px; color: var(--beige); text-transform: uppercase; letter-spacing: 1px; margin-top: 10px; text-align: right;">Última actualización: 10/05/2026</p>
-    </div>
   </section>
 
 
