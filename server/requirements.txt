@@ -1,0 +1,19 @@
+# Pensaer Landings Auto-Generation Service
+#
+# NOTA: Este proyecto solo usa librerias estandar de Python (stdlib),
+# por lo que no hay dependencias externas.
+#
+# Las librerias usadas:
+# - os (sistema operativo)
+# - sys (sistema)
+# - json (parseo de config)
+# - time (delays)
+# - hashlib (MD5 para detectar cambios)
+# - logging (sistema de logs)
+# - logging.handlers (rotacion de logs)
+# - subprocess (ejecutar scripts)
+# - pathlib (manejo de rutas)
+# - datetime (timestamps)
+
+# Si en el futuro agregamos dependencias, las listamos aqui
+# pip install -r requirements.txt

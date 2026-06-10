@@ -1,0 +1,51 @@
+{
+  "service": {
+    "name": "PensaerLandingsAgent",
+    "display_name": "Pensaer Landings Auto-Generation Service",
+    "description": "Monitorea cambios en landing pages y ejecuta pipeline de generación automático"
+  },
+  "monitoring": {
+    "check_interval_seconds": 10,
+    "inactivity_timeout_seconds": 3600,
+    "restart_on_error": true,
+    "restart_delay_seconds": 60
+  },
+  "paths": {
+    "base_directory": "C:\\Users\\marcelo\\Documents\\Landings",
+    "log_directory": "C:\\Users\\marcelo\\Documents\\Landings\\server\\logs",
+    "config_directory": "C:\\Users\\marcelo\\Documents\\Landings\\server\\config",
+    "watch_file": "gen_landings.py"
+  },
+  "pipeline": {
+    "scripts": [
+      {
+        "name": "gen_landings.py",
+        "description": "Genera landing pages HTML + fichas HTML",
+        "timeout_seconds": 300
+      },
+      {
+        "name": "gen_pdfs.py",
+        "description": "Convierte fichas HTML a PDF",
+        "timeout_seconds": 600
+      },
+      {
+        "name": "gen_index.py",
+        "description": "Regenera index.html",
+        "timeout_seconds": 60
+      }
+    ],
+    "git_auto_commit": true,
+    "git_auto_push": true
+  },
+  "logging": {
+    "level": "INFO",
+    "max_file_size_mb": 10,
+    "backup_count": 5,
+    "format": "[%(asctime)s] [%(levelname)s] %(message)s"
+  },
+  "notifications": {
+    "send_on_error": false,
+    "email": null,
+    "webhook": null
+  }
+}
