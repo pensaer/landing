@@ -33,3 +33,10 @@ renders_p*/render_*.jpg
 
 # Instrucciones de skills de GitHub Copilot/Claude
 .github/
+
+# Archivos de deployment (ZIPs muy grandes)
+*.zip
+Landings_Deployment_*.zip
+deploy.bat
+prepare-for-deployment*.bat
+prepare_deployment.py
