@@ -103,6 +103,7 @@
     .info-strip { background: var(--brand-blue); display: grid; grid-template-columns: 1fr 1fr 1fr; }
     .info-card { padding: 36px 56px; border-right: 1px solid rgba(255,255,255,0.07); }
     .info-card:last-child { border-right: none; }
+    .info-card-price { background: rgba(169,156,141,0.08); }
     .info-label {
       font-family: 'Alliance No.1', sans-serif; font-weight: 300;
       font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
@@ -111,6 +112,9 @@
     .info-value {
       font-family: 'Alliance No.1', sans-serif; font-weight: 300;
       font-size: 26px; color: var(--white); line-height: 1.15; margin-bottom: 6px;
+    }
+    .info-value-price {
+      font-weight: 400; font-size: clamp(30px, 3.2vw, 38px); color: var(--beige);
     }
     .info-sub { font-size: 12px; font-weight: 300; color: rgba(255,255,255,0.38); line-height: 1.7; }
 
@@ -221,6 +225,19 @@
 
     /* ── FICHA TÉCNICA ────────────────────────────────── */
     .ficha-section { background: var(--light-beige); padding: 72px 56px; }
+    .ficha-price {
+      display: flex; justify-content: space-between; align-items: baseline;
+      background: var(--brand-blue); padding: 24px 32px; margin-bottom: 32px;
+    }
+    .ficha-price-label {
+      font-family: 'Alliance No.1', sans-serif; font-weight: 300;
+      font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+    }
+    .ficha-price-val {
+      font-family: 'Alliance No.1', sans-serif; font-weight: 400;
+      font-size: clamp(26px, 3vw, 32px); color: var(--white);
+    }
     .ficha-list { display: grid; grid-template-columns: repeat(2, 1fr); column-gap: 48px; }
     .ficha-item {
       display: flex; justify-content: space-between; align-items: baseline;
@@ -343,6 +360,11 @@
   </section>
 
   <div class="info-strip">
+    <div class="info-card info-card-price">
+      <p class="info-label">Precio de lista</p>
+      <p class="info-value info-value-price">USD 95.000</p>
+      <p class="info-sub">Disponible</p>
+    </div>
     <div class="info-card">
       <p class="info-label">Ubicación</p>
       <p class="info-value">Italia 1165</p>
@@ -352,11 +374,6 @@
       <p class="info-label">Superficie y tipo</p>
       <p class="info-value">55 m²</p>
       <p class="info-sub">Departamento 2 dormitorios · Piso 8</p>
-    </div>
-    <div class="info-card">
-      <p class="info-label">Estado de disponibilidad</p>
-      <p class="info-value" style="font-size: 14px;">Disponible</p>
-      <p class="info-sub">Consultar por esta unidad</p>
     </div>
   </div>
 
@@ -374,6 +391,10 @@
 
   <section class="ficha-section">
     <p class="section-eyebrow">Información general</p>
+    <div class="ficha-price">
+      <span class="ficha-price-label">Precio de lista</span>
+      <span class="ficha-price-val">USD 95.000</span>
+    </div>
     <div class="ficha-list">
       <div class="ficha-item">
         <span class="ficha-item-sub">Tipo</span>
@@ -394,10 +415,6 @@
       <div class="ficha-item">
         <span class="ficha-item-sub">Piso</span>
         <span class="ficha-item-val">Piso 8</span>
-      </div>
-      <div class="ficha-item">
-        <span class="ficha-item-sub">Precio de lista</span>
-        <span class="ficha-item-val">USD 95.000</span>
       </div>
       <div class="ficha-item">
         <span class="ficha-item-sub">Estado</span>
