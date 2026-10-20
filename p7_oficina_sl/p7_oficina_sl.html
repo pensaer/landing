@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Oficina en Venta · San Lorenzo 1725 · Rosario · Pensaer</title>
 
-  <!-- Sora: tipografía secundaria para cuerpo de texto -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -50,504 +49,271 @@
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      font-family: 'Sora', sans-serif;
-      background: var(--white);
-      color: var(--brand-blue);
-      line-height: 1.6;
-    }
+    body { font-family: 'Sora', sans-serif; background: var(--white); color: var(--brand-blue); line-height: 1.6; }
 
     /* ── HEADER ───────────────────────────────────────── */
     header {
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      z-index: 10;
-      padding: 28px 56px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      position: absolute; top: 0; left: 0; right: 0; z-index: 10;
+      padding: 28px 56px; display: flex; align-items: center; justify-content: space-between;
       background: linear-gradient(to bottom, rgba(37,40,58,0.65), transparent);
     }
-
-    .logo-img {
-      height: 28px;
-      width: auto;
-      display: block;
-    }
-
+    .logo-img { height: 28px; width: auto; display: block; }
     .header-contact {
-      font-family: 'Alliance No.1', sans-serif;
-      font-weight: 400;
-      font-size: 11px;
-      letter-spacing: 2.5px;
-      color: var(--white);
-      text-transform: uppercase;
-      text-decoration: none;
-      border: 1px solid rgba(255,255,255,0.5);
-      padding: 10px 28px;
+      font-family: 'Alliance No.1', sans-serif; font-weight: 400; font-size: 11px;
+      letter-spacing: 2.5px; text-transform: uppercase; color: var(--white); text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.5); padding: 10px 28px;
       transition: background 0.2s, border-color 0.2s;
     }
-    .header-contact:hover {
-      background: rgba(255,255,255,0.1);
-      border-color: var(--white);
-    }
+    .header-contact:hover { background: rgba(255,255,255,0.1); border-color: var(--white); }
 
     /* ── HERO ─────────────────────────────────────────── */
     .hero {
-      position: relative;
-      height: 90vh;
-      min-height: 560px;
-      overflow: hidden;
+      position: relative; background: var(--brand-blue);
+      height: 90vh; min-height: 560px; overflow: hidden;
     }
-
     .hero-bg {
-      position: absolute;
-      inset: 0;
-      background-image: url('fotos/04-salon.jpeg');
-      background-size: cover;
-      background-position: center 30%;
+      position: absolute; inset: 0;
+      background-size: cover; background-position: center 30%;
       filter: brightness(0.42);
     }
-
     .hero-content {
-      position: relative;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: flex-end;
-      padding: 0 56px 72px;
+      position: relative; height: 100%; display: flex; flex-direction: column;
+      align-items: flex-start; justify-content: flex-end; padding: 0 56px 72px;
     }
-
     .hero-eyebrow {
-      font-family: 'Alliance No.1', sans-serif;
-      font-weight: 300;
-      font-size: 11px;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.55);
-      margin-bottom: 20px;
+      font-family: 'Alliance No.1', sans-serif; font-weight: 300;
+      font-size: 11px; letter-spacing: 4px; text-transform: uppercase;
+      color: rgba(255,255,255,0.55); margin-bottom: 20px;
     }
-
     .hero-title {
-      font-family: 'Alliance No.1', sans-serif;
-      font-weight: 300;
-      font-size: clamp(40px, 5.5vw, 72px);
-      color: var(--white);
-      line-height: 1.05;
-      max-width: 720px;
-      margin-bottom: 40px;
+      font-family: 'Alliance No.1', sans-serif; font-weight: 300;
+      font-size: clamp(40px, 5.5vw, 72px); color: var(--white); line-height: 1.05;
+      max-width: 720px; margin-bottom: 40px;
     }
-
-    .hero-actions {
-      display: flex;
-      gap: 12px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
+    .hero-actions { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
     .btn-cta {
-      font-family: 'Alliance No.1', sans-serif;
-      font-weight: 400;
-      font-size: 11px;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-      color: var(--white);
-      text-decoration: none;
-      border: 1px solid rgba(255,255,255,0.55);
-      padding: 13px 36px;
+      font-family: 'Alliance No.1', sans-serif; font-weight: 400; font-size: 11px;
+      letter-spacing: 2.5px; text-transform: uppercase; color: var(--white); text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.55); padding: 13px 36px;
       transition: background 0.2s, border-color 0.2s;
     }
-    .btn-cta:hover {
-      background: rgba(255,255,255,0.1);
-      border-color: var(--white);
-    }
-
-    .btn-pdf {
-      font-family: 'Alliance No.1', sans-serif;
-      font-weight: 400;
-      font-size: 11px;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-      color: var(--white);
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      padding: 13px 28px;
-      border: 1px solid rgba(255,255,255,0.35);
-      background: rgba(255,255,255,0.08);
-      transition: background 0.2s, border-color 0.2s;
-    }
-    .btn-pdf:hover { background: rgba(255,255,255,0.16); border-color: rgba(255,255,255,0.7); }
-    .btn-pdf svg { width: 14px; height: 14px; fill: currentColor; flex-shrink: 0; }
+    .btn-cta:hover { background: rgba(255,255,255,0.1); border-color: var(--white); }
 
     /* ── INFO STRIP ───────────────────────────────────── */
-    .info-strip {
-      background: var(--brand-blue);
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-    }
-
-    .info-card {
-      padding: 36px 56px;
-      border-right: 1px solid rgba(255,255,255,0.07);
-    }
+    .info-strip { background: var(--brand-blue); display: grid; grid-template-columns: 1fr 1fr 1fr; }
+    .info-card { padding: 36px 56px; border-right: 1px solid rgba(255,255,255,0.07); }
     .info-card:last-child { border-right: none; }
-
+    .info-card-price { background: rgba(169,156,141,0.08); }
     .info-label {
-      font-family: 'Alliance No.1', sans-serif;
-      font-weight: 300;
-      font-size: 10px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.4);
-      margin-bottom: 10px;
+      font-family: 'Alliance No.1', sans-serif; font-weight: 300;
+      font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+      color: rgba(255,255,255,0.4); margin-bottom: 10px;
     }
-
     .info-value {
-      font-family: 'Alliance No.1', sans-serif;
-      font-weight: 300;
-      font-size: 26px;
-      color: var(--white);
-      line-height: 1.15;
-      margin-bottom: 6px;
+      font-family: 'Alliance No.1', sans-serif; font-weight: 300;
+      font-size: 26px; color: var(--white); line-height: 1.15; margin-bottom: 6px;
     }
-
-    .info-sub {
-      font-size: 12px;
-      font-weight: 300;
-      color: rgba(255,255,255,0.38);
-      line-height: 1.7;
+    .info-value-price {
+      font-weight: 400; font-size: clamp(30px, 3.2vw, 38px); color: var(--beige);
     }
-
-    /* ── GALERÍA ──────────────────────────────────────── */
-    .gallery-strip {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 3px;
-    }
-
-    .gallery-strip .g-item {
-      height: 280px;
-      overflow: hidden;
-      cursor: pointer;
-    }
-
-    .gallery-strip .g-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-      display: block;
-    }
-    .gallery-strip .g-item:hover img { transform: scale(1.03); }
+    .info-sub { font-size: 12px; font-weight: 300; color: rgba(255,255,255,0.38); line-height: 1.7; }
 
     /* ── DESCRIPCIÓN ──────────────────────────────────── */
     .desc-section {
-      padding: 96px 56px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: center;
+      padding: 96px 56px; display: grid; grid-template-columns: 1fr 1fr;
+      gap: 80px; align-items: center;
     }
-
+    .desc-section.no-image { grid-template-columns: 1fr; max-width: 760px; }
     .section-eyebrow {
-      font-family: 'Alliance No.1', sans-serif;
-      font-weight: 300;
-      font-size: 10px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--beige);
-      margin-bottom: 20px;
+      font-family: 'Alliance No.1', sans-serif; font-weight: 300;
+      font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+      color: var(--beige); margin-bottom: 20px;
     }
-
     .desc-title {
-      font-family: 'Alliance No.1', sans-serif;
-      font-weight: 300;
-      font-size: clamp(28px, 3vw, 42px);
-      color: var(--brand-blue);
-      line-height: 1.1;
+      font-family: 'Alliance No.1', sans-serif; font-weight: 300;
+      font-size: clamp(28px, 3vw, 42px); color: var(--brand-blue); line-height: 1.1; margin-bottom: 28px;
+    }
+    .desc-text { font-size: 14px; font-weight: 300; color: var(--dark-gray); line-height: 1.9; margin-bottom: 32px; }
+    .badge-estado {
+      font-family: 'Alliance No.1', sans-serif; font-weight: 400;
+      font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase;
+      color: var(--brand-blue); border: 1px solid var(--brand-blue); padding: 10px 22px; display: inline-block;
+    }
+    .badge-estado-tercero {
+      color: rgba(255,255,255,0.6); border: 1px solid rgba(255,255,255,0.4);
+      padding: 8px 16px; display: inline-flex; flex-direction: column; align-items: center;
+    }
+    .badge-label { font-size: 8px; color: rgba(255,255,255,0.45); margin-bottom: 4px; letter-spacing: 1.5px; }
+    .badge-value { font-size: 11px; letter-spacing: 1px; color: rgba(255,255,255,0.8); font-weight: 500; }
+    .desc-img { width: 100%; height: 500px; object-fit: cover; display: block; }
+    .desc-img-contain { object-fit: contain; background: var(--light-beige); }
+
+    /* ── PLANTA Y AMBIENTES ──────────────────────────── */
+    .planta-section {
+      padding: 96px 56px; display: grid;
+      grid-template-columns: 1fr 1fr; gap: 64px; align-items: start;
+    }
+    .planta-title {
+      font-family: 'Alliance No.1', sans-serif; font-weight: 300;
+      font-size: clamp(28px, 3vw, 40px); color: var(--brand-blue); line-height: 1.1;
       margin-bottom: 28px;
     }
-
-    .desc-text {
-      font-size: 14px;
-      font-weight: 300;
-      color: var(--dark-gray);
-      line-height: 1.9;
-      margin-bottom: 32px;
+    .dim-list { display: flex; flex-direction: column; margin-top: 4px; }
+    .dim-item {
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding: 11px 0; border-bottom: 1px solid var(--light-gray);
+    }
+    .dim-amb {
+      font-family: 'Alliance No.1', sans-serif; font-weight: 300;
+      font-size: 13px; color: var(--dark-gray);
+    }
+    .dim-val {
+      font-family: 'Alliance No.1', sans-serif; font-weight: 400;
+      font-size: 13px; color: var(--brand-blue);
+    }
+    .dim-note {
+      font-size: 11px; font-weight: 300; color: var(--beige);
+      margin-top: 10px; line-height: 1.6;
+    }
+    .planta-img { width: 100%; height: auto; display: block; border: 1px solid var(--light-gray); }
+    .planta-section-wide {
+      display: block; text-align: center;
+    }
+    .planta-section-wide .section-eyebrow { margin-bottom: 16px; }
+    .planta-section-wide .planta-title { margin-bottom: 40px; }
+    .planta-section-wide .planta-img { max-width: 1080px; margin: 0 auto; }
+    @media (max-width: 860px) {
+      .planta-section { grid-template-columns: 1fr; padding: 56px 24px; gap: 40px; }
+      .planta-section-wide { padding: 56px 24px; }
     }
 
-    .badge-entrega {
-      font-family: 'Alliance No.1', sans-serif;
-      font-weight: 400;
-      font-size: 10px;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-      color: var(--brand-blue);
-      border: 1px solid var(--brand-blue);
-      padding: 10px 22px;
-      display: inline-block;
+    /* ── CARRUSEL DE RENDERS ─────────────────────────── */
+    .renders-carousel { position: relative; width: 100%; height: 520px; overflow: hidden; background: var(--brand-blue); }
+    .renders-carousel .slide { position: absolute; inset: 0; opacity: 0; transition: opacity 0.7s ease; }
+    .renders-carousel .slide.active { opacity: 1; }
+    .renders-carousel .slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .rc-eyebrow {
+      position: absolute; top: 24px; left: 56px; z-index: 5;
+      font-family: 'Alliance No.1', sans-serif; font-weight: 300;
+      font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
     }
-
-    .desc-img {
-      width: 100%;
-      height: 500px;
-      object-fit: cover;
-      display: block;
+    .rc-nav {
+      position: absolute; top: 50%; transform: translateY(-50%); z-index: 5;
+      background: none; border: none; cursor: pointer;
+      color: rgba(255,255,255,0.65); font-size: 44px; padding: 0 28px; line-height: 1;
+      font-family: 'Alliance No.1', sans-serif; font-weight: 300; transition: color 0.2s;
+    }
+    .rc-nav:hover { color: var(--white); }
+    .rc-prev { left: 0; }
+    .rc-next { right: 0; }
+    .rc-dots {
+      position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);
+      display: flex; gap: 8px; z-index: 5;
+    }
+    .rc-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: rgba(255,255,255,0.3); border: none; cursor: pointer; padding: 0;
+      transition: background 0.25s;
+    }
+    .rc-dot.active { background: var(--white); }
+    @media (max-width: 860px) {
+      .renders-carousel { height: 280px; }
+      .rc-nav { font-size: 32px; padding: 0 14px; }
+      .rc-eyebrow { left: 24px; }
     }
 
     /* ── FICHA TÉCNICA ────────────────────────────────── */
-    .ficha-section {
-      background: var(--light-beige);
-      padding: 72px 56px;
+    .ficha-section { background: var(--light-beige); padding: 72px 56px; }
+    .ficha-price {
+      display: flex; justify-content: space-between; align-items: baseline;
+      background: var(--brand-blue); padding: 24px 32px; margin-bottom: 32px;
     }
-
-    .ficha-list {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      column-gap: 48px;
+    .ficha-price-label {
+      font-family: 'Alliance No.1', sans-serif; font-weight: 300;
+      font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
     }
-
+    .ficha-price-val {
+      font-family: 'Alliance No.1', sans-serif; font-weight: 400;
+      font-size: clamp(26px, 3vw, 32px); color: var(--white);
+    }
+    .ficha-list { display: grid; grid-template-columns: repeat(2, 1fr); column-gap: 48px; }
     .ficha-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      padding: 15px 0;
-      border-bottom: 1px solid rgba(37,40,58,0.12);
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding: 15px 0; border-bottom: 1px solid rgba(37,40,58,0.12);
     }
-
-    .ficha-item-sub {
-      font-family: 'Alliance No.1', sans-serif;
-      font-weight: 300;
-      font-size: 13px;
-      color: var(--dark-gray);
-    }
-
-    .ficha-item-val {
-      font-family: 'Alliance No.1', sans-serif;
-      font-weight: 400;
-      font-size: 13px;
-      color: var(--brand-blue);
-    }
+    .ficha-item-sub { font-family: 'Alliance No.1', sans-serif; font-weight: 300; font-size: 13px; color: var(--dark-gray); }
+    .ficha-item-val { font-family: 'Alliance No.1', sans-serif; font-weight: 400; font-size: 13px; color: var(--brand-blue); }
 
     /* ── UBICACIÓN ────────────────────────────────────── */
     .ubicacion-section {
-      padding: 96px 56px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 64px;
-      align-items: start;
+      padding: 96px 56px; display: grid; grid-template-columns: 1fr 1fr;
+      gap: 64px; align-items: start;
     }
-
-    .ubicacion-map {
-      width: 100%;
-      height: 380px;
-      border: none;
-      display: block;
-      filter: grayscale(25%);
-    }
-
+    .ubicacion-map { width: 100%; height: 380px; border: none; display: block; filter: grayscale(25%); }
     .ubicacion-content { display: flex; flex-direction: column; gap: 20px; }
-
     .ubicacion-title {
-      font-family: 'Alliance No.1', sans-serif;
-      font-weight: 300;
-      font-size: clamp(28px, 3vw, 40px);
-      color: var(--brand-blue);
-      line-height: 1.1;
+      font-family: 'Alliance No.1', sans-serif; font-weight: 300;
+      font-size: clamp(28px, 3vw, 40px); color: var(--brand-blue); line-height: 1.1;
     }
-
-    .ubicacion-text {
-      font-size: 14px;
-      font-weight: 300;
-      color: var(--dark-gray);
-      line-height: 1.9;
-    }
+    .ubicacion-text { font-size: 14px; font-weight: 300; color: var(--dark-gray); line-height: 1.9; }
     .ubicacion-text strong { color: var(--brand-blue); font-weight: 500; }
-
-    .ubicacion-tags {
-      display: flex;
-      flex-direction: column;
-      margin-top: 8px;
-    }
-
+    .ubicacion-tags { display: flex; flex-direction: column; margin-top: 8px; }
     .ubicacion-tag {
-      font-family: 'Alliance No.1', sans-serif;
-      font-weight: 300;
-      font-size: 13px;
-      color: var(--dark-gray);
-      padding: 13px 0;
-      border-bottom: 1px solid var(--light-gray);
+      font-family: 'Alliance No.1', sans-serif; font-weight: 300;
+      font-size: 13px; color: var(--dark-gray); padding: 13px 0; border-bottom: 1px solid var(--light-gray);
     }
 
-    /* ── SERVICIOS ────────────────────────────────────── */
-    .servicios-section {
-      background: var(--light-beige);
-      padding: 72px 56px;
-    }
-
-    .servicios-list {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      column-gap: 48px;
-    }
-
+    /* ── SERVICIOS / CARACTERÍSTICAS ─────────────────── */
+    .servicios-section { background: var(--light-beige); padding: 72px 56px; }
+    .servicios-section.bg-white { background: var(--white); }
+    .servicios-list { display: grid; grid-template-columns: repeat(2, 1fr); column-gap: 48px; }
     .servicio-item {
-      font-family: 'Alliance No.1', sans-serif;
-      font-weight: 300;
-      font-size: 13px;
-      color: var(--dark-gray);
-      padding: 14px 0;
-      border-bottom: 1px solid rgba(37,40,58,0.12);
+      font-family: 'Alliance No.1', sans-serif; font-weight: 300;
+      font-size: 13px; color: var(--dark-gray); padding: 14px 0; border-bottom: 1px solid rgba(37,40,58,0.12);
     }
 
     /* ── CTA FINAL ────────────────────────────────────── */
-    .cta-section {
-      background: var(--brand-blue);
-      padding: 96px 56px;
-      text-align: center;
-    }
-
+    .cta-section { background: var(--brand-blue); padding: 96px 56px; text-align: center; }
     .cta-question {
-      font-family: 'Alliance No.1', sans-serif;
-      font-weight: 300;
-      font-size: 11px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.38);
-      margin-bottom: 24px;
+      font-family: 'Alliance No.1', sans-serif; font-weight: 300;
+      font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+      color: rgba(255,255,255,0.38); margin-bottom: 24px;
     }
-
     .cta-title {
-      font-family: 'Alliance No.1', sans-serif;
-      font-weight: 300;
-      font-size: clamp(34px, 4.5vw, 58px);
-      color: var(--white);
-      line-height: 1.1;
-      margin-bottom: 48px;
+      font-family: 'Alliance No.1', sans-serif; font-weight: 300;
+      font-size: clamp(34px, 4.5vw, 58px); color: var(--white); line-height: 1.1; margin-bottom: 48px;
     }
-
-    .cta-buttons {
-      display: flex;
-      gap: 16px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
+    .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
     .btn-call {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: var(--white);
-      color: var(--brand-blue);
-      text-decoration: none;
-      font-family: 'Alliance No.1', sans-serif;
-      font-weight: 400;
-      font-size: 11px;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-      padding: 18px 48px;
-      transition: background 0.2s;
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--white); color: var(--brand-blue); text-decoration: none;
+      font-family: 'Alliance No.1', sans-serif; font-weight: 400; font-size: 11px;
+      letter-spacing: 2.5px; text-transform: uppercase; padding: 18px 48px; transition: background 0.2s;
     }
     .btn-call:hover { background: var(--light-beige); }
-
     .btn-wa {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: transparent;
-      color: rgba(255,255,255,0.6);
-      text-decoration: none;
-      font-family: 'Alliance No.1', sans-serif;
-      font-weight: 400;
-      font-size: 11px;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-      padding: 18px 48px;
-      border: 1px solid rgba(255,255,255,0.22);
-      transition: border-color 0.2s, color 0.2s;
+      display: inline-flex; align-items: center; gap: 10px;
+      background: transparent; color: rgba(255,255,255,0.6); text-decoration: none;
+      font-family: 'Alliance No.1', sans-serif; font-weight: 400; font-size: 11px;
+      letter-spacing: 2.5px; text-transform: uppercase; padding: 18px 48px;
+      border: 1px solid rgba(255,255,255,0.22); transition: border-color 0.2s, color 0.2s;
     }
     .btn-wa:hover { border-color: rgba(255,255,255,0.6); color: var(--white); }
 
     /* ── FOOTER ───────────────────────────────────────── */
     footer {
-      background: var(--black);
-      padding: 28px 56px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 12px;
+      background: var(--black); padding: 28px 56px;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 12px;
     }
-
     .footer-logo { height: 22px; width: auto; display: block; }
-
-    .footer-copy {
-      font-family: 'Alliance No.1', sans-serif;
-      font-weight: 300;
-      font-size: 11px;
-      color: rgba(255,255,255,0.28);
-      letter-spacing: 1px;
+    .footer-copy, .footer-address {
+      font-family: 'Alliance No.1', sans-serif; font-weight: 300;
+      font-size: 11px; color: rgba(255,255,255,0.28); letter-spacing: 1px;
     }
-
-    .footer-address {
-      font-family: 'Alliance No.1', sans-serif;
-      font-weight: 300;
-      font-size: 11px;
-      color: rgba(255,255,255,0.28);
-      text-align: right;
-    }
-
-    /* ── LIGHTBOX ─────────────────────────────────────── */
-    .lightbox {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.95);
-      z-index: 1000;
-      align-items: center;
-      justify-content: center;
-    }
-    .lightbox.open { display: flex; }
-
-    .lightbox img {
-      max-width: 90vw;
-      max-height: 88vh;
-      object-fit: contain;
-    }
-
-    .lb-close {
-      position: absolute;
-      top: 24px; right: 32px;
-      color: rgba(255,255,255,0.55);
-      font-size: 30px;
-      cursor: pointer;
-      background: none;
-      border: none;
-      line-height: 1;
-      font-family: 'Alliance No.1', sans-serif;
-      font-weight: 300;
-    }
-
-    .lb-nav {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      color: rgba(255,255,255,0.45);
-      font-size: 44px;
-      cursor: pointer;
-      background: none;
-      border: none;
-      padding: 0 24px;
-      line-height: 1;
-      font-family: 'Alliance No.1', sans-serif;
-      font-weight: 300;
-    }
-    .lb-prev { left: 0; }
-    .lb-next { right: 0; }
+    .footer-address { text-align: right; }
 
     /* ── RESPONSIVE ───────────────────────────────────── */
     @media (max-width: 860px) {
@@ -556,9 +322,7 @@
       .hero-content { padding: 0 24px 48px; }
       .info-strip { grid-template-columns: 1fr; }
       .info-card { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); padding: 28px 24px; }
-      .gallery-strip { grid-template-columns: repeat(2, 1fr); }
-      .gallery-strip .g-item { height: 200px; }
-      .desc-section { grid-template-columns: 1fr; padding: 56px 24px; gap: 40px; }
+      .desc-section { grid-template-columns: 1fr !important; padding: 56px 24px; gap: 40px; }
       .desc-img { height: 300px; }
       .ficha-section, .servicios-section { padding: 48px 24px; }
       .ficha-list, .servicios-list { grid-template-columns: 1fr; column-gap: 0; }
@@ -568,150 +332,128 @@
       footer { padding: 24px; flex-direction: column; align-items: flex-start; }
       .footer-address { text-align: left; }
     }
-
     @media (max-width: 480px) {
       .hero { height: 64vh; min-height: 400px; }
       .hero-title { font-size: clamp(30px, 8vw, 48px); }
-      .gallery-strip { grid-template-columns: 1fr; }
-      .gallery-strip .g-item { height: 220px; }
       .cta-buttons { flex-direction: column; gap: 12px; }
       .btn-call, .btn-wa { width: 100%; justify-content: center; }
     }
+
   </style>
 </head>
 <body>
 
-  <!-- HEADER -->
   <header>
     <img class="logo-img" src="../pensaer-logo.png" alt="Pensaer Desarrollos" />
     <a href="tel:+5493416980855" class="header-contact">Contactar</a>
   </header>
 
-  <!-- HERO -->
   <section class="hero">
-    <div class="hero-bg"></div>
+    <div class="hero-bg" style="background-image:url('fotos/04-salon.jpeg');"></div>
     <div class="hero-content">
       <p class="hero-eyebrow">Oficina en venta · San Lorenzo 1725</p>
-      <h1 class="hero-title">Espacio amplio,<br>luminoso y listo<br>para trabajar.</h1>
+      <h1 class="hero-title">Espacio ideal<br>para tu oficina en Pensaer 7.</h1>
       <div class="hero-actions">
         <a href="tel:+5493416980855" class="btn-cta">Consultar ahora</a>
-        <a href="ficha.pdf" download="Pensaer - Oficina San Lorenzo 1725.pdf" class="btn-pdf">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 16l-4-4h2.5V4h3v8H16l-4 4zm-7 4h14v-2H5v2z"/></svg>
-          Descargar ficha PDF
-        </a>
       </div>
     </div>
   </section>
 
-  <!-- INFO STRIP -->
   <div class="info-strip">
+    <div class="info-card info-card-price">
+      <p class="info-label">Precio de lista</p>
+      <p class="info-value info-value-price">USD 130.000</p>
+      <p class="info-sub">Disponible</p>
+    </div>
     <div class="info-card">
       <p class="info-label">Ubicación</p>
       <p class="info-value">San Lorenzo 1725</p>
-      <p class="info-sub">Zona centro · Rosario · Santa Fe</p>
+      <p class="info-sub">Rosario · Santa Fe · Argentina</p>
     </div>
     <div class="info-card">
-      <p class="info-label">Superficies</p>
-      <p class="info-value">110,25 m² equivalentes</p>
-      <p class="info-sub">Cubierta: 93 m² · Patio semi-cubierto: 34,5 m²</p>
+      <p class="info-label">Superficie y tipo</p>
+      <p class="info-value">110,25 m²</p>
+      <p class="info-sub">Oficina · Piso 1</p>
     </div>
   </div>
 
-  <!-- GALERÍA -->
-  <div class="gallery-strip">
-    <div class="g-item" onclick="openLb(0)">
-      <img src="fotos/03-interior-patio.jpeg" alt="Interior con vista al patio" />
-    </div>
-    <div class="g-item" onclick="openLb(1)">
-      <img src="fotos/09-patio-2.jpeg" alt="Patio exterior semi-cubierto" />
-    </div>
-    <div class="g-item" onclick="openLb(2)">
-      <img src="fotos/10-interior-vidrio.jpeg" alt="Tabiques de vidrio" />
-    </div>
-  </div>
-
-  <!-- DESCRIPCIÓN -->
   <section class="desc-section">
     <div>
       <p class="section-eyebrow">El espacio</p>
       <h2 class="desc-title">Funcionalidad y ubicación en un solo espacio.</h2>
-      <p class="desc-text">
-        Oficina en venta ubicada sobre calle San Lorenzo, entre Italia y España, en pleno centro de Rosario. Amplia oficina al contrafrente, vidriada a patio interno.<br><br>
-        El espacio cuenta con 2 baños, office y sala de reuniones separada con tabiques de vidrio tipo loft. Placares completos, alacenas y baño mesada. Incluye termotanque eléctrico. Preinstalación de AA. Orientación Sur.
-      </p>
-      <span class="badge-entrega">Entrega inmediata</span>
+      <p class="desc-text">Oficina en venta ubicada sobre calle San Lorenzo, entre Italia y España, en pleno centro de Rosario. Amplia oficina al contrafrente, vidriada a patio interno.<br><br><br><br>El espacio cuenta con 2 baños, office y sala de reuniones separada con tabiques de vidrio tipo loft. Placares completos, alacenas y baño con mesada. Incluye termotanque eléctrico y preinstalación de AA. Orientación sur.</p>
+      <span class="badge-estado">Disponible</span>
     </div>
-    <img class="desc-img" src="fotos/02-interior-principal.jpeg" alt="Interior con tabiques de vidrio" />
+    <img class="desc-img" src="fotos/02-interior-principal.jpeg" alt="Pensaer 7" loading="lazy" />
   </section>
 
-  <!-- FICHA TÉCNICA -->
+
+
+  <section class="planta-section">
+    <div>
+      <p class="section-eyebrow">Diseño y planta</p>
+      <h2 class="planta-title">Planta de la oficina<br>Piso 1°.</h2>
+      <div class="dim-list">
+      <div class="dim-item"><span class="dim-amb">Patio</span><span class="dim-val">6,77 × 4,20 m</span></div>
+      <div class="dim-item"><span class="dim-amb">Oficina principal</span><span class="dim-val">6,77 × 10,33 m</span></div>
+      <div class="dim-item"><span class="dim-amb">Office / kitchenette</span><span class="dim-val">1,83 × 1,30 m</span></div>
+      <div class="dim-item"><span class="dim-amb">Baño</span><span class="dim-val">1,83 × 1,30 m</span></div>
+      </div>
+      <p class="dim-note">Medidas tomadas sobre planos de arquitectura.</p>
+    </div>
+    <img class="planta-img" src="../plantas_p7/planta_1piso_oficina.png" alt="Planta Pensaer 7 01-04" loading="lazy" />
+  </section>
+
   <section class="ficha-section">
     <p class="section-eyebrow">Información general</p>
+    <div class="ficha-price">
+      <span class="ficha-price-label">Precio de lista</span>
+      <span class="ficha-price-val">USD 130.000</span>
+    </div>
     <div class="ficha-list">
       <div class="ficha-item">
-        <span class="ficha-item-sub">Ambiente</span>
-        <span class="ficha-item-val">1</span>
+        <span class="ficha-item-sub">Tipo</span>
+        <span class="ficha-item-val">Oficina</span>
       </div>
       <div class="ficha-item">
         <span class="ficha-item-sub">Baños</span>
         <span class="ficha-item-val">2</span>
       </div>
       <div class="ficha-item">
-        <span class="ficha-item-sub">Condición</span>
-        <span class="ficha-item-val">Excelente</span>
+        <span class="ficha-item-sub">Sup. interior exclusiva</span>
+        <span class="ficha-item-val">93 m²</span>
       </div>
       <div class="ficha-item">
-        <span class="ficha-item-sub">Antigüedad</span>
-        <span class="ficha-item-val">4 años</span>
+        <span class="ficha-item-sub">Patio semicubierto</span>
+        <span class="ficha-item-val">34,5 m²</span>
       </div>
       <div class="ficha-item">
-        <span class="ficha-item-sub">Planta</span>
-        <span class="ficha-item-val">1°</span>
-      </div>
-      <div class="ficha-item">
-        <span class="ficha-item-sub">Orientación</span>
-        <span class="ficha-item-val">Sur</span>
-      </div>
-      <div class="ficha-item">
-        <span class="ficha-item-sub">Uso</span>
-        <span class="ficha-item-val">Oficina</span>
-      </div>
-      <div class="ficha-item">
-        <span class="ficha-item-sub">Superficie equivalente</span>
+        <span class="ficha-item-sub">Sup. equivalente</span>
         <span class="ficha-item-val">110,25 m²</span>
       </div>
       <div class="ficha-item">
-        <span class="ficha-item-sub">Cochera</span>
-        <span class="ficha-item-val">1</span>
+        <span class="ficha-item-sub">Piso</span>
+        <span class="ficha-item-val">Piso 1</span>
       </div>
       <div class="ficha-item">
-        <span class="ficha-item-sub">Ascensores</span>
-        <span class="ficha-item-val">Doble</span>
+        <span class="ficha-item-sub">Estado</span>
+        <span class="ficha-item-val">Disponible</span>
       </div>
       <div class="ficha-item">
-        <span class="ficha-item-sub">Seguridad</span>
-        <span class="ficha-item-val">Llaves electrónicas y alarma</span>
+        <span class="ficha-item-sub">Edificio</span>
+        <span class="ficha-item-val">Pensaer 7</span>
       </div>
     </div>
   </section>
 
-  <!-- UBICACIÓN -->
   <section class="ubicacion-section">
-    <iframe
-      class="ubicacion-map"
-      src="https://maps.google.com/maps?q=San+Lorenzo+1725,+Rosario,+Santa+Fe,+Argentina&t=&z=16&ie=UTF8&iwloc=&output=embed"
-      allowfullscreen
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"
-    ></iframe>
-
+    <iframe class="ubicacion-map"
+      src="https://maps.google.com/maps?q=San+Lorenzo+1725%2C+Rosario%2C+Santa+Fe%2C+Argentina&t=&z=16&ie=UTF8&iwloc=&output=embed"
+      allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     <div class="ubicacion-content">
       <p class="section-eyebrow">Dónde encontrarnos</p>
       <h2 class="ubicacion-title">Ubicación</h2>
-      <p class="ubicacion-text">
-        Propiedad ubicada sobre una de las principales calles del centro de Rosario.
-        <strong>San Lorenzo entre Italia y España.</strong> Zona comercial y de servicios de alta demanda.
-      </p>
+      <p class="ubicacion-text">Propiedad ubicada sobre una de las principales calles del centro de Rosario. <strong>San Lorenzo entre Italia y España.</strong> Zona comercial y de servicios de alta demanda.</p>
       <div class="ubicacion-tags">
         <span class="ubicacion-tag">Zona centro</span>
         <span class="ubicacion-tag">Próximo a tribunales</span>
@@ -722,73 +464,31 @@
     </div>
   </section>
 
-  <!-- SERVICIOS -->
-  <section class="servicios-section">
+  <section class="servicios-section bg-white">
     <p class="section-eyebrow">Servicios</p>
     <div class="servicios-list">
       <span class="servicio-item">Agua corriente</span>
       <span class="servicio-item">Electricidad</span>
-      <span class="servicio-item">Pavimento</span>
       <span class="servicio-item">Gas natural</span>
+      <span class="servicio-item">Cloacas</span>
+      <span class="servicio-item">Pavimento</span>
     </div>
   </section>
 
-  <!-- CTA FINAL -->
   <section class="cta-section">
     <p class="cta-question">¿Te interesa esta unidad?</p>
     <h2 class="cta-title">Consultá ahora y<br>coordiná una visita.</h2>
     <div class="cta-buttons">
       <a href="tel:+5493416980855" class="btn-call">Llamar ahora</a>
-      <a href="https://wa.me/5493416980855?text=Hola%2C%20me%20interesa%20la%20Oficina%201C%20en%20San%20Lorenzo%201725%2C%20Rosario" class="btn-wa" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="https://wa.me/5493416980855?text=Hola%2C%20me%20interesa%20la%20oficina%20de%20Pensaer%207%2C%20San%20Lorenzo%201725" class="btn-wa" target="_blank" rel="noopener">WhatsApp</a>
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer>
     <img class="footer-logo" src="../pensaer-logo.png" alt="Pensaer" />
     <span class="footer-copy">© 2025 Pensaer · pensaer.com.ar</span>
     <span class="footer-address">Córdoba 1336 Piso 3 · Rosario, Santa Fe</span>
   </footer>
-
-  <!-- LIGHTBOX -->
-  <div class="lightbox" id="lightbox" onclick="if(event.target===this)closeLb()">
-    <button class="lb-close" onclick="closeLb()">×</button>
-    <button class="lb-nav lb-prev" onclick="navLb(-1)">‹</button>
-    <img id="lb-img" src="" alt="" />
-    <button class="lb-nav lb-next" onclick="navLb(1)">›</button>
-  </div>
-
-  <script>
-    const gallery = [
-      'fotos/03-interior-patio.jpeg',
-      'fotos/09-patio-2.jpeg',
-      'fotos/10-interior-vidrio.jpeg',
-    ];
-    let cur = 0;
-
-    function openLb(i) {
-      cur = i;
-      document.getElementById('lb-img').src = gallery[i];
-      document.getElementById('lightbox').classList.add('open');
-    }
-
-    function closeLb() {
-      document.getElementById('lightbox').classList.remove('open');
-    }
-
-    function navLb(d) {
-      cur = (cur + d + gallery.length) % gallery.length;
-      document.getElementById('lb-img').src = gallery[cur];
-    }
-
-    document.addEventListener('keydown', e => {
-      const lb = document.getElementById('lightbox');
-      if (!lb.classList.contains('open')) return;
-      if (e.key === 'Escape') closeLb();
-      if (e.key === 'ArrowRight') navLb(1);
-      if (e.key === 'ArrowLeft') navLb(-1);
-    });
-  </script>
 
 </body>
 </html>
