@@ -176,6 +176,7 @@
       margin-top: 10px; line-height: 1.6;
     }
     .planta-img { width: 100%; height: auto; display: block; border: 1px solid var(--light-gray); }
+    .planta-img-compact { width: auto; max-width: 100%; max-height: 620px; margin: 0 auto; }
     .planta-section-wide {
       display: block; text-align: center;
     }
@@ -185,6 +186,7 @@
     @media (max-width: 860px) {
       .planta-section { grid-template-columns: 1fr; padding: 56px 24px; gap: 40px; }
       .planta-section-wide { padding: 56px 24px; }
+      .planta-img-compact { max-height: 480px; }
     }
 
     /* ── CARRUSEL DE RENDERS ─────────────────────────── */
@@ -401,7 +403,7 @@
       </div>
       <p class="dim-note">Medidas tomadas sobre planos de arquitectura.</p>
     </div>
-    <img class="planta-img" src="../plantas_p7/planta_1piso_oficina.png" alt="Planta Pensaer 7 01-04" loading="lazy" />
+    <img class="planta-img planta-img-compact" src="../plantas_p7/planta_1piso_oficina.png" alt="Planta Pensaer 7 01-04" loading="lazy" />
   </section>
 
   <section class="ficha-section">
